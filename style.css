@@ -129,11 +129,9 @@ a:hover {
 /* remove gaps in the name */
 h1 {
     background: red;
-    margin: auto;
-    width: fit-content;
     line-height: 1rem;
     text-wrap: always;
-    text-align: center;
+    /* text-align: center; */
     font-size: 1rem;
     color: #f5e0dc;
 }
