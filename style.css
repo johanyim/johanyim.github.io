@@ -56,6 +56,7 @@ img {
 
 img.self {
     width: 40%;
+    aspect-ratio: 1; 
 }
 
 a {
@@ -126,11 +127,14 @@ a:hover {
 
 /* remove gaps in the name */
 h1 {
+    background: red;
+    margin: auto;
+    width: fit-content;
     line-height: 1rem;
-    letter-spacing: 0rem;
     text-wrap: always;
     text-align: center;
     font-size: 1rem;
+    color: #f5e0dc;
 }
 
 .huge-name,
@@ -139,8 +143,6 @@ h1 {
 .small-name,
 .tiny-name {
     display: none;
-    color: #b4befe;
-    color: #f5e0dc;
 }
 @media (min-width: 62rem) 
 { .huge-name  { display: inline;} }
