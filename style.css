@@ -103,15 +103,18 @@ a:hover {
     align-items: flex-end;
     justify-content: center;
 }
-.frame .icon {
-    display: inline-block;
-    text-align: center;
-    font-size: 6rem;
-    border-radius: 50%;
-    background-color: #11111b;
+.icon {
     height: 9rem; 
     width:  9rem;
     margin: 1rem auto;
+    border-radius: 50%;
+    background-color: #11111b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 6rem;
 }
 
 
