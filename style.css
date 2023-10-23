@@ -55,8 +55,9 @@ img {
 }
 
 img.self {
-    width: 40%;
     aspect-ratio: 1; 
+    width: 30vw;
+    height: 30vw;
 }
 
 a {
