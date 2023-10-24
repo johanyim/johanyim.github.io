@@ -1,8 +1,6 @@
 @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;500&display=swap');
-
-* {margin:0; padding:0;}
-* {font-family: 'Noto Sans Mono', monospace;}
+* {margin: 0; padding: 0; font-family: 'Noto Sans Mono', monospace;}
 
 body {
     overflow: scroll;
@@ -24,20 +22,12 @@ body {-ms-overflow-style: none;scrollbar-width: none;}
     text-wrap: wrap;
 }
 
-.window {
-    background: #1e1e2e;
-}
+.window { background: #1e1e2e;}
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .window::-webkit-scrollbar { display: none; }
 /* Hide scrollbar for IE, Edge and Firefox */
 .window { -ms-overflow-style: none;scrollbar-width: none; }
-
-.floating-center {
-    text-align: center;
-    width: fit-content;
-    align-self: center;
-}
 
 .window.text {
     padding: 1rem;
@@ -45,13 +35,19 @@ body {-ms-overflow-style: none;scrollbar-width: none;}
     color: #cdd6f4;
 }
 
-/*Top + picture*/
+.floating-center {
+    text-align: center;
+    width: fit-content;
+    align-self: center;
+}
 
 img {
     align-self: center;
     border: 1rem solid #1e1e2e;
     background-color: #1e1e2e;
 }
+
+/* Big name text and self picture */
 
 img.self {
     aspect-ratio: 1; 
@@ -93,23 +89,31 @@ h1 {
     }
 }
 
+h2 {
+    font-size: 2rem;
+    font-weight: normal;
 
+    line-height: 6rem;
+    margin-bottom: -2rem;
+}
 
 a {
     text-decoration: none;
     color: #cdd6f4;
-}
-
-
-.whoami a {
-    display: inline-block;
-    width: 100%;
 }
 a:hover {
     font-weight: bold;
     background: #45475a;
 }
 
+.whoami a {
+    display: inline-block;
+    width: 100%;
+}
+
+
+
+/* Responsive multi-frame section */
 .multi-frame {
     display: flex;
     flex-wrap: wrap;
@@ -127,6 +131,7 @@ a:hover {
     padding: 1rem;
     color: #6c7086;
 }
+
 .frame:hover {
     background-color: #313244;
     font-weight: bold;
@@ -134,12 +139,14 @@ a:hover {
 
 .frame h3 {
     font-size: 1.5rem;
+    font-weight: normal;
     
     height: 4rem;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
+
 .icon {
     height: 9rem; 
     width:  9rem;
@@ -154,21 +161,59 @@ a:hover {
     font-size: 6rem;
 }
 
-
 .frame .description {
     display: inline-block;
     font-size: 1rem;
 }
 
+/* Linux setup section*/
+.setup {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 2rem;
+
+    width: 100%;
+    max-width: 50rem;
+}
+
+
+/* Title */
+.setup summary { 
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0 1rem;
+}
+.setup summary:hover { cursor: pointer; }
+
+.setup .title {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.setup .title:hover {
+    font-weight: bold;
+    background-color: #313244;
+}
+
+.setup .key     { flex: 1 1 auto }
+.setup .value   { flex: 1 1 auto; text-align: right}
+.setup .links   { text-align: right; }
 
 
 
-h2 {
-    font-size: 3rem;
-    font-weight: normal;
 
-    line-height: 7rem;
-    margin-bottom: -2rem;
+/* Frame on open */
+.setup details[open] > summary {
+    margin-bottom: 1rem;
+}
+.setup details {
+    background: #1e1e2e;
+    font-size: 1rem;
+    padding: 1rem;
 }
 
 /* Gaps above and below the screen*/
@@ -181,9 +226,3 @@ h2 {
     height: 2rem;
     width: 100%;
 }
-
-
-
-
-
-
