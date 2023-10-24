@@ -30,7 +30,7 @@ body {-ms-overflow-style: none;scrollbar-width: none;}
 .window { -ms-overflow-style: none;scrollbar-width: none; }
 
 .window.text {
-    padding: 1rem;
+    padding: 0.5rem;
     font-size: 1.5rem;
     color: #cdd6f4;
 }
@@ -201,7 +201,7 @@ a:hover {
 
 .setup .key     { flex: 1 1 auto }
 .setup .value   { flex: 1 1 auto; text-align: right}
-.setup .links   { text-align: right; }
+.setup .links   { text-align: right }
 
 
 
@@ -213,7 +213,7 @@ a:hover {
 .setup details {
     background: #1e1e2e;
     font-size: 1rem;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 /* Gaps above and below the screen*/
