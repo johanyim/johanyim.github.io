@@ -41,6 +41,7 @@ body {-ms-overflow-style: none;scrollbar-width: none;}
     align-self: center;
 }
 
+
 img {
     align-self: center;
     border: 1rem solid #1e1e2e;
@@ -64,6 +65,13 @@ h1 {
     text-align: center;
     letter-spacing: 1rem;
     font-size: 7rem; 
+}
+
+quote {
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    max-width: 50rem;
 }
 
 @media only screen and (max-width: 767px) {
