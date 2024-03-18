@@ -1,0 +1,67 @@
+@import 'catppuccin-colors.scss';
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;600;800&family=Noto+Sans:wght@200;300;400;700&display=swap');
+$header-height: 6rem;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// 60:30:10 rule!
+$sixty: $crust;
+$thirty: $text;
+$ten: $lavender;
+
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+$uhd: 1920px;
+
+//for mobile, tablet, laptop, desktop, 4khd
+@mixin screen($point) {
+    @if $point == s {
+        @media (max-width: $md){ @content; }
+    }
+    @else if $point == m {
+        @media (min-width: $md) and (max-width: $xxl){ @content; }
+    }
+    @else if $point == l {
+        @media (min-width: $xxl){ @content; }
+    }
+    @else if $point == xl {
+        @media (min-width: $uhd){ @content; }
+    }
+}
+
+
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+
+a {
+  text-decoration: none;
+}
+
+body {
+    font-family: 'Noto Sans Mono', sans-serif;
+    transition:
+        color 0.5s,
+        background-color 0.5s;
+    line-height: 1.6;
+    font-size: 15px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
