@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tsparticles/vue3": "^3.0.0",
-    "tsparticles": "^3.3.0",
+    "@tsparticles/basic": "^3.3.0",
+    "@tsparticles/interaction-external-bubble": "^3.3.0",
+    "@tsparticles/interaction-external-push": "^3.3.0",
+    "@tsparticles/interaction-particles-links": "^3.3.0",
+    "@tsparticles/vue3": "^3.0.1",
     "vue": "^3.4.15",
     "vue3-leaderline": "^1.2.11"
   },
