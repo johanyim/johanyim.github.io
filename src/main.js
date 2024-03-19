@@ -1,9 +1,9 @@
 import './assets/style.scss'
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import Particles from "@tsparticles/vue3";
-import { loadFull } from "tsparticles"; 
+// import { createApp } from 'vue'
+// import App from './App.vue'
+// import Particles from "@tsparticles/vue3";
+// import { loadFull } from "tsparticles"; 
 
 createApp(App)
     .use(Particles, {
