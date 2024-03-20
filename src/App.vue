@@ -70,6 +70,7 @@
 
 
         <section id="calltoaction">
+            <HRule text='Contact'/>
         </section>
     </main>
 </template>
