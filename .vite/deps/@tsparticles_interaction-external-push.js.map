@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/interaction-external-push/browser/index.js"],
+  "sourcesContent": ["export async function loadExternalPushInteraction(engine, refresh = true) {\n    await engine.addInteractor(\"externalPush\", async (container) => {\n        const { Pusher } = await import(\"./Pusher.js\");\n        return new Pusher(container);\n    }, refresh);\n}\nexport * from \"./Options/Classes/Push.js\";\nexport * from \"./Options/Interfaces/IPush.js\";\n"],
+  "mappings": ";;;;;;;AAAA,eAAsB,4BAA4B,QAAQ,UAAU,MAAM;AACtE,QAAM,OAAO,cAAc,gBAAgB,OAAO,cAAc;AAC5D,UAAM,EAAE,OAAO,IAAI,MAAM,OAAO,sBAAa;AAC7C,WAAO,IAAI,OAAO,SAAS;AAAA,EAC/B,GAAG,OAAO;AACd;",
+  "names": []
+}

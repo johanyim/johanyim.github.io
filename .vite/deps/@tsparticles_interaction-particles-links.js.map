@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/interaction-particles-links/browser/index.js"],
+  "sourcesContent": ["export async function loadParticlesLinksInteraction(engine, refresh = true) {\n    const { loadLinksInteraction } = await import(\"./interaction.js\"), { loadLinksPlugin } = await import(\"./plugin.js\");\n    await loadLinksInteraction(engine, refresh);\n    await loadLinksPlugin(engine, refresh);\n}\nexport * from \"./Options/Classes/Links.js\";\nexport * from \"./Options/Classes/LinksShadow.js\";\nexport * from \"./Options/Classes/LinksTriangle.js\";\nexport * from \"./Options/Interfaces/ILinks.js\";\nexport * from \"./Options/Interfaces/ILinksShadow.js\";\nexport * from \"./Options/Interfaces/ILinksTriangle.js\";\n"],
+  "mappings": ";;;;;;;;;AAAA,eAAsB,8BAA8B,QAAQ,UAAU,MAAM;AACxE,QAAM,EAAE,qBAAqB,IAAI,MAAM,OAAO,2BAAkB,GAAG,EAAE,gBAAgB,IAAI,MAAM,OAAO,sBAAa;AACnH,QAAM,qBAAqB,QAAQ,OAAO;AAC1C,QAAM,gBAAgB,QAAQ,OAAO;AACzC;",
+  "names": []
+}

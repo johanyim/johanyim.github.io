@@ -1,11 +1,4 @@
 <script>
-    import NerdButton from './NerdButton.vue';
-
-    export default {
-        components: {
-            NerdButton
-        }
-    };
 </script>
 
 <template>

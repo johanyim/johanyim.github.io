@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/interaction-external-push/browser/Options/Classes/Push.js"],
+  "sourcesContent": ["import { setRangeValue } from \"@tsparticles/engine\";\nexport class Push {\n    constructor() {\n        this.default = true;\n        this.groups = [];\n        this.quantity = 4;\n    }\n    load(data) {\n        if (!data) {\n            return;\n        }\n        if (data.default !== undefined) {\n            this.default = data.default;\n        }\n        if (data.groups !== undefined) {\n            this.groups = data.groups.map((t) => t);\n        }\n        if (!this.groups.length) {\n            this.default = true;\n        }\n        const quantity = data.quantity;\n        if (quantity !== undefined) {\n            this.quantity = setRangeValue(quantity);\n        }\n    }\n}\n"],
+  "mappings": ";;;;;AACO,IAAM,OAAN,MAAW;AAAA,EACd,cAAc;AACV,SAAK,UAAU;AACf,SAAK,SAAS,CAAC;AACf,SAAK,WAAW;AAAA,EACpB;AAAA,EACA,KAAK,MAAM;AACP,QAAI,CAAC,MAAM;AACP;AAAA,IACJ;AACA,QAAI,KAAK,YAAY,QAAW;AAC5B,WAAK,UAAU,KAAK;AAAA,IACxB;AACA,QAAI,KAAK,WAAW,QAAW;AAC3B,WAAK,SAAS,KAAK,OAAO,IAAI,CAAC,MAAM,CAAC;AAAA,IAC1C;AACA,QAAI,CAAC,KAAK,OAAO,QAAQ;AACrB,WAAK,UAAU;AAAA,IACnB;AACA,UAAM,WAAW,KAAK;AACtB,QAAI,aAAa,QAAW;AACxB,WAAK,WAAW,cAAc,QAAQ;AAAA,IAC1C;AAAA,EACJ;AACJ;",
+  "names": []
+}

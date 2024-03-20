@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/updater-size/browser/index.js"],
+  "sourcesContent": ["export async function loadSizeUpdater(engine, refresh = true) {\n    await engine.addParticleUpdater(\"size\", async () => {\n        const { SizeUpdater } = await import(\"./SizeUpdater.js\");\n        return new SizeUpdater();\n    }, refresh);\n}\n"],
+  "mappings": ";AAAA,eAAsB,gBAAgB,QAAQ,UAAU,MAAM;AAC1D,QAAM,OAAO,mBAAmB,QAAQ,YAAY;AAChD,UAAM,EAAE,YAAY,IAAI,MAAM,OAAO,2BAAkB;AACvD,WAAO,IAAI,YAAY;AAAA,EAC3B,GAAG,OAAO;AACd;",
+  "names": []
+}

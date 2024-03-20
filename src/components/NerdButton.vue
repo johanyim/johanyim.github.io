@@ -1,6 +1,7 @@
 <template>
     <a :href="url" class="nerd-button">
-        <span class="nerd-icon" v-html="getIcon"></span>
+        <!-- <span class="nerd-icon" v-html="getIcon"></span> -->
+        <i :class="'nf ' + symbol"></i>
     </a>
 </template>
 
@@ -15,26 +16,18 @@
                 type: String,
                 required: true
             },
-        },
-        computed: {
-            getIcon() {
-                return `<i class="nf ${this.symbol}"></i>`;
-            }
         }
     };
 </script>
 
 <style scoped lang='scss'>
 @import '../assets/style.scss';
-
 .nerd-button {
     display: inline-block;
     text-decoration: none;
-    border: none;
     padding: 0 1rem;
-    border-radius: 5px;
     &:hover{
-        background-color: $base;
+        color: $overlay0;
         cursor: pointer;
     }
 }

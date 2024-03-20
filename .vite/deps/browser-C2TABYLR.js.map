@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/move-base/browser/index.js"],
+  "sourcesContent": ["export async function loadBaseMover(engine, refresh = true) {\n    await engine.addMover(\"base\", async () => {\n        const { BaseMover } = await import(\"./BaseMover.js\");\n        return new BaseMover();\n    }, refresh);\n}\n"],
+  "mappings": ";AAAA,eAAsB,cAAc,QAAQ,UAAU,MAAM;AACxD,QAAM,OAAO,SAAS,QAAQ,YAAY;AACtC,UAAM,EAAE,UAAU,IAAI,MAAM,OAAO,yBAAgB;AACnD,WAAO,IAAI,UAAU;AAAA,EACzB,GAAG,OAAO;AACd;",
+  "names": []
+}

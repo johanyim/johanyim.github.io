@@ -1,11 +1,12 @@
 @import 'catppuccin-colors.scss';
-@import url("https://www.nerdfonts.com/assets/css/webfont.css");
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;600;800&family=Noto+Sans:wght@200;300;400;700&display=swap');
-$header-height: 6rem;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;600');
+// @import url("https://www.nerdfonts.com/assets/css/webfont.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+$header-height: 6rem;
 
 // 60:30:10 rule!
 $sixty: $crust;
@@ -55,9 +56,9 @@ a {
 
 body {
     font-family: 'Noto Sans Mono', sans-serif;
-    transition:
-        color 0.5s,
-        background-color 0.5s;
+    // transition:
+    //     color 0.5s,
+    //     background-color 0.5s;
     line-height: 1.6;
     font-size: 15px;
     text-rendering: optimizeLegibility;

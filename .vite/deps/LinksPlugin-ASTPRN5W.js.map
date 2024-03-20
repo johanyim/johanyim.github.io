@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/interaction-particles-links/browser/LinksPlugin.js"],
+  "sourcesContent": ["export class LinksPlugin {\n    constructor() {\n        this.id = \"links\";\n    }\n    async getPlugin(container) {\n        const { LinkInstance } = await import(\"./LinkInstance.js\");\n        return new LinkInstance(container);\n    }\n    loadOptions() {\n    }\n    needsPlugin() {\n        return true;\n    }\n}\n"],
+  "mappings": ";AAAO,IAAM,cAAN,MAAkB;AAAA,EACrB,cAAc;AACV,SAAK,KAAK;AAAA,EACd;AAAA,EACA,MAAM,UAAU,WAAW;AACvB,UAAM,EAAE,aAAa,IAAI,MAAM,OAAO,4BAAmB;AACzD,WAAO,IAAI,aAAa,SAAS;AAAA,EACrC;AAAA,EACA,cAAc;AAAA,EACd;AAAA,EACA,cAAc;AACV,WAAO;AAAA,EACX;AACJ;",
+  "names": []
+}

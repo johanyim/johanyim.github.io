@@ -1,151 +1,38 @@
 <script setup>
-    import Header from './components/Header.vue'
-    import HRule from './components/HRule.vue'
-    // import Stars from './components/Stars.vue'
-    import NerdButton from './components/NerdButton.vue'
-    import Timeline from './components/Timeline.vue'
+    import HRule from './components/HRule.vue' // +2 requests
+    import Timeline from './components/Timeline.vue' // +2 requests
+    import starConfig from "./assets/star_config.json" // +1 request
 </script>
 
 <template>
-    <Header/>
+    <header>
+        <h1>Johan Yim</h1>
+        <!-- <nav> -->
+        <!--     <ul> -->
+        <!--         <li>Who am I</li> -->
+        <!--         <li>Who am I</li> -->
+        <!--         <li>Who am I</li> -->
+        <!--         <li>Who am I</li> -->
+        <!--     </ul> -->
+        <!-- </nav> -->
+        <button id="contact">Contact</button>
+    </header>
     <main>
-        <!-- <Stars/> -->
-
-<vue-particles
-            id="stars"
-            :options="{
-    autoPlay: true,
-    background: {
-        color: {
-            value: '#11111b'
-        }
-    },
-    delay: 0,
-    detectRetina: true,
-    fullScreen: {
-        enable: false,
-        zIndex: -10
-    },
-    duration: 0,
-    fpsLimit: 10,
-    interactivity: {
-        detectsOn: 'window',
-        events: {
-            onClick: {
-                enable: true,
-                mode: 'push'
-            },
-            onHover: {
-                enable: true,
-                mode: 'bubble'
-            },
-            resize: {
-                delay: 0.1,
-                enable: false
-            }
-        },
-        modes: {
-            bubble: {
-                distance: 150,
-                mix: false,
-                opacity: 0.3,
-                size: 6
-            },
-            push: {
-                quantity: 1
-            }
-        }
-    },
-    particles: {
-        color: { value: '#cdd6f4' },
-        move: {
-            decay: 0,
-            distance: {},
-            direction: 'top',
-            enable: true,
-            path: {
-                clamp: true,
-                delay: {
-                    value: 0
-                },
-                enable: false,
-                options: {}
-            },
-            outModes: {
-                default: 'out',
-                bottom: 'out',
-                left: 'out',
-                right: 'out',
-                top: 'out'
-            },
-            random: false,
-            speed: {
-                min: 0.03,
-                max: 0.05
-            },
-            straight: true
-        },
-        number: {
-            value: 80,
-            limit: {
-                value: 300,
-                mode: 'delete'
-            },
-            density: {
-                enable: true,
-                value_area: {
-                    density_auto: true
-                }
-            }
-        },
-        opacity: {
-            value: { min: 1, max: 1 }
-        },
-        reduceDuplicates: false,
-        shape: {
-            close: true,
-            fill: true,
-            type: 'circle',
-            options: {
-                polygon: { sides : 5 }
-            }
-        },
-        size: {
-            value: {
-                min: 1,
-                max: 2
-            }
-        },
-        links: {
-            enable: true,
-            color: { value: '#cdd6f4' },
-            distance: 180,
-            frequency: 0.2,
-            opacity: 0.7,
-            width: 2
-        }
-    },
-    pauseOnBlur: true,
-    pauseOnOutsideViewport: true,
-    smooth: true,
-    zLayers: 1,
-    motion: {
-        disable: false,
-        reduce: {
-            factor: 4,
-            value: true
-        }
-    }
-}"/>
-
+        <vue-particles id="stars" :options="starConfig"/>
         <section id="hero">
             <div class="hero-text-container">
                 <h2>Hi, I'm Johan Yim</h2>
                 <h1>Let's make lightweight, high-performance applications
                     <div class="social-links">
-                        <NerdButton class="text-cat-mauve"      symbol="nf-fa-github"   url="https://github.com/johanyim"/>
-                        <NerdButton class="text-cat-sapphire"   symbol="nf-md-linkedin" url="https://www.linkedin.com/in/johanjyyim"/>
-                        <NerdButton class="text-cat-red"        symbol="nf-fa-envelope" url="mailto:johanjyyim@gmail.com"/>
+                        <a href="https://github.com/johanyim" 
+                            class="nf nf-fa-github"
+                            style="color:#cba6f7"></a>
+                        <a href="https://www.linkedin.com/in/johanjyyim" 
+                            class="nf nf-md-linkedin"
+                            style="color:#74c7ec"></a>
+                        <a href="mailto:johanjyyim@gmail.com" 
+                            class="nf nf-fa-envelope"
+                            style="color:#f38ba8"></a>
                     </div>
                 </h1>
             </div>
@@ -161,7 +48,7 @@
             <div id="about-text">
                 <p>I'm Johan, a Computer Science Master's Graduate from the University of Bath, bringing you clear, maintainable code using idiomatic practices and conventions, without sacrificing speed. I'm from Hong Kong.</p>
 
-                <p>I am an aspiring software engineer with a performance-oriented mindset - looking to save the world from slow apps that just suck. I aim to measure what I make, empirically testing and benchmarking my code to grasp every chance at optimization. I take a compiler-first approach to what I do, unafraid to dive into the computed assembly code. Every millisecond counts.</p>
+                <p>I am an aspiring software engineer with a performance-oriented mindset - looking to save the world from slow apps that just suck. I aim to measure what I make, empirically testing and benchmarking my code to grasp every chance at optimization. I take a compiler-first approach to what I do, unafraid to dive into the computed assembly code. Every millisecond counts. Every request costs money. </p>
 
                 <p>When I'm not in front of the computer, I like to read books, practice piano and solve Rubik's cubes. Sometimes you'll find me doing laps at the swimming pool.</p>
 
@@ -202,15 +89,52 @@ export default {
 
 
 <style scoped lang="scss">
+@import url("https://www.nerdfonts.com/assets/css/webfont.css");
 @import './assets/style.scss';
 @import './assets/base.css';
+
+header {
+    color: $thirty;
+    width: 100%;
+    position: fixed;
+    top: 0; left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $header-height;
+    background: $crust;
+    z-index: 1;
+
+
+    h1 {
+        flex: 0 0 auto;
+        font-size: 2rem;
+        margin: 1rem;
+    }
+
+    nav {
+        ul {
+            display: flex;
+        }
+    }
+
+    #contact {
+        margin: 10px;
+        border-radius: 10px;
+        flex: 0 0 auto;
+        padding: 1rem;
+        background: $ten;
+        color: $sixty;
+    }
+
+}
 
 #stars {
     position: absolute;
     z-index:-1;
     width: 100vw;
     height: 80vh;
-    border: 1px solid red;
 }
     section {
         padding-left: 3rem;
@@ -318,6 +242,16 @@ export default {
         #timeline {
             margin: auto;
             max-width: 80rem;
+        }
+    }
+
+    a.nf {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0 1rem;
+        &:hover{
+            color: $overlay0;
+            cursor: pointer;
         }
     }
 

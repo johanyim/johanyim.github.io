@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/@tsparticles/interaction-external-bubble/browser/index.js"],
+  "sourcesContent": ["export async function loadExternalBubbleInteraction(engine, refresh = true) {\n    await engine.addInteractor(\"externalBubble\", async (container) => {\n        const { Bubbler } = await import(\"./Bubbler.js\");\n        return new Bubbler(container);\n    }, refresh);\n}\nexport * from \"./Options/Classes/BubbleBase.js\";\nexport * from \"./Options/Classes/BubbleDiv.js\";\nexport * from \"./Options/Classes/Bubble.js\";\nexport * from \"./Options/Interfaces/IBubbleBase.js\";\nexport * from \"./Options/Interfaces/IBubbleDiv.js\";\nexport * from \"./Options/Interfaces/IBubble.js\";\n"],
+  "mappings": ";;;;;;;;;AAAA,eAAsB,8BAA8B,QAAQ,UAAU,MAAM;AACxE,QAAM,OAAO,cAAc,kBAAkB,OAAO,cAAc;AAC9D,UAAM,EAAE,QAAQ,IAAI,MAAM,OAAO,uBAAc;AAC/C,WAAO,IAAI,QAAQ,SAAS;AAAA,EAChC,GAAG,OAAO;AACd;",
+  "names": []
+}

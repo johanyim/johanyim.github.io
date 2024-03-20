@@ -1,0 +1,124 @@
+{
+  "hash": "a961050a",
+  "configHash": "76a2daef",
+  "lockfileHash": "01af6ca7",
+  "browserHash": "5b4ac309",
+  "optimized": {
+    "vue": {
+      "src": "../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "5b28a4e8",
+      "needsInterop": false
+    },
+    "@tsparticles/vue3": {
+      "src": "../../node_modules/@tsparticles/vue3/dist/particles.es.js",
+      "file": "@tsparticles_vue3.js",
+      "fileHash": "56f949e7",
+      "needsInterop": false
+    },
+    "@tsparticles/basic": {
+      "src": "../../node_modules/@tsparticles/basic/browser/index.js",
+      "file": "@tsparticles_basic.js",
+      "fileHash": "c04a78ab",
+      "needsInterop": false
+    },
+    "@tsparticles/interaction-external-bubble": {
+      "src": "../../node_modules/@tsparticles/interaction-external-bubble/browser/index.js",
+      "file": "@tsparticles_interaction-external-bubble.js",
+      "fileHash": "07c5b880",
+      "needsInterop": false
+    },
+    "@tsparticles/interaction-particles-links": {
+      "src": "../../node_modules/@tsparticles/interaction-particles-links/browser/index.js",
+      "file": "@tsparticles_interaction-particles-links.js",
+      "fileHash": "c0f5907b",
+      "needsInterop": false
+    },
+    "@tsparticles/interaction-external-push": {
+      "src": "../../node_modules/@tsparticles/interaction-external-push/browser/index.js",
+      "file": "@tsparticles_interaction-external-push.js",
+      "fileHash": "4bd15fab",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "plugin-IOEXOVN2": {
+      "file": "plugin-IOEXOVN2.js"
+    },
+    "Pusher-6A7YO6HP": {
+      "file": "Pusher-6A7YO6HP.js"
+    },
+    "browser-EO6OASHT": {
+      "file": "browser-EO6OASHT.js"
+    },
+    "SizeUpdater-4235NBLD": {
+      "file": "SizeUpdater-4235NBLD.js"
+    },
+    "browser-QMLUAJ4I": {
+      "file": "browser-QMLUAJ4I.js"
+    },
+    "Bubbler-2Z3YT45X": {
+      "file": "Bubbler-2Z3YT45X.js"
+    },
+    "Linker-5L5S2F3W": {
+      "file": "Linker-5L5S2F3W.js"
+    },
+    "interaction-7T23QHG5": {
+      "file": "interaction-7T23QHG5.js"
+    },
+    "LinkInstance-BNYKULCS": {
+      "file": "LinkInstance-BNYKULCS.js"
+    },
+    "LinksPlugin-ASTPRN5W": {
+      "file": "LinksPlugin-ASTPRN5W.js"
+    },
+    "browser-C2TABYLR": {
+      "file": "browser-C2TABYLR.js"
+    },
+    "CircleDrawer-ICMSTY6J": {
+      "file": "CircleDrawer-ICMSTY6J.js"
+    },
+    "browser-XYEY65GD": {
+      "file": "browser-XYEY65GD.js"
+    },
+    "ColorUpdater-QCG23P5L": {
+      "file": "ColorUpdater-QCG23P5L.js"
+    },
+    "browser-XLRTH34A": {
+      "file": "browser-XLRTH34A.js"
+    },
+    "OpacityUpdater-NMMIEL5T": {
+      "file": "OpacityUpdater-NMMIEL5T.js"
+    },
+    "browser-NMGC4K2N": {
+      "file": "browser-NMGC4K2N.js"
+    },
+    "OutOfCanvasUpdater-DJOKGT6L": {
+      "file": "OutOfCanvasUpdater-DJOKGT6L.js"
+    },
+    "chunk-GU3YDFVY": {
+      "file": "chunk-GU3YDFVY.js"
+    },
+    "chunk-6FBSUO7S": {
+      "file": "chunk-6FBSUO7S.js"
+    },
+    "chunk-3ZZHAQH5": {
+      "file": "chunk-3ZZHAQH5.js"
+    },
+    "chunk-JHPJRO7G": {
+      "file": "chunk-JHPJRO7G.js"
+    },
+    "Container-M22BWEQO": {
+      "file": "Container-M22BWEQO.js"
+    },
+    "BaseMover-S5SZFDO2": {
+      "file": "BaseMover-S5SZFDO2.js"
+    },
+    "chunk-26VV2B24": {
+      "file": "chunk-26VV2B24.js"
+    },
+    "chunk-53DC3RJ4": {
+      "file": "chunk-53DC3RJ4.js"
+    }
+  }
+}

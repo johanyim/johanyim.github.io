@@ -3,7 +3,7 @@
     import experiences from '../experiences.json'
     import LeaderLine from 'vue3-leaderline'
     const count = experiences.length;
-    const randoms = [...Array(count)].map(() => Math.floor(Math.random() * 100));
+    // const randoms = [...Array(count)].map(() => Math.floor(Math.random() * 100));
     const circleRef = ref([])
 
     onMounted(() => {
@@ -27,7 +27,7 @@
                     });
                 }
             }
-        }, 100)
+        }, 1000)  //TODO: Fix this shit
     })
 
 </script>
@@ -42,7 +42,7 @@
                     <circle 
                     :circleId="data.id"
                     :ref="(circle) => (circleRef[data.id] = circle)" 
-                    :cx="randoms[index]" 
+                    :cx="Math.floor(Math.random()*25)" 
                     cy="50" r="0" 
                     fill="none" 
                     stroke="#cdd6f4" stroke-width="2" />
