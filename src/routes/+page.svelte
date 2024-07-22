@@ -69,14 +69,16 @@
       <Stars id="stars2" className="relative w-1/1 z-0 h-1/1" />
     </div>
     <div
-      class="border-t-subtext z-10 mx-auto rounded-b-xl border-2 border-t-0 border-surface1 bg-mantle p-10 transition duration-500 group-hover:border-overlay0"
+      class="z-10 mx-auto rounded-b-xl border-2 border-t-0 border-surface1 border-t-subtext1 bg-mantle p-4 transition duration-500 group-hover:border-overlay0 sm:p-10"
     >
       <img
         src="./transparent.png"
         alt="Picture of me"
         class="pointer-events-none relative left-10 top-[-10rem] mb-[-8rem] size-[12rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
       />
-      <p class="text-balance text-2xl font-light tracking-tight text-text">
+      <p
+        class="text-balance text-lg font-light tracking-tight text-text sm:text-2xl"
+      >
         About Me self image I'm Johan. I graduated from the University of Bath
         with a Master's degree in Computer Science. Right now, I'm working
         towards finding a career in software engineering. I enjoy taking my time
@@ -97,37 +99,36 @@
 
 <Line text="Experience" style="py-16" />
 <section class="mx-auto min-h-section max-w-wide">
-  <ol class="relative border-s border-gray-200 dark:border-gray-700">
-    {#each events as event, index}
-      <li class="mb-10 ms-6">
+  <ol class="relative -ml-6 divide-y-2 divide-base border-s-2 border-surface1">
+    {#each events.slice().reverse() as event, index}
+      <li class="group ms-8 py-2 sm:py-4">
         <span
-          class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
+          class="absolute -start-3 mt-2 flex h-6 w-6 items-center justify-center rounded-full border-4 border-subtext0 bg-crust ring-[1.5rem] ring-crust transition-all duration-150 group-hover:border-lavender"
         >
-          <svg
-            class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
-            <path
-              d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
-            />
-          </svg>
         </span>
-        <h3 class="mb-1 flex items-center text-lg font-semibold text-text">
-          {event.title}
-        </h3>
-        <time class="mb-2 block text-sm font-normal leading-none text-overlay0"
-          >{event.start_date.toLocaleDateString("en-gb", {
-            year: "numeric",
-            month: "short",
-          })}</time
+        <div
+          class="ml-2 rounded-xl border-2 border-base p-4 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle"
         >
-        <p class="mb-4 text-base font-normal text-subtext0">
-          {event.description}
-        </p>
+          <h3
+            class="mb-1 flex items-center text-lg font-bold text-lavender sm:text-2xl"
+          >
+            {event.title}
+          </h3>
+          <time
+            class="text-md mb-2 block font-semibold leading-none text-overlay0"
+            >{event.start_date.toLocaleDateString("en-gb", {
+              year: "numeric",
+              month: "short",
+            })}</time
+          >
+          <p class="text-md text-base font-normal text-subtext0 sm:text-lg">
+            {event.description}
+          </p>
+        </div>
       </li>
     {/each}
   </ol>
 </section>
+
+<Line text="Skills" style="py-16" />
+<section class="mx-auto min-h-section max-w-wide"></section>

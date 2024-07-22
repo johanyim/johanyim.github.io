@@ -20,7 +20,7 @@
     <ul class="flex h-0 justify-center gap-4">
       <li>
         <a
-          href={base}
+          href="{base}/"
           class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
           >Home</a
         >
