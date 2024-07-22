@@ -1,5 +1,9 @@
 <script>
   import "../app.css";
+
+  import { base } from "$app/paths";
+
+  //scrolling
   let y;
 </script>
 
@@ -16,21 +20,21 @@
     <ul class="flex h-0 justify-center gap-4">
       <li>
         <a
-          href="/"
+          href={base}
           class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
           >Home</a
         >
       </li>
       <li>
         <a
-          href="/reviews"
+          href="{base}/reviews"
           class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
           >Reviews</a
         >
       </li>
       <li>
         <a
-          href="/linux"
+          href="{base}/linux"
           class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
           >Linux</a
         >
