@@ -1,4 +1,5 @@
 <script>
+  import { base } from "$app/paths";
   import Line from "$lib/components/Line.svelte";
   import Stars from "$lib/components/Stars.svelte";
   import Meteors from "$lib/components/Meteors.svelte";
@@ -8,7 +9,6 @@
   import Email from "~icons/mdi/email";
   import Github from "~icons/mdi/github";
   import Timeline from "$lib/components/Timeline.svelte";
-  import { base } from "$app/base";
 </script>
 
 <section class="flex min-h-section">
