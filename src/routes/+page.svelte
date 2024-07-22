@@ -5,6 +5,7 @@
   import Meteors from "$lib/components/Meteors.svelte";
   import Project from "$lib/components/Project.svelte";
   import { projects } from "$data/projects";
+  import { events } from "$data/events";
   import LinkedIn from "~icons/mdi/linkedin";
   import Email from "~icons/mdi/email";
   import Github from "~icons/mdi/github";
@@ -93,6 +94,40 @@
     </div>
   </div>
 </section>
-<!-- <Line text="Experience" style="py-16" /> -->
-<!-- <Timeline /> -->
-<!-- <Stars style="relative z-[-2] h-section w-full" /> -->
+
+<Line text="Experience" style="py-16" />
+<section class="mx-auto min-h-section max-w-wide">
+  <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {#each events as event, index}
+      <li class="mb-10 ms-6">
+        <span
+          class="absolute -start-3 flex h-6 w-6 items-center justify-center rounded-full bg-blue-100 ring-8 ring-white dark:bg-blue-900 dark:ring-gray-900"
+        >
+          <svg
+            class="h-2.5 w-2.5 text-blue-800 dark:text-blue-300"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
+            <path
+              d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"
+            />
+          </svg>
+        </span>
+        <h3 class="mb-1 flex items-center text-lg font-semibold text-text">
+          {event.title}
+        </h3>
+        <time class="mb-2 block text-sm font-normal leading-none text-overlay0"
+          >{event.start_date.toLocaleDateString("en-gb", {
+            year: "numeric",
+            month: "short",
+          })}</time
+        >
+        <p class="mb-4 text-base font-normal text-subtext0">
+          {event.description}
+        </p>
+      </li>
+    {/each}
+  </ol>
+</section>
