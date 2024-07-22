@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/@tsparticles/interaction-particles-links/browser/interaction.js"],
-  "sourcesContent": ["export async function loadLinksInteraction(engine, refresh = true) {\n    await engine.addInteractor(\"particlesLinks\", async (container) => {\n        const { Linker } = await import(\"./Linker.js\");\n        return new Linker(container);\n    }, refresh);\n}\n"],
-  "mappings": ";AAAA,eAAsB,qBAAqB,QAAQ,UAAU,MAAM;AAC/D,QAAM,OAAO,cAAc,kBAAkB,OAAO,cAAc;AAC9D,UAAM,EAAE,OAAO,IAAI,MAAM,OAAO,sBAAa;AAC7C,WAAO,IAAI,OAAO,SAAS;AAAA,EAC/B,GAAG,OAAO;AACd;",
-  "names": []
-}

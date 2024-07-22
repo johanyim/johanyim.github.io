@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/@tsparticles/updater-out-modes/browser/index.js"],
-  "sourcesContent": ["export async function loadOutModesUpdater(engine, refresh = true) {\n    await engine.addParticleUpdater(\"outModes\", async (container) => {\n        const { OutOfCanvasUpdater } = await import(\"./OutOfCanvasUpdater.js\");\n        return new OutOfCanvasUpdater(container);\n    }, refresh);\n}\n"],
-  "mappings": ";AAAA,eAAsB,oBAAoB,QAAQ,UAAU,MAAM;AAC9D,QAAM,OAAO,mBAAmB,YAAY,OAAO,cAAc;AAC7D,UAAM,EAAE,mBAAmB,IAAI,MAAM,OAAO,kCAAyB;AACrE,WAAO,IAAI,mBAAmB,SAAS;AAAA,EAC3C,GAAG,OAAO;AACd;",
-  "names": []
-}

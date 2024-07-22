@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/@tsparticles/interaction-particles-links/browser/plugin.js"],
-  "sourcesContent": ["export async function loadLinksPlugin(engine, refresh = true) {\n    const { LinksPlugin } = await import(\"./LinksPlugin.js\"), plugin = new LinksPlugin();\n    await engine.addPlugin(plugin, refresh);\n}\n"],
-  "mappings": ";AAAA,eAAsB,gBAAgB,QAAQ,UAAU,MAAM;AAC1D,QAAM,EAAE,YAAY,IAAI,MAAM,OAAO,2BAAkB,GAAG,SAAS,IAAI,YAAY;AACnF,QAAM,OAAO,UAAU,QAAQ,OAAO;AAC1C;",
-  "names": []
-}

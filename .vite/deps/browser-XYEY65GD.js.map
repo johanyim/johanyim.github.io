@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/@tsparticles/shape-circle/browser/index.js"],
-  "sourcesContent": ["export async function loadCircleShape(engine, refresh = true) {\n    const { CircleDrawer } = await import(\"./CircleDrawer.js\");\n    await engine.addShape(\"circle\", new CircleDrawer(), refresh);\n}\n"],
-  "mappings": ";AAAA,eAAsB,gBAAgB,QAAQ,UAAU,MAAM;AAC1D,QAAM,EAAE,aAAa,IAAI,MAAM,OAAO,4BAAmB;AACzD,QAAM,OAAO,SAAS,UAAU,IAAI,aAAa,GAAG,OAAO;AAC/D;",
-  "names": []
-}

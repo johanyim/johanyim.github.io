@@ -1,28 +1,41 @@
 {
-  "name": "website",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tsparticles/basic": "^3.3.0",
-    "@tsparticles/interaction-external-bubble": "^3.3.0",
-    "@tsparticles/interaction-external-push": "^3.3.0",
-    "@tsparticles/interaction-particles-links": "^3.3.0",
-    "@tsparticles/vue3": "^3.0.1",
-    "vue": "^3.4.15",
-    "vue3-leaderline": "^1.2.11"
-  },
-  "devDependencies": {
-    "@catppuccin/tailwindcss": "^0.1.6",
-    "@vitejs/plugin-vue": "^5.0.3",
-    "autoprefixer": "^10.4.17",
-    "sass": "^1.71.1",
-    "tailwindcss": "^3.4.1",
-    "vite": "^5.0.11"
-  }
+	"name": "website",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@catppuccin/tailwindcss": "^0.1.6",
+		"@iconify-json/mdi": "^1.1.67",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/adapter-static": "^3.0.2",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@tailwindcss/container-queries": "^0.1.1",
+		"autoprefixer": "^10.4.19",
+		"eslint-config-prettier": "^9.1.0",
+		"postcss": "^8.4.39",
+		"prettier": "^3.3.2",
+		"prettier-plugin-svelte": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.6.5",
+		"svelte": "^4.2.7",
+		"svelte-check": "^3.6.0",
+		"tailwindcss": "^3.4.4",
+		"tslib": "^2.4.1",
+		"typescript": "^5.0.0",
+		"unplugin-icons": "^0.19.0",
+		"vite": "^5.0.3"
+	},
+	"type": "module",
+	"dependencies": {
+		"@fontsource/noto-sans-mono": "^5.0.20",
+		"@tsparticles/slim": "^3.5.0",
+		"@tsparticles/svelte": "^3.1.1",
+		"tsparticles": "^3.5.0"
+	}
 }

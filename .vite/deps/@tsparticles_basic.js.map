@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/@tsparticles/basic/browser/index.js"],
-  "sourcesContent": ["export async function loadBasic(engine, refresh = true) {\n    const { loadBaseMover } = await import(\"@tsparticles/move-base\"), { loadCircleShape } = await import(\"@tsparticles/shape-circle\"), { loadColorUpdater } = await import(\"@tsparticles/updater-color\"), { loadOpacityUpdater } = await import(\"@tsparticles/updater-opacity\"), { loadOutModesUpdater } = await import(\"@tsparticles/updater-out-modes\"), { loadSizeUpdater } = await import(\"@tsparticles/updater-size\");\n    await loadBaseMover(engine, false);\n    await loadCircleShape(engine, false);\n    await loadColorUpdater(engine, false);\n    await loadOpacityUpdater(engine, false);\n    await loadOutModesUpdater(engine, false);\n    await loadSizeUpdater(engine, false);\n    await engine.refresh(refresh);\n}\n"],
-  "mappings": ";AAAA,eAAsB,UAAU,QAAQ,UAAU,MAAM;AACpD,QAAM,EAAE,cAAc,IAAI,MAAM,OAAO,uBAAwB,GAAG,EAAE,gBAAgB,IAAI,MAAM,OAAO,uBAA2B,GAAG,EAAE,iBAAiB,IAAI,MAAM,OAAO,uBAA4B,GAAG,EAAE,mBAAmB,IAAI,MAAM,OAAO,uBAA8B,GAAG,EAAE,oBAAoB,IAAI,MAAM,OAAO,uBAAgC,GAAG,EAAE,gBAAgB,IAAI,MAAM,OAAO,uBAA2B;AACrZ,QAAM,cAAc,QAAQ,KAAK;AACjC,QAAM,gBAAgB,QAAQ,KAAK;AACnC,QAAM,iBAAiB,QAAQ,KAAK;AACpC,QAAM,mBAAmB,QAAQ,KAAK;AACtC,QAAM,oBAAoB,QAAQ,KAAK;AACvC,QAAM,gBAAgB,QAAQ,KAAK;AACnC,QAAM,OAAO,QAAQ,OAAO;AAChC;",
-  "names": []
-}
