@@ -14,10 +14,10 @@
 
 <svelte:head><title>Johan Yim</title></svelte:head>
 
-<section class="flex min-h-section">
+<section class="flex h-[30rem] min-h-section">
   <Stars className="top-0 left-0 absolute z-[-2] h-section w-full" />
   <!-- <Stars id="stars1" style="top-0 left-0 fixed z-[-2] h-section w-full" /> -->
-  <div class="container m-auto h-full max-w-wide p-3">
+  <div class="container m-auto h-fit max-w-wide p-3">
     <h1 class="mb-4 text-4xl font-semibold opacity-80 sm:text-4xl md:text-5xl">
       Hi, I'm Johan
     </h1>
