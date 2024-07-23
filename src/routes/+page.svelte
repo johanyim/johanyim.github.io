@@ -98,16 +98,16 @@
 </section>
 
 <Line text="Experience" style="py-16" />
-<section class="mx-auto min-h-section max-w-wide">
-  <ol class="relative -ml-6 divide-y-2 divide-base border-s-2 border-surface1">
+<section class=" mx-auto min-h-section max-w-wide">
+  <ol class="relative z-10 -ml-6 border-s-2 border-surface1">
     {#each events.slice().reverse() as event, index}
-      <li class="group ms-8 py-2 sm:py-4">
+      <li class="group z-10 ms-6 py-2 sm:py-4">
         <span
-          class="absolute -start-3 mt-2 flex h-6 w-6 items-center justify-center rounded-full border-4 border-subtext0 bg-crust ring-[1.5rem] ring-crust transition-all duration-150 group-hover:border-lavender"
+          class="absolute -start-3 z-[-10] mt-6 flex h-6 w-6 items-center justify-center rounded-full border-4 border-subtext0 bg-crust ring-[1rem] ring-crust transition-all duration-150 group-hover:border-lavender"
         >
         </span>
         <div
-          class="ml-2 rounded-xl border-2 border-base p-4 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle"
+          class=" rounded-xl border-2 border-base p-4 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle"
         >
           <h3
             class="mb-1 flex items-center text-lg font-bold text-lavender sm:text-2xl"
@@ -131,4 +131,6 @@
 </section>
 
 <Line text="Skills" style="py-16" />
-<section class="mx-auto min-h-section max-w-wide"></section>
+<section class="mx-auto min-h-section max-w-wide">
+  <!-- <div class="flex size-full h-[80rem] border-4"></div> -->
+</section>
