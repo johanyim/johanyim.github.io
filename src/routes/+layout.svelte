@@ -1,10 +1,12 @@
-<script>
+<script lang="ts">
   import "../app.css";
 
   import { base } from "$app/paths";
+  import Menu from "~icons/mdi/menu";
 
-  //scrolling
-  let y;
+  let innerWidth = 0;
+  let scrollY = 0;
+  let isOpen = false;
 </script>
 
 <header
@@ -16,30 +18,36 @@
     Johan Yim
   </h1>
 
-  <nav class=" m-4 h-0 flex-1">
-    <ul class="flex h-0 justify-center gap-4">
-      <li>
-        <a
-          href="{base}/"
-          class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a
-          href="{base}/reviews"
-          class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
-          >Reviews</a
-        >
-      </li>
-      <li>
-        <a
-          href="{base}/linux"
-          class="disappearing rounded-lg p-2 text-overlay2 hover:text-text"
-          >Linux</a
-        >
-      </li>
-    </ul>
+  <nav class="m-4 h-0 flex-1">
+    <button
+      on:click={() => (isOpen = !isOpen)}
+      class="disappearing text-2xl sm:hidden"><Menu /></button
+    >
+    {#if isOpen | (innerWidth > 640)}
+      <ul class="relative justify-center gap-x-4 sm:flex">
+        <li class="contents">
+          <a
+            href="{base}/"
+            class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
+            on:click={() => (isOpen = false)}>Home</a
+          >
+        </li>
+        <li class="contents">
+          <a
+            href="{base}/reviews"
+            class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
+            on:click={() => (isOpen = false)}>Reviews</a
+          >
+        </li>
+        <li class="contents">
+          <a
+            href="{base}/linux"
+            class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
+            on:click={() => (isOpen = false)}>Linux</a
+          >
+        </li>
+      </ul>
+    {/if}
   </nav>
   <button
     href="#"
@@ -51,18 +59,17 @@
   <slot />
 </div>
 
-<svelte:window bind:scrollY={y} />
-{#if y > 150}
+<svelte:window bind:scrollY bind:innerWidth />
+{#if scrollY > 150}
   <style>
     .disappearing {
-      transition: all 0.3s;
       opacity: 30%;
     }
 
     .disappearing:hover {
       background: #11111b;
-      transition: all 0.3s;
-      opacity: 100%;
+      transition: all 0.2s;
+      opacity: 90%;
     }
     .contact {
       background-color: rgba(0, 0, 0, 0);
@@ -72,7 +79,17 @@
       /* background-color: #11111b; */
       color: #11111b;
       background: #b4befe;
-      opacity: 100%;
+      opacity: 90%;
+    }
+  </style>
+{/if}
+
+{#if isOpen}
+  <style>
+    nav a,
+    nav button {
+      opacity: 90% !important;
+      background: #11111b;
     }
   </style>
 {/if}

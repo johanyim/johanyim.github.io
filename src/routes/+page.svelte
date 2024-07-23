@@ -18,7 +18,7 @@
   <Stars className="top-0 left-0 absolute z-[-2] h-section w-full" />
   <!-- <Stars id="stars1" style="top-0 left-0 fixed z-[-2] h-section w-full" /> -->
   <div class="container m-auto h-fit max-w-wide p-3">
-    <h1 class="mb-4 text-4xl font-semibold opacity-80 sm:text-4xl md:text-5xl">
+    <h1 class="sm:text-4x mb-4 text-4xl font-semibold opacity-80">
       Hi, I'm Johan
     </h1>
     <h4 class="text-balance text-2xl text-text opacity-60">
