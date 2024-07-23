@@ -12,6 +12,8 @@
   import Timeline from "$lib/components/Timeline.svelte";
 </script>
 
+<svelte:head><title>Johan Yim</title></svelte:head>
+
 <section class="flex min-h-section">
   <Stars className="top-0 left-0 absolute z-[-2] h-section w-full" />
   <!-- <Stars id="stars1" style="top-0 left-0 fixed z-[-2] h-section w-full" /> -->
@@ -76,23 +78,34 @@
         alt="Picture of me"
         class="pointer-events-none relative left-10 top-[-10rem] mb-[-8rem] size-[12rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
       />
-      <p
-        class="text-balance text-lg font-light tracking-tight text-text sm:text-2xl"
+
+      <div
+        class="divide-y divide-solid divide-surface1 text-lg font-light tracking-tighter text-text sm:text-xl"
       >
-        About Me self image I'm Johan. I graduated from the University of Bath
-        with a Master's degree in Computer Science. Right now, I'm working
-        towards finding a career in software engineering. I enjoy taking my time
-        to learn new languages, paradigms and technologies for software
-        development. I like making apps that feel fast and lightweight. Because
-        of this, I really like using Rust for its type safety and performance.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minus
-        ea vitae nesciunt provident perferendis est corporis inventore numquam
-        nihil exercitationem ab, delectus debitis eius illo nobis, eos iure nam.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe itaque a
-        porro sequi, nostrum sit earum corporis maiores impedit excepturi, error
-        reprehenderit! Omnis velit molestias tempora, repellat voluptatem animi
-        a.
-      </p>
+        <p class="py-4">
+          About Me self image I'm Johan. I graduated from the University of Bath
+          with a Master's degree in Computer Science. Right now, I'm working
+          towards finding a career in software engineering.
+        </p>
+        <p class="py-4">
+          I enjoy taking my time to learn new languages, paradigms and
+          technologies for software development. I like making apps that feel
+          fast and lightweight. Because of this, I really like using Rust for
+          its type safety and performance.
+        </p>
+        <p class="py-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores minus
+          ea vitae nesciunt provident perferendis est corporis inventore numquam
+          nihil exercitationem ab, delectus debitis eius illo nobis, eos iure
+          nam.
+        </p>
+        <p class="py-4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe itaque
+          a porro sequi, nostrum sit earum corporis maiores impedit excepturi,
+          error reprehenderit! Omnis velit molestias tempora, repellat
+          voluptatem animi a.
+        </p>
+      </div>
     </div>
   </div>
 </section>
@@ -132,5 +145,5 @@
 
 <Line text="Skills" style="py-16" />
 <section class="mx-auto min-h-section max-w-wide">
-  <!-- <div class="flex size-full h-[80rem] border-4"></div> -->
+  <div class="flex size-full h-[80rem] border-4"></div>
 </section>
