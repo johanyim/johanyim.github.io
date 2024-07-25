@@ -60,13 +60,13 @@
 </section>
 
 <Line text="About Me" style="py-16" />
-<section class="mx-auto min-h-section max-w-wide">
+<section class="mx-auto min-h-section">
   <div class="group">
     <div
       class="relative m-auto h-44 rounded-t-xl border-2 border-b-4 border-surface1 border-b-subtext0 bg-crust pt-2 transition duration-500 group-hover:border-overlay0 group-hover:border-b-lavender"
     >
       <h2
-        class="absolute bottom-4 right-4 text-3xl font-semibold text-text opacity-50 sm:bottom-8 sm:right-16 sm:text-4xl"
+        class="absolute bottom-4 right-4 text-xl font-semibold text-text opacity-50 sm:bottom-8 sm:right-16 sm:text-4xl"
       >
         Johan Yim
       </h2>
@@ -80,21 +80,21 @@
         alt="Picture of me"
         class="pointer-events-none relative left-6 top-[-10rem] mb-[-8rem] size-[12rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
       />
-      <div class="absolute right-4 top-0 my-4 flex gap-5">
+      <div class="absolute right-4 top-0 my-4 flex gap-5 text-3xl">
         <a href="https://github.com/johanyim" target="_blank"
           ><Github
-            class="rounded-md text-4xl text-mauve hover:bg-surface0 hover:text-text"
+            class="rounded-md text-mauve hover:bg-surface0 hover:text-text"
           /></a
         >
 
         <a href="https://www.linkedin.com/in/johanjyyim" target="_blank"
           ><LinkedIn
-            class="rounded-md text-4xl text-sapphire hover:bg-surface0 hover:text-text"
+            class="rounded-md text-sapphire hover:bg-surface0 hover:text-text"
           /></a
         >
         <a href="#contact"
           ><Email
-            class="rounded-md text-4xl text-red hover:bg-surface0 hover:text-text"
+            class="rounded-md text-red hover:bg-surface0 hover:text-text"
           /></a
         >
       </div>
@@ -141,7 +141,7 @@
 </section>
 
 <Line text="Experience" style="py-16" />
-<section class=" mx-auto min-h-section max-w-wide">
+<section>
   <ol class="relative z-10 -ml-6 border-s-2 border-surface1">
     {#each events.slice().reverse() as event, index}
       <li class="group z-10 ms-6 py-2 sm:py-4">
@@ -200,7 +200,6 @@
         placeholder="giga@chad.com"
       />
       ->
-
       <span
         class="flex-1 border-4 border-mantle bg-crust p-4 text-lg placeholder-surface1"
         >johanjyyim@gmail.com</span

@@ -12,7 +12,7 @@ export default {
         widest: "80rem",
         wide: "60rem",
         narrow: "40rem",
-        narrowest: "40rem",
+        narrowest: "25rem",
         section: "85vh",
       },
     },
