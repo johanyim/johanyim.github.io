@@ -49,10 +49,10 @@
       </ul>
     {/if}
   </nav>
-  <button
-    href="#"
+  <a
+    href="{base}/#contact"
     class="contact flex-0 disappearing mr-8 mt-6 h-fit rounded-lg border-2 border-lavender bg-lavender p-3 text-crust opacity-80 hover:opacity-100"
-    >Contact</button
+    >Contact</a
   >
 </header>
 <div class="content max-width px-10">

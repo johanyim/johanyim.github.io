@@ -3,13 +3,19 @@
   import Line from "$lib/components/Line.svelte";
   import Stars from "$lib/components/Stars.svelte";
   import Meteors from "$lib/components/Meteors.svelte";
+  import ContactForm from "$lib/components/ContactForm.svelte";
   import Project from "$lib/components/Project.svelte";
   import { projects } from "$data/projects";
   import { events } from "$data/events";
   import LinkedIn from "~icons/mdi/linkedin";
   import Email from "~icons/mdi/email";
+  import WhatsApp from "~icons/mdi/whatsapp";
   import Github from "~icons/mdi/github";
+  import Rss from "~icons/mdi/rss";
+  import Send from "~icons/mdi/send";
   import Timeline from "$lib/components/Timeline.svelte";
+  let message = "";
+  let subject = "";
 </script>
 
 <svelte:head><title>Johan Yim</title></svelte:head>
@@ -24,21 +30,35 @@
       I'm a software engineer that will go to great lengths to make my programs
       feel fast and smooth
     </h4>
-    <div class="my-4 flex gap-5">
+    <div class="my-4 flex gap-3">
       <a href="https://github.com/johanyim" target="_blank"
         ><Github
-          class="rounded-md text-4xl text-mauve hover:bg-surface0 hover:text-text"
+          class="rounded-md text-3xl text-mauve hover:bg-surface0 hover:text-text"
         /></a
       >
-
       <a href="https://www.linkedin.com/in/johanjyyim" target="_blank"
         ><LinkedIn
-          class="rounded-md text-4xl text-sapphire hover:bg-surface0 hover:text-text"
+          class="rounded-md text-3xl text-sapphire hover:bg-surface0 hover:text-text"
+        /></a
+      >
+      <a href="mailto:johanjyyim@gmail.com"
+        ><Email
+          class="rounded-md text-3xl text-red hover:bg-surface0 hover:text-text"
+        /></a
+      >
+      <a href="https://github.com/johanyim.atom" target="_blank"
+        ><Rss
+          class="rounded-md text-3xl text-peach hover:bg-surface0 hover:text-text"
+        /></a
+      >
+      <a href="https://wa.me/+447510787854" target="_blank"
+        ><WhatsApp
+          class="rounded-md text-3xl text-green hover:bg-surface0 hover:text-text"
         /></a
       >
       <a href="#contact"
-        ><Email
-          class="rounded-md text-4xl text-red hover:bg-surface0 hover:text-text"
+        ><Send
+          class="rounded-md text-3xl text-lavender hover:bg-surface0 hover:text-text"
         /></a
       >
     </div>
@@ -173,47 +193,7 @@
   </ol>
 </section>
 
-<Line text="Skills" style="py-16" />
-<section class="mx-auto min-h-section max-w-wide">
-  Here are some tech stacks I've worked with in the past: RUST RUST
-  <div class="flex size-full h-[80rem] border-4"></div>
-</section>
-
 <Line text="Contact" style="py-16" />
 <section id="contact" class="mx-auto min-h-section max-w-wide">
-  <select name="email-to" id="email-to">
-    <option value="gmail"> Personal - johanjyyim@gmail.com </option>
-    <option value="bga"> Work - jyim@bgautomotive.co.uk </option>
-  </select>
-
-  <form
-    class="flex flex-col gap-4 rounded-xl border p-4"
-    action="https://formspree.io/f/mpwaqbak"
-    method="POST"
-  >
-    <!-- send to johanjyyim@gmail.com -->
-    <div class="flex">
-      <input
-        class="flex-1 border-4 border-mantle bg-crust p-4 text-lg placeholder-surface1"
-        type="email"
-        name="email"
-        placeholder="giga@chad.com"
-      />
-      ->
-      <span
-        class="flex-1 border-4 border-mantle bg-crust p-4 text-lg placeholder-surface1"
-        >johanjyyim@gmail.com</span
-      >
-    </div>
-
-    <label for="message">Message</label>
-    <textarea class="border-4 border-mantle bg-crust p-4 text-lg" name="message"
-    ></textarea>
-    <!-- your other form fields go here -->
-    <button
-      type="submit"
-      class="m-auto w-fit rounded-xl bg-lavender p-4 text-2xl text-crust"
-      >Send</button
-    >
-  </form>
+  <ContactForm />
 </section>

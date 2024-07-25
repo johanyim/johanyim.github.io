@@ -7,7 +7,7 @@
 
 <a
   {href}
-  class="group col-span-1 h-fit rounded-xl border-[3px] border-overlay1 bg-mantle p-3 transition duration-200 first:mx-auto first:w-full hover:border-lavender hover:bg-base xl:first:col-span-2 xl:first:max-w-wide xl:first:p-6"
+  class="group col-span-1 h-fit rounded-xl border-2 border-overlay0 bg-mantle p-3 transition duration-200 first:mx-auto first:w-full hover:border-lavender hover:bg-base xl:first:col-span-2 xl:first:max-w-wide xl:first:p-6"
 >
   <div class="text-3xl font-bold text-lavender xl:group-first:text-4xl">
     {title}
