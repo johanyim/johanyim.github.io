@@ -7,13 +7,8 @@
   import Project from "$lib/components/Project.svelte";
   import { projects } from "$data/projects";
   import { events } from "$data/events";
-  import LinkedIn from "~icons/mdi/linkedin";
-  import Email from "~icons/mdi/email";
-  import WhatsApp from "~icons/mdi/whatsapp";
-  import Github from "~icons/mdi/github";
-  import Rss from "~icons/mdi/rss";
-  import Send from "~icons/mdi/send";
   import Timeline from "$lib/components/Timeline.svelte";
+  import SocialButtons from "$lib/components/SocialButtons.svelte";
   let message = "";
   let subject = "";
 </script>
@@ -22,45 +17,16 @@
 
 <section class="flex h-[30rem] min-h-section">
   <Stars className="top-0 left-0 absolute z-[-2] h-section w-full" />
-  <div class="container m-auto h-fit max-w-wide p-3">
-    <h1 class="sm:text-4x mb-4 text-4xl font-semibold opacity-80">
-      Hi, I'm Johan
-    </h1>
-    <h4 class="text-balance text-2xl text-text opacity-60">
-      I'm a software engineer that will go to great lengths to make my programs
-      feel fast and smooth
-    </h4>
-    <div class="my-4 flex gap-3">
-      <a href="https://github.com/johanyim" target="_blank"
-        ><Github
-          class="rounded-md text-3xl text-mauve hover:bg-surface0 hover:text-text"
-        /></a
-      >
-      <a href="https://www.linkedin.com/in/johanjyyim" target="_blank"
-        ><LinkedIn
-          class="rounded-md text-3xl text-sapphire hover:bg-surface0 hover:text-text"
-        /></a
-      >
-      <a href="mailto:johanjyyim@gmail.com"
-        ><Email
-          class="rounded-md text-3xl text-red hover:bg-surface0 hover:text-text"
-        /></a
-      >
-      <a href="https://github.com/johanyim.atom" target="_blank"
-        ><Rss
-          class="rounded-md text-3xl text-peach hover:bg-surface0 hover:text-text"
-        /></a
-      >
-      <a href="https://wa.me/+447510787854" target="_blank"
-        ><WhatsApp
-          class="rounded-md text-3xl text-green hover:bg-surface0 hover:text-text"
-        /></a
-      >
-      <a href="#contact"
-        ><Send
-          class="rounded-md text-3xl text-lavender hover:bg-surface0 hover:text-text"
-        /></a
-      >
+  <div class="m-auto align-middle">
+    <div class="container m-auto h-fit max-w-wide p-3">
+      <h1 class="sm:text-4x mb-4 text-4xl font-semibold opacity-80">
+        Hi, I'm Johan
+      </h1>
+      <h4 class="text-balance text-2xl text-text opacity-60">
+        I'm a software engineer that will go to great lengths to make my
+        programs feel fast and smooth
+      </h4>
+      <div class="my-4 flex gap-3 text-3xl"><SocialButtons /></div>
     </div>
     <a
       href="{base}/cv"
@@ -98,29 +64,16 @@
       <img
         src="./transparent.png"
         alt="Picture of me"
-        class="pointer-events-none relative left-6 top-[-10rem] mb-[-8rem] size-[12rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
+        class="pointer-events-none relative left-6 top-[-10rem] mb-[-8rem] size-[10rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
       />
-      <div class="absolute right-4 top-0 my-4 flex gap-5 text-3xl">
-        <a href="https://github.com/johanyim" target="_blank"
-          ><Github
-            class="rounded-md text-mauve hover:bg-surface0 hover:text-text"
-          /></a
-        >
-
-        <a href="https://www.linkedin.com/in/johanjyyim" target="_blank"
-          ><LinkedIn
-            class="rounded-md text-sapphire hover:bg-surface0 hover:text-text"
-          /></a
-        >
-        <a href="#contact"
-          ><Email
-            class="rounded-md text-red hover:bg-surface0 hover:text-text"
-          /></a
-        >
+      <div
+        class="absolute right-4 top-0 my-4 flex gap-2 text-xl sm:right-10 sm:text-3xl"
+      >
+        <SocialButtons />
       </div>
 
       <div
-        class="divide-y divide-solid divide-surface1 border-t border-surface1 text-lg font-light tracking-tight text-text sm:text-xl"
+        class="relative top-4 divide-y divide-solid divide-surface1 border-t border-surface1 text-lg font-light tracking-tight text-text sm:text-xl"
       >
         <p class="py-4">
           I'm Johan. I graduated from the University of Bath with a Master's
