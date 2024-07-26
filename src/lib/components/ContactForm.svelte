@@ -17,13 +17,13 @@
   <!-- send to johanjyyim@gmail.com -->
   <div class="flex flex-wrap gap-4">
     <input
-      class="flex-1 rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-text placeholder-surface1"
+      class="block w-full flex-1 basis-64 rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-text placeholder-surface1"
       type="email"
       name="email"
       placeholder="Your email"
     />
     <span
-      class="inline-block flex-1 rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-overlay0 placeholder-surface1"
+      class="block flex-1 basis-64 overflow-auto rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-overlay0 placeholder-surface1"
       >johanjyyim@gmail.com</span
     >
   </div>
@@ -31,7 +31,7 @@
   <label for="subject" class="visually-hidden">Subject</label>
   <input
     bind:value={subject}
-    class="rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-text placeholder-surface1"
+    class="w-full rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-text placeholder-surface1"
     type="text"
     name="subject"
     placeholder="Subject"
