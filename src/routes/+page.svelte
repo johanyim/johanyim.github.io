@@ -49,7 +49,6 @@
 </section>
 
 <Line text="Experience" style="py-16" />
-
 <section>
   <Timeline />
 </section>

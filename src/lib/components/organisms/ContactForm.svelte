@@ -1,8 +1,7 @@
 <script>
-  // export let title;
-  // export let headline;
-  // export let description;
-  // export let href;
+  import { copy } from "svelte-copy";
+
+  import ContentCopy from "~icons/mdi/content-copy";
 
   let subject = "";
   let message = "";
@@ -13,7 +12,7 @@
   action="https://formspree.io/f/mpwaqbak"
   method="POST"
 >
-  <h3 class="text-4xl font-bold text-lavender">Get in touch</h3>
+  <h3 class="text-3xl font-bold text-lavender">Send me a message</h3>
   <!-- send to johanjyyim@gmail.com -->
   <div class="flex flex-wrap gap-4">
     <input
@@ -22,10 +21,12 @@
       name="email"
       placeholder="Your email"
     />
-    <span
-      class="block flex-1 basis-64 overflow-auto rounded-xl border-2 border-mantle bg-crust p-4 text-lg text-overlay0 placeholder-surface1"
-      >johanjyyim@gmail.com</span
-    >
+    <button
+      class="block flex-1 basis-64 overflow-x-hidden text-nowrap rounded-xl border-2 border-mantle bg-base p-4 text-left text-lg text-overlay0 placeholder-surface1 ring-surface0 hover:ring-2 active:bg-mantle"
+      use:copy={"johanjyyim@gmail.com"}
+      type="button"
+      >johanjyyim@gmail.com <ContentCopy class="inline" />
+    </button>
   </div>
 
   <label for="subject" class="visually-hidden">Subject</label>
@@ -46,15 +47,15 @@
     placeholder="Message"
   />
   <!-- your other form fields go here -->
-  <div>
+  <div class="grid grid-cols-2 gap-6 sm:grid-cols-3">
     <a
       href="mailto:johanjyyim@gmail.com?subject={subject}&body={message}"
-      class="m-auto w-fit rounded-xl bg-lavender p-4 text-lg text-crust"
+      class="m-auto block w-full rounded-xl border-2 border-lavender p-4 text-center text-lavender sm:w-fit"
       >Open in mail</a
     >
     <button
       type="submit"
-      class="m-auto w-fit rounded-xl bg-lavender p-4 text-2xl text-crust"
+      class="m-auto w-full rounded-xl bg-lavender p-4 text-lg text-crust"
       >Send</button
     >
   </div>
