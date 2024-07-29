@@ -1,3 +1,5 @@
+import { base } from "$app/paths";
+
 export interface Project {
     title: string;
     headline: string;
@@ -30,7 +32,7 @@ export const projects: Project[] = [
         title: "My linux dotfiles",
         headline: "",
         description: "Something I've always been working on is organizing and optimizing my Linux desktop configuration. I have an entire page on this site dedicated to this - check it out at '/linux'",
-        href: "/linux"
+        href: `${base}/linux`
     },
 ];
 
