@@ -142,9 +142,9 @@
 
   let loaded = false;
 
-  let onParticlesLoaded = (event) => {
-    const particlesContainer = event.detail.particles;
-  };
+  // let onParticlesLoaded = (event) => {
+  //   const particlesContainer = event.detail.particles;
+  // };
 
   import { onMount } from "svelte";
 

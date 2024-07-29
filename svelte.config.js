@@ -15,6 +15,8 @@ const config = {
     },
     alias: {
       $atoms: "./src/lib/components/atoms",
+      $molecules: "./src/lib/components/molecules",
+      $organisms: "./src/lib/components/organisms",
       $assets: "./src/lib/assets",
       $components: "./src/lib/components",
       $data: "./src/lib/data",
