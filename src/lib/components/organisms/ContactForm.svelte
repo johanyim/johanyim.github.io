@@ -50,12 +50,12 @@
   <div class="grid grid-cols-2 gap-6 sm:grid-cols-3">
     <a
       href="mailto:johanjyyim@gmail.com?subject={subject}&body={message}"
-      class="m-auto block w-full rounded-xl border-2 border-lavender p-4 text-center text-lavender sm:w-fit"
+      class="m-auto block h-full w-full rounded-xl border-2 border-lavender p-4 text-center text-lavender sm:w-fit"
       >Open in mail</a
     >
     <button
       type="submit"
-      class="m-auto w-full rounded-xl bg-lavender p-4 text-lg text-crust"
+      class="m-auto h-full w-full rounded-xl bg-lavender p-4 text-lg text-crust"
       >Send</button
     >
   </div>

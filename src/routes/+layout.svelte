@@ -55,7 +55,7 @@
     >Contact</a
   >
 </header>
-<div class="content max-width px-10">
+<div class="content max-width px-4">
   <slot />
 </div>
 

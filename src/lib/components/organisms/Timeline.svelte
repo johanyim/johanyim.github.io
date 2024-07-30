@@ -2,7 +2,7 @@
   import { events } from "$data/events";
 </script>
 
-<ol class="relative z-10 -ml-6 border-s-2 border-surface1">
+<ol class="relative z-10 border-s-2 border-surface1">
   {#each events.slice().reverse() as event}
     <li class="group z-10 ms-6 py-2 sm:py-4">
       <span

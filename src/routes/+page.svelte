@@ -58,7 +58,7 @@
   <ContactForm />
 </section>
 
-<section class="mx-auto max-w-wide">
+<section class="mx-auto max-w-widest">
   <LifeChart />
 </section>
 

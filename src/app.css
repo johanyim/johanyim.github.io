@@ -5,15 +5,12 @@
 ::selection {
   background: rgb(69,71,90);
   /* color: #11111b; */
-
 }
-
 
 section {
     margin: auto;
     max-width: 80rem;
 }
-
 
 .visually-hidden {
     border: 0;
