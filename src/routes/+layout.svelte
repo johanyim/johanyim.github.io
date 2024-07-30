@@ -23,7 +23,7 @@
       on:click={() => (isOpen = !isOpen)}
       class="disappearing text-2xl sm:hidden"><Menu /></button
     >
-    {#if isOpen | (innerWidth > 640)}
+    {#if isOpen || innerWidth > 640}
       <ul class="relative justify-center gap-x-4 sm:flex">
         <li class="contents">
           <a

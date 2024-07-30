@@ -8,7 +8,7 @@
 </script>
 
 <form
-  class="flex flex-col gap-4 rounded-2xl border-2 border-overlay0 bg-mantle p-4"
+  class="group flex flex-col gap-4 rounded-2xl bg-mantle p-4 ring-4 ring-crust duration-200 hover:ring-surface0"
   action="https://formspree.io/f/mpwaqbak"
   method="POST"
 >
@@ -22,7 +22,7 @@
       placeholder="Your email"
     />
     <button
-      class="block flex-1 basis-64 overflow-x-hidden text-nowrap rounded-xl border-2 border-mantle bg-base p-4 text-left text-lg text-overlay0 placeholder-surface1 ring-surface0 hover:ring-2 active:bg-mantle"
+      class="block flex-1 basis-64 overflow-x-hidden text-nowrap rounded-xl border-2 border-mantle bg-base p-4 text-left text-lg text-overlay0 placeholder-surface1 ring-surface0 duration-200 hover:ring-2 active:bg-mantle"
       use:copy={"johanjyyim@gmail.com"}
       type="button"
       >johanjyyim@gmail.com <ContentCopy class="inline" />
