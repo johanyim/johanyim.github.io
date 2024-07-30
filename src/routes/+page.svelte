@@ -48,16 +48,17 @@
   <About />
 </section>
 
-<Line text="Experience" style="py-16" />
+<Line text="Timeline" style="py-16" />
 <section>
   <Timeline />
 </section>
 
-<Line text="Contact" style="py-16" />
-<section id="contact" class="mx-auto max-w-wide">
+<Line id="contact" text="Contact" style="py-16" />
+<section class="mx-auto max-w-wide">
   <ContactForm />
 </section>
 
+<Line text="Motivation" style="py-16" />
 <section class="mx-auto max-w-widest">
   <LifeChart />
 </section>
