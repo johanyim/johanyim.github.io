@@ -1,6 +1,5 @@
 <script lang="ts">
   import "../app.css";
-
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
 

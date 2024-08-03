@@ -28,7 +28,7 @@
     </div>
     <a
       href="{base}/cv"
-      class="inline-block rounded-xl border-2 border-lavender p-3 text-xl text-lavender hover:border-text hover:bg-mantle hover:text-text"
+      class="inline-block rounded-xl border-2 border-lavender p-3 text-xl text-lavender hover:border-text hover:text-text"
       >View CV</a
     >
   </div>
