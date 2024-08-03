@@ -63,4 +63,4 @@
   <LifeChart />
 </section>
 
-<footer></footer>
+<footer class="my-32"></footer>
