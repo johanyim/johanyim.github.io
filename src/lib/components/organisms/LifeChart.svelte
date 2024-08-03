@@ -29,7 +29,7 @@
       {#if filled}
         <div class="size-1 bg-text md:size-3"></div>
       {:else}
-        <div class="size-1 bg-mantle md:size-3"></div>
+        <div class="size-1 bg-surface0 md:size-3"></div>
       {/if}
     {/each}
   </div>
