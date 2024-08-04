@@ -12,7 +12,7 @@
     >
       Johan Yim
     </h2>
-    <Stars id="stars2" className="relative w-1/1 z-0 h-1/1" />
+    <Stars id="stars2" className="relative w-full z-0 h-full" />
   </div>
   <div
     class="relative z-10 mx-auto rounded-b-xl border-2 border-t-0 border-surface1 border-t-subtext1 bg-mantle p-4 transition duration-500 group-hover:border-overlay0"

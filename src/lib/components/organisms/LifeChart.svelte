@@ -33,4 +33,7 @@
       {/if}
     {/each}
   </div>
+  <p class="m-4 text-center text-xl font-semibold text-overlay0">
+    There's no better motivation than death
+  </p>
 </div>
