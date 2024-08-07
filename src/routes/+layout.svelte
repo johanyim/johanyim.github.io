@@ -2,16 +2,24 @@
   import "../app.css";
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
+  import { page } from "$app/stores";
 
+  // for collapsing navbar into menu icon
   let innerWidth = 0;
+
+  // for making navbar transparent
   let scrollY = 0;
   let isOpen = false;
 
+  // for highlighting navbar
+  let routeId;
+  $: routeId = $page.route.id;
+
   const links = [
-    { href: `${base}/`, text: "Home" },
-    { href: `${base}/reviews`, text: "Reviews" },
-    { href: `${base}/linux`, text: "Linux" },
-    { href: `${base}/blog`, text: "Blog" },
+    { href: `/`, text: "Home" },
+    { href: `/reviews`, text: "Reviews" },
+    { href: `/linux`, text: "Linux" },
+    { href: `/blog`, text: "Blog" },
   ];
 </script>
 
@@ -36,6 +44,7 @@
             <a
               {href}
               class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
+              class:active={routeId == href}
               on:click={() => (isOpen = false)}>{text}</a
             >
           </li>
@@ -91,5 +100,8 @@
 <style>
   .disappearing {
     transition: all 0.3s;
+  }
+  .active {
+    color: #b4befe;
   }
 </style>

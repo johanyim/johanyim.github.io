@@ -4,15 +4,7 @@
   const birth = new Date(2001, 0, 20).getTime();
   const today = new Date().getTime();
 
-  const weeks = (today - birth) / (7 * 24 * 60 * 60 * 1000);
-
-  const filledSquares = weeks;
-
-  let squares = Array(totalSquares)
-    .fill(false)
-    .map((_, index) => {
-      return index < filledSquares;
-    });
+  const weeks = Math.floor((today - birth) / (7 * 24 * 60 * 60 * 1000));
 </script>
 
 <div class="mx-auto w-fit">
@@ -25,15 +17,20 @@
     grid-rows-[repeat(80,_minmax(0,_1fr))]
     gap-[2px]"
   >
-    {#each squares as filled}
-      {#if filled}
-        <div class="size-1 bg-text md:size-3"></div>
+    {#each { length: totalSquares } as _, i}
+      <!-- <div class="size-1 md:size-3"></div> -->
+      {#if i < weeks}
+        <div class="size-2 bg-overlay1 hover:bg-lavender md:size-3"></div>
+      {:else if i == weeks}
+        <div class="size-2 bg-text hover:bg-lavender md:size-3"></div>
       {:else}
-        <div class="size-1 bg-surface0 md:size-3"></div>
+        <div class="size-2 bg-surface0 hover:bg-lavender md:size-3"></div>
       {/if}
     {/each}
   </div>
   <p class="m-4 text-center text-xl font-semibold text-overlay0">
-    There's no better motivation than death
+    There's no better motivation than death.
+
+    <!-- The only contribution graph that matters -->
   </p>
 </div>
