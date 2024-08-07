@@ -1,6 +1,8 @@
+@import "$lib/markdown.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 ::selection {
   background: rgb(69,71,90);

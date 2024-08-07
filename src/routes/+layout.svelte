@@ -6,6 +6,13 @@
   let innerWidth = 0;
   let scrollY = 0;
   let isOpen = false;
+
+  const links = [
+    { href: `${base}/`, text: "Home" },
+    { href: `${base}/reviews`, text: "Reviews" },
+    { href: `${base}/linux`, text: "Linux" },
+    { href: `${base}/blog`, text: "Blog" },
+  ];
 </script>
 
 <header
@@ -17,34 +24,22 @@
     Johan Yim
   </h1>
 
-  <nav class="m-4 h-0 flex-1">
+  <nav class="m-4 flex-1">
     <button
       on:click={() => (isOpen = !isOpen)}
       class="disappearing text-2xl sm:hidden"><Menu /></button
     >
     {#if isOpen || innerWidth > 640}
       <ul class="relative justify-center gap-x-4 sm:flex">
-        <li class="contents">
-          <a
-            href="{base}/"
-            class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
-            on:click={() => (isOpen = false)}>Home</a
-          >
-        </li>
-        <li class="contents">
-          <a
-            href="{base}/reviews"
-            class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
-            on:click={() => (isOpen = false)}>Reviews</a
-          >
-        </li>
-        <li class="contents">
-          <a
-            href="{base}/linux"
-            class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
-            on:click={() => (isOpen = false)}>Linux</a
-          >
-        </li>
+        {#each links as { href, text }}
+          <li class="contents">
+            <a
+              {href}
+              class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
+              on:click={() => (isOpen = false)}>{text}</a
+            >
+          </li>
+        {/each}
       </ul>
     {/if}
   </nav>
@@ -54,7 +49,7 @@
     >Contact</a
   >
 </header>
-<div class="content max-width px-4">
+<div class="content max-width pt-header px-4">
   <slot />
 </div>
 

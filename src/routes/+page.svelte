@@ -13,9 +13,9 @@
 
 <svelte:head><title>Johan Yim</title></svelte:head>
 
-<section class="flex h-[30rem] min-h-section">
+<section class="-mt-header flex h-[30rem] min-h-section">
   <Stars id="hero" className="top-0 left-0 absolute z-[-2] h-section w-full" />
-  <div class="m-auto align-middle">
+  <div class="m-auto p-8 align-middle">
     <div class="container m-auto h-fit max-w-wide p-3">
       <h1 class="sm:text-4x mb-4 text-4xl font-semibold opacity-80">
         Hi, I'm Johan

@@ -14,6 +14,7 @@ export default {
         narrow: "40rem",
         narrowest: "25rem",
         section: "85vh",
+        header: "5rem",
       },
     },
   },
