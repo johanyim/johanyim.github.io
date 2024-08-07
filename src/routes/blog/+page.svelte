@@ -1,5 +1,12 @@
 <script lang="ts">
-  export let data: Record<string, any>;
+  interface Data {
+    posts: {
+      url: string;
+      data: any;
+    }[];
+  }
+  export let data: Data;
+  let { posts } = data;
   // let posts = Jsondata.posts;
 </script>
 
@@ -7,14 +14,19 @@
 
 posts:
 
-<pre>
-{JSON.stringify(data.posts, null, 2)}
-</pre>
-
 <!-- metadata: Record<string, any> -->
-{#each data.posts as post}
-  <h1>
-    Date: {post.data.date}
-    <a href={post.url}>{post.data.title}</a>
-  </h1>
-{/each}
+<ol>
+  {#each posts as { data, url }}
+    <li>
+      <a href={url}>
+        Date: {new Date(data.date).toLocaleDateString("en-gb", {
+          year: "numeric",
+          month: "short",
+        })}
+        =
+        {data.title}
+      </a>
+      <!-- <a href={url}>{data.title}</a> -->
+    </li>
+  {/each}
+</ol>
