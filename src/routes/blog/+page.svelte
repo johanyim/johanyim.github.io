@@ -1,10 +1,13 @@
 <script lang="ts">
+  import { formatDate } from "$lib/utils";
+
   interface Data {
     posts: {
       url: string;
       data: any;
     }[];
   }
+
   export let data: Data;
   let { posts } = data;
   // let posts = Jsondata.posts;
@@ -12,18 +15,15 @@
 
 <svelte:head><title>Blog</title></svelte:head>
 
-posts:
+<h1 class="m-auto border text-center text-3xl font-semibold text-lavender">
+  Posts
+</h1>
 
-<!-- metadata: Record<string, any> -->
-<ol>
+<ol class="space-y-4">
   {#each posts as { data, url }}
-    <li>
-      <a href={url}>
-        Date: {new Date(data.date).toLocaleDateString("en-gb", {
-          year: "numeric",
-          month: "short",
-        })}
-        =
+    <li class="mx-auto w-narrow">
+      <a class="block border-4 border-lavender p-4" href={url}>
+        <date class="text-overlay0">{formatDate(data.date)}</date>
         {data.title}
       </a>
       <!-- <a href={url}>{data.title}</a> -->

@@ -23,22 +23,21 @@
   ];
 </script>
 
-<header
-  class="align-center fixed z-50 box-border flex h-0 w-screen justify-evenly"
->
+<header class="h-header fixed z-50 flex w-screen items-center">
   <h1
-    class="disappearing flex-0 m-4 hidden h-fit rounded-xl p-2 text-2xl sm:block"
+    class="disappearing flex-0 mx-4 hidden h-fit rounded-xl p-2 text-2xl sm:block"
   >
     Johan Yim
   </h1>
 
-  <nav class="m-4 flex-1">
+  <nav class="h-header flex-1">
     <button
       on:click={() => (isOpen = !isOpen)}
-      class="disappearing text-2xl sm:hidden"><Menu /></button
+      class="disappearing mx-4 mt-4 text-2xl sm:hidden"><Menu /></button
     >
     {#if isOpen || innerWidth > 640}
-      <ul class="relative justify-center gap-x-4 sm:flex">
+      <!-- {#if true || innerWidth > 640} -->
+      <ul class="relative mx-4 justify-center gap-x-4 sm:flex">
         {#each links as { href, text }}
           <li class="contents">
             <a
@@ -52,13 +51,15 @@
       </ul>
     {/if}
   </nav>
+
   <a
     href="{base}/#contact"
-    class="contact flex-0 disappearing mr-8 mt-6 h-fit rounded-lg border-2 border-lavender bg-lavender p-3 text-crust opacity-80 hover:opacity-100"
+    class="contact flex-0 disappearing mx-8 h-fit rounded-lg border-2 border-lavender bg-lavender p-3 text-crust opacity-80 hover:opacity-100"
     >Contact</a
   >
 </header>
-<div class="content max-width pt-header px-4">
+<div class="h-header"></div>
+<div class="px-4">
   <slot />
 </div>
 

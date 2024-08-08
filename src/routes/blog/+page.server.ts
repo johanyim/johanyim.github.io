@@ -28,16 +28,19 @@ export function load() {
 
     let ps = paths.map((p) => p[0].split('/').pop()?.replace('.md', '') || '');
 
-    console.log(JSON.stringify(ps, null, 2))
+
 
     return {
-        posts: paths.map((p) => ({
-            data: p[1].metadata,
-            url: `blog/` + p[0].split('/').pop()?.replace('.md', '') || '',
+        posts: paths
+            .map((path) => ({
+                data: path[1].metadata,
+                url: `blog/` + path[0].split('/').pop()?.replace('.md', '') || '',
 
-        })).sort((first, second) =>
-            new Date(second.data.date).getTime() - new Date(first.data.date).getTime()
-        )
+            }))
+            .filter((post) => post.data.published)
+            .sort((first, second) =>
+                new Date(second.data.date).getTime() - new Date(first.data.date).getTime()
+            )
 
 
     };

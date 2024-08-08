@@ -4,7 +4,7 @@
 
 <svelte:head>
   <!-- Other opengraph stuff -->
-  <title>{data.post.metadata}</title>
+  <title>{data.post.metadata.title}</title>
 </svelte:head>
 
 <article class="markdown contents">
