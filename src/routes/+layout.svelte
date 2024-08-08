@@ -25,7 +25,7 @@
 
 <header class="h-header fixed z-50 flex w-screen items-center">
   <h1
-    class="disappearing flex-0 mx-4 hidden h-fit rounded-xl p-2 text-2xl sm:block"
+    class="disappearing flex-0 mx-4 hidden h-fit text-nowrap rounded-xl p-2 text-2xl sm:block"
   >
     Johan Yim
   </h1>
