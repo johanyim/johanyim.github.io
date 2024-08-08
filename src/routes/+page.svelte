@@ -59,7 +59,7 @@
 </section>
 
 <Line text="Motivation" style="py-16" />
-<section class="mx-auto max-w-widest">
+<section class="mx-auto max-w-wide">
   <LifeChart />
 </section>
 

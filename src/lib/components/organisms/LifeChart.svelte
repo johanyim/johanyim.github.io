@@ -7,24 +7,24 @@
   const weeks = Math.floor((today - birth) / (7 * 24 * 60 * 60 * 1000));
 </script>
 
-<div class="mx-auto w-fit">
+<div class="mx-auto w-full">
   <h3 class="m-4 text-center text-xl font-semibold text-overlay0">
     Weeks of my life
   </h3>
   <div
-    class="grid
+    class="
+    grid
     grid-cols-[repeat(52,_minmax(0,_1fr))]
-    grid-rows-[repeat(80,_minmax(0,_1fr))]
-    gap-[2px]"
+    grid-rows-[repeat(80,_minmax(0,_1fr))] gap-[3px]"
   >
     {#each { length: totalSquares } as _, i}
       <!-- <div class="size-1 md:size-3"></div> -->
       {#if i < weeks}
-        <div class="size-2 bg-overlay1 hover:bg-lavender md:size-3"></div>
+        <div class="aspect-square bg-overlay1 hover:bg-lavender"></div>
       {:else if i == weeks}
-        <div class="size-2 bg-text hover:bg-lavender md:size-3"></div>
+        <div class="aspect-square bg-text hover:bg-lavender"></div>
       {:else}
-        <div class="size-2 bg-surface0 hover:bg-lavender md:size-3"></div>
+        <div class="aspect-square bg-surface0 hover:bg-lavender"></div>
       {/if}
     {/each}
   </div>
