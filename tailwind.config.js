@@ -5,13 +5,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        noto: ["Noto Sans Mono", ...defaultTheme.fontFamily.sans],
+        mono: ["Noto Sans Mono", ...defaultTheme.fontFamily.mono],
+        sans: ["Open sans", ...defaultTheme.fontFamily.sans],
       },
 
       spacing: {
         widest: "80rem",
         wide: "60rem",
-        narrow: "40rem",
+        narrow: "50rem",
         narrowest: "25rem",
         section: "85vh",
         header: "5rem",

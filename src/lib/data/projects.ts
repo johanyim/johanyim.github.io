@@ -6,12 +6,20 @@ export interface Project {
     description: string;
     href?: string;
 }
+
 export const projects: Project[] = [
+    {
+        title: ".dotfiles",
+        headline: "My linux configurations",
+        description: "Something I've always been working on is organizing and optimizing my Linux desktop configuration. I have an entire page on this site dedicated to this - check it out at '/linux'",
+        href: `${base}/linux`
+    },
+
 
     {
         title: "Googol Translate",
         headline: "English to anything translator",
-        description: "English can be difficult. Why bother trying to understand English when talking in <em>caveman</em> is easier and clearly superior? Translate your English sentences to Caveman, Posh, Wildlife Documentary, Gen-Z and more.",
+        description: "English can be difficult. Why bother trying to understand English when talking in <em>caveman</em> is easier? Translate your English sentences to Caveman, Posh, Wildlife Documentary, Gen-Z and more.",
         href: "https://github.com/johanyim/googol_translate"
     },
 
@@ -22,22 +30,9 @@ export const projects: Project[] = [
     },
 
     {
-        title: "Color picker gallery",
-        headline: "No more copy and pasting colors",
-        description: "Using aws lambda, we make a serverless translation."
-    },
-
-    {
         title: "Terminal image viewer",
         headline: "Now you can view your images in your terminal!",
-        description: "Using aws lambda, we make a serverless translation."
-    },
-
-    {
-        title: ".dotfiles",
-        headline: "My linux configurations",
-        description: "Something I've always been working on is organizing and optimizing my Linux desktop configuration. I have an entire page on this site dedicated to this - check it out at '/linux'",
-        href: `${base}/linux`
+        description: "Using rust to make a performant ascii image renderer in the terminal"
     },
 
 ];

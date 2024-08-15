@@ -25,17 +25,20 @@
         <h3 class="inline-block items-center text-surface2">
           {event.location || ""}
         </h3>
-        <time class="text-md block font-semibold leading-none text-overlay0"
+        <time
+          class="text-md block text-pretty font-semibold leading-none text-overlay0"
           >{event.start_date.toLocaleDateString("en-gb", {
             year: "numeric",
             month: "short",
           })}</time
         >
-        <p class="text-md text-base font-normal text-text sm:text-lg">
+        <p class="font-sans text-2xl">
           {@html event.description}
         </p>
         {#if event.outcomes}
-          <ul class="ml-6 list-outside list-disc text-subtext0">
+          <ul
+            class="ml-6 list-outside list-disc text-pretty font-sans text-xl text-subtext0"
+          >
             {#each event.outcomes as outcome}
               <li>{outcome}</li>
             {/each}

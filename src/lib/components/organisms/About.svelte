@@ -19,7 +19,7 @@
   >
     <img
       src="./transparent.png"
-      alt="Picture of me"
+      alt="Me"
       class="pointer-events-none relative left-6 top-[-10rem] mb-[-8rem] size-[10rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
     />
     <div
@@ -29,26 +29,36 @@
     </div>
 
     <div
-      class="relative top-4 divide-y divide-solid divide-surface1 border-t border-surface1 text-lg font-light tracking-tight text-text sm:text-xl"
+      class="relative top-4 divide-y divide-solid divide-surface1 text-pretty
+      border-t border-surface1 font-sans text-xl text-subtext1 sm:text-2xl"
     >
       <p class="py-4">
         I'm Johan. I graduated from the University of Bath with a Master's
-        degree in Computer Science. Right now, I'm a software developer for BG
+        degree in Computer Science. Right now, I'm developing software for BG
         Automotive.
       </p>
       <p class="py-4">
-        I like making things feel fast. I prefer spending 3 hours writing a
-        program that turns a 10-second job into a 1-second script. Maybe it
-        could've been done manually, but I never said anything about making it
-        efficient.
+        I have come to the realisation that life is too short for slow software.
+        I am by no means a hyper-optimizer, and I do have a wealth of patience -
+        however, the software being carelessly shovelled into the world makes me
+        question if my computer's CPU was actually a defective unit.
+      </p>
+      <p class="py-4">
+        I enjoy the long journey to make things fast - unnecessarily fast. The
+        year is {new Date().getFullYear()} and we are still 'loading...' like the
+        90s. I suspect that my allergy to loading spinners has been caused by the
+        overwhelming growth in software complexity. At this rate, the machine you're
+        using to view this site won't even run a browser for 5 minutes. So let's
+        try to fix that.
       </p>
       <p class="py-4">
         I am a minimalist. I have rid myself of unnecessary belongings and
         constructs such as furniture, social media, variety in life, and
         Windows. It is exactly for this reason that I only possess the things
-        that are meaningful to me. You see, a wise man once said:
+        that are meaningful to me. Doing so has allowed me to lead a life free
+        of complexity - albeit an abnormal one.
       </p>
-      <blockquote>
+      <blockquote class="font-light">
         <p
           class="group/quote text-balance py-8 text-center italic text-overlay1"
         >

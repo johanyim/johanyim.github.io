@@ -54,7 +54,7 @@
 
   <a
     href="{base}/#contact"
-    class="contact flex-0 disappearing mx-8 h-fit rounded-lg border-2 border-lavender bg-lavender p-3 text-crust opacity-80 hover:opacity-100"
+    class="contact flex-0 disappearing mx-8 h-fit rounded-lg border-2 border-lavender bg-lavender p-3 text-crust opacity-80 hover:opacity-100 hover:active:bg-crust hover:active:text-lavender"
     >Contact</a
   >
 </header>

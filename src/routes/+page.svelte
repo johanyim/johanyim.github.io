@@ -9,6 +9,18 @@
   import About from "$organisms/About.svelte";
   import ContactForm from "$organisms/ContactForm.svelte";
   import LifeChart from "$organisms/LifeChart.svelte";
+  import { copy } from "svelte-copy";
+  import ContactDetailsButton from "$atoms/ContactDetailsButton.svelte";
+
+  import ContentCopy from "~icons/mdi/content-copy";
+
+  import Github from "~icons/mdi/github";
+  import LinkedIn from "~icons/mdi/linkedin";
+  import Email from "~icons/mdi/email";
+  import Rss from "~icons/mdi/rss";
+  import WhatsApp from "~icons/mdi/whatsapp";
+  import Send from "~icons/mdi/send";
+  import Phone from "~icons/mdi/phone";
 </script>
 
 <svelte:head><title>Johan Yim</title></svelte:head>
@@ -21,8 +33,8 @@
         Hi, I'm Johan
       </h1>
       <h4 class="text-balance text-2xl text-text opacity-60">
-        I'm a software engineer that will go to great lengths to make my
-        programs feel fast and smooth
+        I'm a software engineer that will go to great lengths to make software
+        feel fast
       </h4>
       <div class="my-4 flex gap-3 text-3xl"><SocialButtons /></div>
     </div>
@@ -44,7 +56,7 @@
 </section>
 
 <Line text="About Me" style="py-16" />
-<section class="mx-auto min-h-section">
+<section class="mx-auto max-w-narrow">
   <About />
 </section>
 
@@ -54,7 +66,19 @@
 </section>
 
 <Line id="contact" text="Contact" style="py-16" />
-<section class="mx-auto max-w-wide">
+<section class="mx-auto max-w-wide space-y-4">
+  <div class="flex flex-row flex-wrap justify-around gap-y-2">
+    <ContactDetailsButton
+      color="red"
+      text="johanjyyim@gmail.com"
+      icon={Email}
+    />
+    <ContactDetailsButton
+      color="lavender"
+      text="+44 7510 787854"
+      icon={Phone}
+    />
+  </div>
   <ContactForm />
 </section>
 
