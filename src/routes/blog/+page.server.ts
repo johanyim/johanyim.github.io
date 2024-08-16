@@ -16,7 +16,8 @@ interface Metadata {
     date: Date;
     categories: string[];
     published: boolean;
-    url: string
+    thumbnail?: URL;
+    url: URL;
 }
 
 
