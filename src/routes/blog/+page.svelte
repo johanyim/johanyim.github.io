@@ -11,18 +11,17 @@
 
   export let data: Data;
   let { posts } = data;
+  console.log(data);
   // let posts = Jsondata.posts;
 </script>
 
 <svelte:head><title>Blog</title></svelte:head>
 
-<h1 class="m-auto w-narrow text-5xl font-semibold text-lavender">Posts</h1>
-
 <ol>
   {#each posts as { data, url }, index}
     <li class="mx-auto w-narrow">
       {#if index !== 0}
-        <Line color="surface1" />
+        <Line color="#45475a" />
       {/if}
       <a class="block" href={url}>
         <div class="m-10 flex">
@@ -30,7 +29,6 @@
             <h2 class="text-3xl font-semibold text-lavender">{data.title}</h2>
             <h3 class="text-xl">{data.description}</h3>
             <date class="text-overlay0">{formatDate(data.date)}</date>
-            <p>Read more...</p>
           </div>
           <img class="rounded-xl" src={data.thumbnail} alt="" width="200" />
         </div>

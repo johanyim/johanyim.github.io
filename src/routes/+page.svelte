@@ -46,7 +46,7 @@
   </div>
 </section>
 
-<Line text="Projects" style="mb-16" />
+<Line text="Projects" style="mb-16" color="#cdd6f4" />
 <section class="mx-auto max-w-widest">
   <div class="grid columns-1 grid-flow-dense gap-6 @container xl:columns-2">
     {#each projects as { title, headline, description, href }}
@@ -55,26 +55,26 @@
   </div>
 </section>
 
-<Line text="About Me" style="py-16" />
+<Line text="About Me" style="py-16" color="#cdd6f4" />
 <section class="mx-auto max-w-narrow">
   <About />
 </section>
 
-<Line text="Timeline" style="py-16" />
+<Line text="Timeline" style="py-16" color="#cdd6f4" />
 <section>
   <Timeline />
 </section>
 
-<Line id="contact" text="Contact" style="py-16" />
+<Line id="contact" text="Contact" style="py-16" color="#cdd6f4" />
 <section class="mx-auto max-w-wide space-y-4">
   <div class="flex flex-row flex-wrap justify-around gap-y-2">
     <ContactDetailsButton
-      color="red"
+      activeStyle="group-active:text-red"
       text="johanjyyim@gmail.com"
       icon={Email}
     />
     <ContactDetailsButton
-      color="lavender"
+      activeStyle="group-active:text-lavender"
       text="+44 7510 787854"
       icon={Phone}
     />
@@ -82,7 +82,7 @@
   <ContactForm />
 </section>
 
-<Line text="Motivation" style="py-16" />
+<Line text="Motivation" style="py-16" color="#cdd6f4" />
 <section class="mx-auto max-w-wide">
   <LifeChart />
 </section>

@@ -1,10 +1,10 @@
 <script lang="ts">
   import ContentCopy from "~icons/mdi/content-copy";
   import { copy } from "svelte-copy";
-  export let color;
   export let text;
   export let icon;
   export let copyText = undefined;
+  export let activeStyle;
 </script>
 
 <button
@@ -14,10 +14,10 @@
 >
   <svelte:component
     this={icon}
-    class="inline text-2xl duration-200 sm:text-4xl group-active:text-{color}"
+    class="inline text-2xl transition-colors duration-200 {activeStyle} sm:text-4xl"
   />
-  <span class="duration-200 group-active:text-{color}">
+  <span class="transition-colors duration-200 {activeStyle}">
     {text}
   </span>
-  <ContentCopy class="inline duration-200 group-active:text-{color}" />
+  <ContentCopy class="inline transition-colors duration-200 {activeStyle}" />
 </button>

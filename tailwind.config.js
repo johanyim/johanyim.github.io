@@ -26,4 +26,10 @@ export default {
       defaultFlavour: "mocha",
     }),
   ],
+
+  safelist: [
+    {
+      pattern: /text-.+/,
+    },
+  ],
 };
