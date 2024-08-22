@@ -16,6 +16,7 @@ Compared to living in the perpetual smooth-brained, authoritarian, black-box min
 
 Being a typical Arch (btw) user, I felt like I was at the peak of all things Linux. I had succeeded in taking upon what was once the monumental goal of "creating a computer from scratch". I would have challenged anyone to name a more autistic usage of time and effort than what I had accomplished. 
 I asserted my non-proprietary dominance over everything that could cast a shadow. 
+
 I laughed at people still paying for spyware to reside in their system, casting veil over their naive eyes as it mined away Bitcoin.
 
 
