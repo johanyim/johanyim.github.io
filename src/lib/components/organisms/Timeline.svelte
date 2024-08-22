@@ -12,7 +12,7 @@
       >
       </span>
       <div
-        class="space-y-3 rounded-xl border-2 border-base p-4 ring-opacity-60 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle group-hover:ring-opacity-100"
+        class="space-y-1 rounded-xl border-2 border-base p-4 ring-opacity-60 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle group-hover:ring-opacity-100 sm:space-y-3"
         class:ring-4={i === 0}
         class:ring-lavender={i === 0}
       >
@@ -21,7 +21,6 @@
         >
           {event.title}
         </h3>
-
         <h3 class="inline-block items-center text-surface2">
           {event.location || ""}
         </h3>
@@ -45,13 +44,13 @@
           </ul>
         {/if}
         {#if event.tools}
-          <div class="text-balance text-surface2">
+          <div class="flex flex-wrap gap-2 text-balance text-surface2">
             {#each event.tools as tool}
-              <span
-                class="my-1 inline-block rounded-md bg-base px-2 group-hover:bg-surface0 group-hover:text-overlay2"
-                >{tool}</span
+              <div
+                class="flex-0 rounded-md bg-base px-2 group-hover:bg-surface0 group-hover:text-overlay2"
               >
-              &nbsp;
+                {tool}
+              </div>
             {/each}
           </div>
         {/if}

@@ -32,18 +32,18 @@
       class="relative top-4 divide-y divide-solid divide-surface1 text-pretty
       border-t border-surface1 font-sans text-lg text-subtext1 sm:text-2xl"
     >
-      <p class="py-4">
+      <p class="py-2 sm:py-4">
         I'm Johan. I graduated from the University of Bath with a Master's
         degree in Computer Science. Right now, I'm developing software for BG
         Automotive.
       </p>
-      <p class="py-4">
+      <p class="py-2 sm:py-4">
         I have come to the realisation that life is too short for slow software.
         I am by no means a hyper-optimizer, and I do have a wealth of patience -
         however, the software being carelessly shovelled into the world makes me
         question if my computer's CPU was actually a defective unit.
       </p>
-      <p class="py-4">
+      <p class="py-2 sm:py-4">
         I enjoy the long journey to make things fast - unnecessarily fast. The
         year is {new Date().getFullYear()} and we are still 'loading...' like the
         90s. I suspect that my allergy to loading spinners has been caused by the
@@ -51,7 +51,7 @@
         using to view this site won't even run a browser for 5 minutes. So let's
         try to fix that.
       </p>
-      <p class="py-4">
+      <p class="py-2 sm:py-4">
         I am a minimalist. I have rid myself of unnecessary belongings and
         constructs such as furniture, social media, variety in life, and
         Windows. It is exactly for this reason that I only possess the things
@@ -68,13 +68,13 @@
           >
         </p>
       </blockquote>
-      <p class="py-4">
+      <p class="py-2 sm:py-4">
         I enjoy taking my time to learn new programming languages and paradigms
         through books and documentation. I strive to make apps that feel fast
         and bulletproof. Because of this, I really like using Rust for my
         projects.
       </p>
-      <p class="py-4">
+      <p class="py-2 sm:py-4">
         Aside from programming, I do some unhinged reviews that I post on Google
         maps.
       </p>
