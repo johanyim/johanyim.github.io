@@ -1,6 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="">
+<div class="mb-10">
   <slot />
+  {"footer"}
 </div>

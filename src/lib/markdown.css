@@ -1,24 +1,32 @@
 .markdown h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: #b4befe;
-    text-align: center;
-    text-wrap: balance;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #b4befe;
+  text-align: center;
+  text-wrap: balance;
 }
 
 .markdown h2 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .markdown img {
-    margin: 1rem auto;
+  margin: 1rem auto;
 }
 
 
 .markdown p {
-    font-size: 20px;
-    text-wrap: pretty;
-    font-family: "Open Sans";
-    font-weight: 400;
-    margin-bottom: 1.5rem;
+  font-size: 18px;
+  text-wrap: pretty;
+  font-family: "Open Sans";
+  font-weight: 400;
+  margin-bottom: 1.5rem;
 }
+
+/* .markdown p { */
+/*   font-size: 20px; */
+/*   text-wrap: pretty; */
+/*   font-family: "Open Sans"; */
+/*   font-weight: 400; */
+/*   margin-bottom: 1.5rem; */
+/* } */

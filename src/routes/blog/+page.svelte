@@ -26,9 +26,13 @@
       <a class="block rounded-lg hover:bg-mantle" href={url}>
         <div class="my-2 flex min-h-40 p-4 md:my-6">
           <div class="flex flex-1 flex-col justify-center px-2">
-            <h2 class="text-3xl font-semibold text-lavender">{data.title}</h2>
-            <h3 class="text-xl">{data.description}</h3>
-            <date class="text-overlay0">{formatDate(data.date)}</date>
+            <h2 class="text-2xl font-semibold text-lavender sm:text-3xl">
+              {data.title}
+            </h2>
+            <h3 class="text-lg sm:text-xl">{data.description}</h3>
+            <date class="sm:text-md text-sm text-overlay0"
+              >{formatDate(data.date)}</date
+            >
           </div>
           {#if data.thumbnail !== undefined}
             <img

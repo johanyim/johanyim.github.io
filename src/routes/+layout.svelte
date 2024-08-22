@@ -23,7 +23,7 @@
   ];
 </script>
 
-<header class="h-header fixed z-50 flex w-screen items-center">
+<header class="fixed z-50 flex h-header w-screen items-center">
   <h1
     class="disappearing flex-0 mx-4 hidden h-fit text-nowrap rounded-xl p-2 text-2xl sm:block"
   >
@@ -33,7 +33,8 @@
   <nav class="h-header flex-1">
     <button
       on:click={() => (isOpen = !isOpen)}
-      class="disappearing mx-4 mt-4 text-2xl sm:hidden"><Menu /></button
+      class="disappearing mx-4 mt-4 rounded-xl text-2xl sm:hidden"
+      ><Menu /></button
     >
     {#if isOpen || innerWidth > 640}
       <!-- {#if true || innerWidth > 640} -->
