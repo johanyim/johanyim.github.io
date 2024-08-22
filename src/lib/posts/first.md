@@ -6,6 +6,7 @@ categories:
 - sveltekit
 - svelte
 published: true
+thumbnail: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRqVzvKNxNa_V032VUunXlTUziXbXq9PlBag&s 
 ---
 
 

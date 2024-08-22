@@ -30,7 +30,7 @@
 
     <div
       class="relative top-4 divide-y divide-solid divide-surface1 text-pretty
-      border-t border-surface1 font-sans text-xl text-subtext1 sm:text-2xl"
+      border-t border-surface1 font-sans text-lg text-subtext1 sm:text-2xl"
     >
       <p class="py-4">
         I'm Johan. I graduated from the University of Bath with a Master's

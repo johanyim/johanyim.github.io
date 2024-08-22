@@ -29,14 +29,14 @@
   <Stars id="hero" className="top-0 left-0 absolute z-[-2] h-section w-full" />
   <div class="m-auto p-0 align-middle sm:p-8">
     <div class="container m-auto h-fit max-w-wide p-3">
-      <h1 class="sm:text-4x mb-4 text-4xl font-semibold opacity-80">
+      <h1 class="mb-4 text-2xl font-semibold opacity-80 sm:text-4xl">
         Hi, I'm Johan
       </h1>
-      <h4 class="text-balance text-2xl text-text opacity-60">
+      <h4 class="text-balance text-lg text-text opacity-60 sm:text-2xl">
         I'm a software engineer that will go to great lengths to make software
         feel fast
       </h4>
-      <div class="my-4 flex gap-3 text-3xl"><SocialButtons /></div>
+      <div class="my-4 flex gap-3 text-2xl sm:text-3xl"><SocialButtons /></div>
     </div>
     <a
       href="{base}/cv"

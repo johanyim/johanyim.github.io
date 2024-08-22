@@ -17,7 +17,7 @@
         class:ring-lavender={i === 0}
       >
         <h3
-          class="inline-block items-center text-lg font-bold text-lavender sm:text-2xl"
+          class="inline-block items-center text-xl font-bold text-lavender sm:text-2xl"
         >
           {event.title}
         </h3>
@@ -32,12 +32,12 @@
             month: "short",
           })}</time
         >
-        <p class="font-sans text-2xl">
+        <p class="font-sans text-lg md:text-2xl">
           {@html event.description}
         </p>
         {#if event.outcomes}
           <ul
-            class="ml-6 list-outside list-disc text-pretty font-sans text-xl text-subtext0"
+            class="text-md ml-6 list-outside list-disc text-pretty font-sans text-subtext0 md:text-xl"
           >
             {#each event.outcomes as outcome}
               <li>{outcome}</li>
@@ -46,7 +46,13 @@
         {/if}
         {#if event.tools}
           <div class="text-balance text-surface2">
-            {event.tools.join(" • ")}
+            {#each event.tools as tool}
+              <span
+                class="my-1 inline-block rounded-md bg-base px-2 group-hover:bg-surface0 group-hover:text-overlay2"
+                >{tool}</span
+              >
+              &nbsp;
+            {/each}
           </div>
         {/if}
       </div>

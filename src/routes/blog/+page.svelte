@@ -19,18 +19,25 @@
 
 <ol>
   {#each posts as { data, url }, index}
-    <li class="mx-auto w-narrow">
+    <li class="mx-auto w-full max-w-narrow">
       {#if index !== 0}
         <Line color="#45475a" />
       {/if}
-      <a class="block" href={url}>
-        <div class="m-10 flex">
-          <div class="flex-1">
+      <a class="block rounded-lg hover:bg-mantle" href={url}>
+        <div class="my-2 flex min-h-40 p-4 md:my-6">
+          <div class="flex flex-1 flex-col justify-center px-2">
             <h2 class="text-3xl font-semibold text-lavender">{data.title}</h2>
             <h3 class="text-xl">{data.description}</h3>
             <date class="text-overlay0">{formatDate(data.date)}</date>
           </div>
-          <img class="rounded-xl" src={data.thumbnail} alt="" width="200" />
+          {#if data.thumbnail !== undefined}
+            <img
+              class="hidden rounded-lg md:block"
+              src={data.thumbnail}
+              alt=""
+              width="200"
+            />
+          {/if}
         </div>
       </a>
     </li>
