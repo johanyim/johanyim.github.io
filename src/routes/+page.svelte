@@ -23,7 +23,14 @@
   import Phone from "~icons/mdi/phone";
 </script>
 
-<svelte:head><title>Johan Yim</title></svelte:head>
+<svelte:head>
+  <title>Johan Yim</title>
+  <meta
+    name="keywords"
+    content="Johan Yim, Johan, Yim, Software, Rust, Svelte"
+  />
+  <meta name="description" content="The home page of Johan Yim" />
+</svelte:head>
 
 <section class="-mt-header flex h-[30rem] min-h-section">
   <Stars id="hero" className="top-0 left-0 absolute z-[-2] h-section w-full" />

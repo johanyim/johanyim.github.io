@@ -30,9 +30,7 @@
               {data.title}
             </h2>
             <h3 class="text-lg sm:text-xl">{data.description}</h3>
-            <date class="sm:text-md text-sm text-overlay0"
-              >{formatDate(data.date)}</date
-            >
+            <date class="text-sm text-overlay0">{formatDate(data.date)}</date>
           </div>
           {#if data.thumbnail !== undefined}
             <img

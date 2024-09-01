@@ -8,6 +8,9 @@ export default {
         mono: ["Noto Sans Mono", ...defaultTheme.fontFamily.mono],
         sans: ["Open sans", ...defaultTheme.fontFamily.sans],
       },
+      fontSize: {
+        md: "1rem",
+      },
 
       spacing: {
         widest: "80rem",

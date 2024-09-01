@@ -6,10 +6,9 @@ categories:
 - Linux
 - NixOS
 - Nix
-published: true
+published: false
 thumbnail: https://i.redd.it/bo2gjaxwzi8d1.png
 ---
-
 I've been using Arch Linux for quite some time. 
 Compared to living in the perpetual smooth-brained, authoritarian, black-box mindset of Windows and the Microsoft suite, it was liberating to know the computer inside-and-out. It was the only true step toward making my computer *belong to me*. 
 
@@ -25,9 +24,6 @@ The light of truth was too much for the mortals surrounding my life.
 ## Then end of my 
 
 Once I got my first job, 
-
-
-`This is code`
 
 
 ```html

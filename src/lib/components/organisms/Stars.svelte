@@ -4,6 +4,7 @@
   import Particles, { particlesInit } from "@tsparticles/svelte";
   import { fade } from "svelte/transition";
   import { loadSlim } from "@tsparticles/slim";
+  import { onMount } from "svelte";
 
   let particlesConfig = {
     autoPlay: true,
@@ -146,8 +147,6 @@
   //   const particlesContainer = event.detail.particles;
   // };
 
-  import { onMount } from "svelte";
-
   onMount(() => {
     loaded = true;
   });
@@ -158,7 +157,7 @@
 </script>
 
 {#if loaded}
-  <div transition:fade={{ delay: 0, duration: 300 }} class="content z-[-10]">
+  <div transition:fade={{ delay: 0, duration: 300 }} class="content">
     <Particles {id} class={className} options={particlesConfig} />
   </div>
   <!-- on:particlesLoaded={onParticlesLoaded} -->

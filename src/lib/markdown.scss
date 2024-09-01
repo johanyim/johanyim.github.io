@@ -1,0 +1,42 @@
+// prettier-ignore
+.markdown {
+  header {
+    h1 {
+      @apply text-2xl font-semibold text-lavender sm:text-3xl
+    }
+
+    p {
+      @apply text-lg sm:text-xl
+    }
+
+    date {
+      @apply text-sm text-overlay0
+    }
+  }
+
+  main {
+    h1 {
+      @apply text-2xl font-semibold text-lavender sm:text-3xl
+    }
+
+    h2 {
+      @apply text-xl font-semibold text-lavender sm:text-2xl
+    }
+
+    p {
+      @apply text-wrap font-sans font-normal mb-6 text-lg
+    }
+
+    img {
+      @apply mx-auto my-4
+    }
+
+    code {
+      @apply border-base
+    }
+
+  }
+
+
+
+}

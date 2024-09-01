@@ -33,6 +33,7 @@ const config = {
       $components: "./src/lib/components",
       $data: "./src/lib/data",
       $posts: "./src/lib/posts",
+      $code: "./src/lib/data/code",
     },
   },
 };
