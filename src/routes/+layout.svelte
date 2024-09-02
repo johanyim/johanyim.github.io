@@ -32,9 +32,11 @@
 
   <nav class="h-header flex-1">
     <button
+      name="menu"
       on:click={() => (isOpen = !isOpen)}
-      class="disappearing mx-4 mt-4 rounded-xl text-2xl sm:hidden"
-      ><Menu /></button
+      class="disappearing mx-4 mt-4 rounded-md text-2xl hover:bg-surface0 hover:text-text sm:hidden
+      "
+      class:text-lavender={isOpen}><Menu /></button
     >
     {#if isOpen || innerWidth > 640}
       <!-- {#if true || innerWidth > 640} -->

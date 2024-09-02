@@ -18,15 +18,15 @@
     <h1>{data.post.metadata.title}</h1>
     <p>{data.post.metadata.description}</p>
     <date>{formatDate(data.post.metadata.date)}</date>
-  </header>
-  <main>
     {#if data.post.metadata.thumbnail}
       <img
         class="thumbnail"
-        alt="thumbnail"
+        alt="Thumbnail of the post"
         src={data.post.metadata.thumbnail}
       />
     {/if}
+  </header>
+  <main>
     <svelte:component this={data.post.default} />
   </main>
 </article>

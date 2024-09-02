@@ -12,6 +12,8 @@
   import { copy } from "svelte-copy";
   import ContactDetailsButton from "$atoms/ContactDetailsButton.svelte";
 
+  import Lazy from "svelte-lazy";
+
   import ContentCopy from "~icons/mdi/content-copy";
 
   import Github from "~icons/mdi/github";
@@ -89,9 +91,16 @@
   <ContactForm />
 </section>
 
-<Line text="Motivation" style="py-16" color="#cdd6f4" />
-<section class="mx-auto max-w-wide">
-  <LifeChart />
-</section>
+<Lazy
+  height={0}
+  keep={false}
+  offset={-50}
+  fadeOption={{ delay: 1000, duration: 1000 }}
+>
+  <Line text="Motivation" style="py-16" color="#cdd6f4" />
+  <section class="mx-auto max-w-wide">
+    <LifeChart />
+  </section>
+</Lazy>
 
 <footer class="my-32"></footer>

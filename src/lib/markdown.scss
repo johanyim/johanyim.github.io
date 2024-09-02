@@ -1,5 +1,5 @@
-// prettier-ignore
 .markdown {
+
   header {
     h1 {
       @apply text-2xl font-semibold text-lavender sm:text-3xl
@@ -10,17 +10,29 @@
     }
 
     date {
-      @apply text-sm text-overlay0
+      @apply text-md text-overlay0 block mb-4
+    }
+
+    .thumbnail {
+      @apply rounded-lg align-middle border-base border-4
     }
   }
 
   main {
     h1 {
-      @apply text-2xl font-semibold text-lavender sm:text-3xl
+      @apply text-3xl font-semibold text-lavender sm:text-4xl
     }
 
     h2 {
+      @apply text-2xl font-semibold text-lavender sm:text-3xl
+    }
+
+    h3 {
       @apply text-xl font-semibold text-lavender sm:text-2xl
+    }
+
+    h4 {
+      @apply text-lg font-semibold text-lavender sm:text-xl
     }
 
     p {
@@ -28,7 +40,7 @@
     }
 
     img {
-      @apply mx-auto my-4
+      @apply mx-auto my-4 rounded-xl
     }
 
     code {
