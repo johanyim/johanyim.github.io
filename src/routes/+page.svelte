@@ -29,7 +29,7 @@
   <title>Johan Yim</title>
   <meta
     name="keywords"
-    content="Johan Yim, Johan, Yim, Software, Rust, Svelte"
+    content="Johan Yim, Johan, Yim, Software, Rust, Svelte, BGAutomotive, Tauri, Vim, NeoVim, Linux"
   />
   <meta name="description" content="The home page of Johan Yim" />
 </svelte:head>
