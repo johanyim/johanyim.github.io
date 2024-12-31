@@ -3,17 +3,22 @@
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
   import { page } from "$app/stores";
+  interface Props {
+    children?: import('svelte').Snippet;
+  }
+
+  let { children }: Props = $props();
 
   // for collapsing navbar into menu icon
-  let innerWidth = 0;
+  let innerWidth = $state(0);
 
   // for making navbar transparent
-  let scrollY = 0;
-  let isOpen = false;
+  let scrollY = $state(0);
+  let isOpen = $state(false);
 
   // for highlighting navbar
-  let routeId;
-  $: routeId = $page.route.id;
+  let routeId = $derived($page.route.id);
+  
 
   const links = [
     { href: `/`, text: "Home" },
@@ -33,7 +38,7 @@
   <nav class="h-header flex-1">
     <button
       name="menu"
-      on:click={() => (isOpen = !isOpen)}
+      onclick={() => (isOpen = !isOpen)}
       class="disappearing mx-4 mt-4 rounded-md text-2xl hover:bg-surface0 hover:text-text sm:hidden
       "
       class:text-lavender={isOpen}><Menu /></button
@@ -47,7 +52,7 @@
               {href}
               class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
               class:active={routeId == href}
-              on:click={() => (isOpen = false)}>{text}</a
+              onclick={() => (isOpen = false)}>{text}</a
             >
           </li>
         {/each}
@@ -63,7 +68,7 @@
 </header>
 <div class="h-header"></div>
 <div class="px-4">
-  <slot />
+  {@render children?.()}
 </div>
 
 <svelte:window bind:scrollY bind:innerWidth />

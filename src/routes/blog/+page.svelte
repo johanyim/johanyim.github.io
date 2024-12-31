@@ -9,7 +9,11 @@
     }[];
   }
 
-  export let data: Data;
+  interface Props {
+    data: Data;
+  }
+
+  let { data }: Props = $props();
   let { posts } = data;
   console.log(data);
   // let posts = Jsondata.posts;

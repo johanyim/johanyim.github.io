@@ -1,10 +1,14 @@
 <script lang="ts">
   import ContentCopy from "~icons/mdi/content-copy";
   import { copy } from "svelte-copy";
-  export let text;
-  export let icon;
-  export let copyText = undefined;
-  export let activeStyle;
+  let {
+    text,
+    icon,
+    copyText = undefined,
+    activeStyle
+  } = $props();
+
+  const SvelteComponent = $derived(icon);
 </script>
 
 <button
@@ -12,8 +16,7 @@
   use:copy={copyText || text}
   type="button"
 >
-  <svelte:component
-    this={icon}
+  <SvelteComponent
     class="inline text-2xl transition-colors duration-200 {activeStyle} sm:text-4xl"
   />
   <span class="transition-colors duration-200 {activeStyle}">

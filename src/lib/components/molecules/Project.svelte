@@ -1,8 +1,10 @@
-<script>
-  export let title;
-  export let headline;
-  export let description;
-  export let href;
+<script lang="ts">
+  let {
+    title,
+    headline,
+    description,
+    href
+  } = $props();
 </script>
 
 <a

@@ -1,8 +1,17 @@
 <script lang="ts">
-  export let id: string = "";
-  export let text: string = "";
-  export let style: string = "";
-  export let color: string = "";
+  interface Props {
+    id?: string;
+    text?: string;
+    style?: string;
+    color?: string;
+  }
+
+  let {
+    id = "",
+    text = "",
+    style = "",
+    color = ""
+  }: Props = $props();
 </script>
 
 <div {id} class={style}>

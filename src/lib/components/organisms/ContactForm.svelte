@@ -3,8 +3,8 @@
 
   import ContentCopy from "~icons/mdi/content-copy";
 
-  let subject = "";
-  let message = "";
+  let subject = $state("");
+  let message = $state("");
 </script>
 
 <form
@@ -45,7 +45,7 @@
     class="text-md resize-none rounded-xl border-2 border-mantle bg-crust p-4 text-text placeholder-surface1"
     name="message"
     placeholder="Message"
-  />
+></textarea>
   <div class="grid h-fit grid-cols-2 gap-6 sm:grid-cols-3">
     <a
       href="mailto:johanjyyim@gmail.com?subject={subject}&body={message}"

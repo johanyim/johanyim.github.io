@@ -1,10 +1,9 @@
-<script>
-  export let className;
-  export let id;
+<script lang="ts">
   import Particles, { particlesInit } from "@tsparticles/svelte";
   import { fade } from "svelte/transition";
   import { loadSlim } from "@tsparticles/slim";
   import { onMount } from "svelte";
+  let { className, id } = $props();
 
   let particlesConfig = {
     autoPlay: true,
@@ -141,7 +140,7 @@
     },
   };
 
-  let loaded = false;
+  let loaded = $state(false);
 
   // let onParticlesLoaded = (event) => {
   //   const particlesContainer = event.detail.particles;
