@@ -15,7 +15,7 @@
     delay: 0,
     detectRetina: true,
     fullScreen: {
-      enable: false,
+      enable: true,
       zIndex: -10,
     },
     duration: 0,
@@ -40,7 +40,7 @@
         bubble: {
           distance: 150,
           mix: false,
-          opacity: 0.3,
+          opacity: 0.2,
           size: 6,
         },
         push: {
@@ -88,7 +88,7 @@
         density: {
           enable: true,
           value_area: {
-            density_auto: true,
+            density_auto: false,
           },
         },
       },
@@ -102,7 +102,7 @@
       shape: {
         close: true,
         fill: true,
-        type: "circle",
+        type: "polygon",
         options: {
           polygon: {
             sides: 5,

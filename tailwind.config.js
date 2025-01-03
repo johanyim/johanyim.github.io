@@ -16,6 +16,7 @@ export default {
         widest: "80rem",
         wide: "60rem",
         narrow: "50rem",
+        narrower: "40rem",
         narrowest: "25rem",
         section: "85vh",
         header: "5rem",

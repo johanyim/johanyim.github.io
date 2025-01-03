@@ -47,7 +47,7 @@ export const events: Event[] =
                 "Utilized knowledge of Rust's extensive type system and design patterns for type-safety and extensibility",
                 "Containerized application for deployment on cloud services",
             ],
-            tools: ["SQL", "Rust", "JavaScript", "React", "Docker", "Azure", "Vim"],
+            tools: ["SQL", "Rust", "Tauri", "Svelte", "Azure"],
             start_date: new Date(2024, 4),
         }
     ]

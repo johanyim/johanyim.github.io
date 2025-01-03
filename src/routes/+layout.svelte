@@ -3,8 +3,10 @@
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
   import { page } from "$app/stores";
+  import Stars from "$organisms/Stars.svelte";
+
   interface Props {
-    children?: import('svelte').Snippet;
+    children?: import("svelte").Snippet;
   }
 
   let { children }: Props = $props();
@@ -18,7 +20,6 @@
 
   // for highlighting navbar
   let routeId = $derived($page.route.id);
-  
 
   const links = [
     { href: `/`, text: "Home" },
@@ -68,6 +69,10 @@
 </header>
 <div class="h-header"></div>
 <div class="px-4">
+  <Stars
+    id="hero"
+    className="top-0 left-0 absolute z-[-100] h-section w-full"
+  />
   {@render children?.()}
 </div>
 

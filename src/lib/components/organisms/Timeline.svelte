@@ -12,7 +12,7 @@
       >
       </span>
       <div
-        class="space-y-1 rounded-xl border-2 border-base p-4 ring-opacity-60 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle group-hover:ring-opacity-100 sm:space-y-3"
+        class="space-y-1 rounded-xl border-2 border-base bg-crust p-4 ring-opacity-60 transition-all duration-150 group-hover:border-surface0 group-hover:bg-mantle group-hover:ring-opacity-100 sm:space-y-3"
         class:ring-4={i === 0}
         class:ring-lavender={i === 0}
       >
@@ -25,7 +25,7 @@
           {event.location || ""}
         </h3>
         <time
-          class="text-md block text-pretty font-semibold leading-none text-overlay0"
+          class="block text-pretty text-md font-semibold leading-none text-overlay0"
           >{event.start_date.toLocaleDateString("en-gb", {
             year: "numeric",
             month: "short",
@@ -36,7 +36,7 @@
         </p>
         {#if event.outcomes}
           <ul
-            class="text-md ml-6 list-outside list-disc text-pretty font-sans text-subtext0 md:text-xl"
+            class="ml-6 list-outside list-disc text-pretty font-sans text-md text-subtext0 md:text-xl"
           >
             {#each event.outcomes as outcome}
               <li>{outcome}</li>

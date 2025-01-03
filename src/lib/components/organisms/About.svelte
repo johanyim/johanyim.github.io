@@ -5,14 +5,13 @@
 
 <div class="group">
   <div
-    class="relative m-auto h-44 rounded-t-xl border-2 border-b-4 border-surface1 border-b-subtext0 bg-crust pt-2 transition duration-500 group-hover:border-overlay0 group-hover:border-b-lavender"
+    class="relative m-auto h-44 rounded-t-xl border-2 border-b-4 border-surface1 border-b-subtext0 bg-crust pt-2 opacity-80 transition duration-500 group-hover:border-overlay0 group-hover:border-b-lavender"
   >
     <h2
-      class="absolute bottom-4 right-4 text-xl font-semibold text-text opacity-50 sm:bottom-8 sm:right-16 sm:text-4xl"
+      class="absolute bottom-4 right-4 text-xl font-semibold text-text opacity-100 opacity-50 sm:bottom-8 sm:right-16 sm:text-4xl"
     >
       Johan Yim
     </h2>
-    <Stars id="stars2" className="relative w-1/1 z-0 h-44" />
   </div>
   <div
     class="relative z-10 mx-auto rounded-b-xl border-2 border-t-0 border-surface1 border-t-subtext1 bg-mantle p-4 transition duration-500 group-hover:border-overlay0"

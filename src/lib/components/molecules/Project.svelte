@@ -1,10 +1,5 @@
 <script lang="ts">
-  let {
-    title,
-    headline,
-    description,
-    href
-  } = $props();
+  let { title, headline, description, href } = $props();
 </script>
 
 <a

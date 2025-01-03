@@ -2,15 +2,13 @@
   import { formatDate } from "$lib/utils";
   import Line from "$atoms/Line.svelte";
 
-  interface Data {
-    posts: {
-      url: string;
-      data: any;
-    }[];
-  }
-
   interface Props {
-    data: Data;
+    data: {
+      posts: {
+        url: string;
+        data: any;
+      }[];
+    };
   }
 
   let { data }: Props = $props();
@@ -21,13 +19,16 @@
 
 <svelte:head><title>Blog</title></svelte:head>
 
-<ol>
+<ol class="space-y-4">
   {#each posts as { data, url }, index}
     <li class="mx-auto w-full max-w-narrow">
-      {#if index !== 0}
-        <Line color="#45475a" />
-      {/if}
-      <a class="block rounded-lg hover:bg-mantle" href={url}>
+      <!-- {#if index !== 0} -->
+      <!--   <Line color="#45475a" /> -->
+      <!-- {/if} -->
+      <a
+        class="block rounded-xl border-2 border-base duration-200 hover:border-lavender hover:bg-crust"
+        href={url}
+      >
         <div class="my-2 flex min-h-40 p-4 md:my-6">
           <div class="flex flex-1 flex-col justify-center px-2">
             <h2 class="text-2xl font-semibold text-lavender sm:text-3xl">

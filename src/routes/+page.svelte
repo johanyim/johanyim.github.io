@@ -35,7 +35,6 @@
 </svelte:head>
 
 <section class="-mt-header flex h-[30rem] min-h-section">
-  <Stars id="hero" className="top-0 left-0 absolute z-[-2] h-section w-full" />
   <div class="m-auto p-0 align-middle sm:p-8">
     <div class="container m-auto h-fit max-w-wide p-3">
       <h1 class="mb-4 text-2xl font-semibold opacity-80 sm:text-4xl">
@@ -56,8 +55,10 @@
 </section>
 
 <Line text="Projects" style="mb-16" color="#cdd6f4" />
-<section class="mx-auto max-w-widest">
-  <div class="grid columns-1 grid-flow-dense gap-6 @container xl:columns-2">
+<section class="z-10 mx-auto max-w-widest">
+  <div
+    class="z-10 grid columns-1 grid-flow-dense gap-6 @container xl:columns-2"
+  >
     {#each projects as { title, headline, description, href }}
       <Project {headline} {title} {description} {href} />
     {/each}

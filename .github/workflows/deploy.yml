@@ -24,7 +24,7 @@ jobs:
           node-version: 20
           cache: npm
 
-      - name: Install dependencies
+      - name: Install dependencies (forced legacy mode)
         run: npm install --legacy-peer-deps --force
 
       - name: build

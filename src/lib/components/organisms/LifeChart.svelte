@@ -24,7 +24,9 @@
       {:else if i == weeks}
         <div class="aspect-square bg-text hover:bg-lavender"></div>
       {:else}
-        <div class="aspect-square bg-surface0 hover:bg-lavender"></div>
+        <div
+          class="aspect-square bg-overlay1 opacity-50 hover:bg-lavender hover:opacity-100"
+        ></div>
       {/if}
     {/each}
   </div>
