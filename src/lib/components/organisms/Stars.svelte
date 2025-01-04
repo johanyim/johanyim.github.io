@@ -80,7 +80,7 @@
         straight: true,
       },
       number: {
-        value: 80,
+        value: 100,
         limit: {
           value: 300,
           mode: "delete",

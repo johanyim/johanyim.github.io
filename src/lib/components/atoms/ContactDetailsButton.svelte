@@ -1,18 +1,13 @@
 <script lang="ts">
   import ContentCopy from "~icons/mdi/content-copy";
   import { copy } from "svelte-copy";
-  let {
-    text,
-    icon,
-    copyText = undefined,
-    activeStyle
-  } = $props();
+  let { text, icon, copyText = undefined, activeStyle } = $props();
 
   const SvelteComponent = $derived(icon);
 </script>
 
 <button
-  class="group flex items-center gap-4 overflow-x-hidden text-nowrap rounded-2xl border-4 border-crust bg-mantle p-4 text-xl text-overlay0 ring-surface0 hover:ring-4 hover:duration-200 active:bg-crust sm:text-3xl"
+  class="group relative flex items-center gap-4 overflow-x-hidden text-nowrap rounded-2xl border-4 border-crust bg-mantle p-4 text-xl text-overlay0 ring-surface0 hover:ring-4 hover:duration-200 active:bg-crust sm:text-3xl"
   use:copy={copyText || text}
   type="button"
 >

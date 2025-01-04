@@ -11,8 +11,8 @@ export const projects: Project[] = [
     {
         title: ".dotfiles",
         headline: "My linux configurations",
-        description: "Something I've always been working on is organizing and optimizing my Linux desktop configuration. I have an entire page on this site dedicated to this - check it out at '/linux'",
-        href: `${base}/linux`
+        description: "Something I've always been working on is optimizing my Linux desktop configuration and workflow. Check out my Linux configuration files on Github",
+        href: "https://github.com/johanyim/.dotfiles"
     },
 
 

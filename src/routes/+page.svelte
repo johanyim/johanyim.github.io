@@ -2,27 +2,14 @@
   import { base } from "$app/paths";
   import { projects } from "$data/projects";
   import Line from "$atoms/Line.svelte";
-  import Timeline from "$organisms/Timeline.svelte";
-  import Stars from "$organisms/Stars.svelte";
-  import Project from "$molecules/Project.svelte";
   import SocialButtons from "$molecules/SocialButtons.svelte";
+  import Project from "$molecules/Project.svelte";
   import About from "$organisms/About.svelte";
-  import ContactForm from "$organisms/ContactForm.svelte";
-  import LifeChart from "$organisms/LifeChart.svelte";
-  import { copy } from "svelte-copy";
-  import ContactDetailsButton from "$atoms/ContactDetailsButton.svelte";
-
+  import Timeline from "$organisms/Timeline.svelte";
+  import Contact from "$organisms/Contact.svelte";
   import Lazy from "svelte-lazy";
-
-  import ContentCopy from "~icons/mdi/content-copy";
-
-  import Github from "~icons/mdi/github";
-  import LinkedIn from "~icons/mdi/linkedin";
-  import Email from "~icons/mdi/email";
-  import Rss from "~icons/mdi/rss";
-  import WhatsApp from "~icons/mdi/whatsapp";
-  import Send from "~icons/mdi/send";
-  import Phone from "~icons/mdi/phone";
+  import LifeChart from "$organisms/LifeChart.svelte";
+  import ContactForm from "$organisms/ContactForm.svelte";
 </script>
 
 <svelte:head>
@@ -77,19 +64,7 @@
 
 <Line id="contact" text="Contact" style="py-16" color="#cdd6f4" />
 <section class="mx-auto max-w-wide space-y-4">
-  <div class="flex flex-row flex-wrap justify-around gap-y-2">
-    <ContactDetailsButton
-      activeStyle="group-active:text-red"
-      text="johanjyyim@gmail.com"
-      icon={Email}
-    />
-    <ContactDetailsButton
-      activeStyle="group-active:text-lavender"
-      text="+44 7510 787854"
-      icon={Phone}
-    />
-  </div>
-  <ContactForm />
+  <Contact />
 </section>
 
 <Lazy
@@ -103,5 +78,3 @@
     <LifeChart />
   </section>
 </Lazy>
-
-<footer class="my-32"></footer>

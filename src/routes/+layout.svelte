@@ -2,7 +2,7 @@
   import "../app.css";
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import Stars from "$organisms/Stars.svelte";
 
   interface Props {
@@ -12,23 +12,24 @@
   let { children }: Props = $props();
 
   // for collapsing navbar into menu icon
-  let innerWidth = $state(0);
+  let innerWidth = $state(1000);
 
   // for making navbar transparent
   let scrollY = $state(0);
   let isOpen = $state(false);
 
   // for highlighting navbar
-  let routeId = $derived($page.route.id);
+  let routeId = $derived(page.route.id);
 
   const links = [
     { href: `/`, text: "Home" },
     { href: `/reviews`, text: "Reviews" },
-    { href: `/linux`, text: "Linux" },
+    // { href: `/linux`, text: "Linux" },
     { href: `/blog`, text: "Blog" },
   ];
 </script>
 
+<svelte:window bind:scrollY bind:innerWidth />
 <header class="fixed z-50 flex h-header w-screen items-center">
   <h1
     class="disappearing flex-0 mx-4 hidden h-fit text-nowrap rounded-xl p-2 text-2xl sm:block"
@@ -69,15 +70,15 @@
 </header>
 <div class="h-header"></div>
 <div class="px-4">
-  <Stars
-    id="hero"
-    className="top-0 left-0 absolute z-[-100] h-section w-full"
-  />
-  {@render children?.()}
+    <Stars
+        id="hero"
+        className="top-0 left-0 absolute z-[-100] h-section w-full"
+    />
+    {@render children?.()}
 </div>
+<footer class="my-32"></footer>
 
-<svelte:window bind:scrollY bind:innerWidth />
-{#if scrollY > 150}
+{#if scrollY > 50}
   <style>
     .disappearing {
       opacity: 30%;

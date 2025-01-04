@@ -19,7 +19,7 @@
 
 <svelte:head><title>Blog</title></svelte:head>
 
-<ol class="space-y-4">
+<ol class="relative space-y-4">
   {#each posts as { data, url }, index}
     <li class="mx-auto w-full max-w-narrow">
       <!-- {#if index !== 0} -->
