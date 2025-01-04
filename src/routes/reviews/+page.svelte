@@ -44,17 +44,25 @@
         </Lazy>
         <div class="flex h-full flex-col space-y-2">
           <div class="flex-0 flex w-full flex-wrap justify-between">
-            <h2 class="flex-0 text-3xl font-semibold text-lavender">
+            <span class="flex-0 text-3xl font-semibold text-lavender">
               {listing}
-            </h2>
+            </span>
+            <span class="flex-0 text-3xl font-semibold text-surface1">
+              {location}
+            </span>
           </div>
 
           <div class="flex flex-1 flex-col">
-            <FormatQuoteOpen class="self-start text-3xl" />
+            <div class="flex justify-between">
+              <FormatQuoteOpen class="flex-0 text-3xl text-surface2" />
+              <div class="flex-0 italic text-surface2">
+                {formatDate(date)}
+              </div>
+            </div>
             <quote class="line-clamp-5 text-lg italic">
               {excerpt}
             </quote>
-            <FormatQuoteClose class="self-end text-3xl" />
+            <FormatQuoteClose class="self-end text-3xl text-surface2" />
           </div>
         </div>
         <div class="flex justify-center space-x-2">

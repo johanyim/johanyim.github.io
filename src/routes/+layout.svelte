@@ -24,7 +24,7 @@
   const links = [
     { href: `/`, text: "Home" },
     { href: `/reviews`, text: "Reviews" },
-    { href: `/linux`, text: "Linux" },
+    // { href: `/linux`, text: "Linux" },
     { href: `/blog`, text: "Blog" },
   ];
 </script>
@@ -44,14 +44,10 @@
       "
       class:text-lavender={isOpen}><Menu /></button
     >
+      <ul class="relative mx-4 justify-center gap-x-4 sm:flex"
+            class:hidden={!isOpen && !(innerWidth >640) }
 
-        {#if innerWidth <= 640} 
-            <div class="bg-red-300 w-full h-full"></div>
-            
-        {/if}
-    {#if isOpen || innerWidth > 640}
-      <!-- {#if true || innerWidth > 640} -->
-      <ul class="relative mx-4 justify-center gap-x-4 sm:flex">
+        >
         {#each links as { href, text }}
           <li class="contents">
             <a
@@ -63,7 +59,6 @@
           </li>
         {/each}
       </ul>
-    {/if}
   </nav>
 
   <a
@@ -80,9 +75,13 @@
     />
     {@render children?.()}
 </div>
+<footer class="my-24">
+
+</footer>
+
 
 <svelte:window bind:scrollY bind:innerWidth />
-{#if scrollY > 150}
+{#if scrollY > 50}
   <style>
     .disappearing {
       opacity: 30%;
