@@ -12,7 +12,7 @@
   let { children }: Props = $props();
 
   // for collapsing navbar into menu icon
-  let innerWidth = $state(0);
+  let innerWidth = $state(1000);
 
   // for making navbar transparent
   let scrollY = $state(0);
@@ -44,6 +44,11 @@
       "
       class:text-lavender={isOpen}><Menu /></button
     >
+
+        {#if innerWidth <= 640} 
+            <div class="bg-red-300 w-full h-full"></div>
+            
+        {/if}
     {#if isOpen || innerWidth > 640}
       <!-- {#if true || innerWidth > 640} -->
       <ul class="relative mx-4 justify-center gap-x-4 sm:flex">
@@ -69,11 +74,11 @@
 </header>
 <div class="h-header"></div>
 <div class="px-4">
-  <Stars
-    id="hero"
-    className="top-0 left-0 absolute z-[-500] h-section w-full"
-  />
-  {@render children?.()}
+    <Stars
+        id="hero"
+        className="top-0 left-0 absolute z-[-100] h-section w-full"
+    />
+    {@render children?.()}
 </div>
 
 <svelte:window bind:scrollY bind:innerWidth />
