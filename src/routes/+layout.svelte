@@ -12,7 +12,7 @@
   let { children }: Props = $props();
 
   // for collapsing navbar into menu icon
-  let innerWidth = $state(1000);
+  let innerWidth = $state(0);
 
   // for making navbar transparent
   let scrollY = $state(0);
@@ -44,11 +44,6 @@
       "
       class:text-lavender={isOpen}><Menu /></button
     >
-
-        {#if innerWidth <= 640} 
-            <div class="bg-red-300 w-full h-full"></div>
-            
-        {/if}
     {#if isOpen || innerWidth > 640}
       <!-- {#if true || innerWidth > 640} -->
       <ul class="relative mx-4 justify-center gap-x-4 sm:flex">
