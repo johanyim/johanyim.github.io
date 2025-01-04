@@ -3,8 +3,6 @@
   import Line from "$atoms/Line.svelte";
 
   import { reviews } from "$data/reviews";
-
-  console.log(reviews);
 </script>
 
 <svelte:head><title>Reviews</title></svelte:head>
