@@ -45,7 +45,8 @@
       class:text-lavender={isOpen}><Menu /></button
     >
     {#if isOpen || innerWidth > 640}
-      <!-- {#if true || innerWidth > 640} -->
+            
+      <!-- TODO: navbar doesn't appear on first frame {#if !isOpen && innerWidth <= 640} causes fail on build -->
       <ul class="relative mx-4 justify-center gap-x-4 sm:flex">
         {#each links as { href, text }}
           <li class="contents">
@@ -76,6 +77,7 @@
 
         {@render children?.()}
 </div>
+<footer class="my-24"></footer>
 
 <svelte:window bind:scrollY bind:innerWidth />
 {#if scrollY > 150}
