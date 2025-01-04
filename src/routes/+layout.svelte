@@ -29,6 +29,7 @@
   ];
 </script>
 
+<svelte:window bind:scrollY bind:innerWidth />
 <header class="fixed z-50 flex h-header w-screen items-center">
   <h1
     class="disappearing flex-0 mx-4 hidden h-fit text-nowrap rounded-xl p-2 text-2xl sm:block"
@@ -76,7 +77,6 @@
     {@render children?.()}
 </div>
 
-<svelte:window bind:scrollY bind:innerWidth />
 {#if scrollY > 150}
   <style>
     .disappearing {
