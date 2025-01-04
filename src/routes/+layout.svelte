@@ -82,7 +82,7 @@
 
 <svelte:window bind:scrollY bind:innerWidth />
 
-{#if scrollY > 50}
+{#if scrollY > 150}
   <style>
     .disappearing {
       opacity: 30%;
