@@ -2,7 +2,7 @@
   import "../app.css";
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
-  import { page } from "$app/state";
+  import { page } from "$app/stores";
   import Stars from "$organisms/Stars.svelte";
 
   interface Props {
@@ -19,7 +19,7 @@
   let isOpen = $state(false);
 
   // for highlighting navbar
-  let routeId = $derived(page.route.id);
+  let routeId = $derived($page.route.id);
 
   const links = [
     { href: `/`, text: "Home" },
@@ -44,10 +44,9 @@
       "
       class:text-lavender={isOpen}><Menu /></button
     >
-            <!-- class:hidden={!isOpen && !(innerWidth >640) } -->
-      <ul class="relative mx-4 justify-center gap-x-4 sm:flex"
-
-        >
+    {#if isOpen || innerWidth > 640}
+      <!-- {#if true || innerWidth > 640} -->
+      <ul class="relative mx-4 justify-center gap-x-4 sm:flex">
         {#each links as { href, text }}
           <li class="contents">
             <a
@@ -59,6 +58,7 @@
           </li>
         {/each}
       </ul>
+    {/if}
   </nav>
 
   <a
@@ -71,17 +71,13 @@
 <div class="px-4">
     <Stars
         id="hero"
-        className="top-0 left-0 absolute z-[-100] h-section w-full"
+        className="top-0 left-0 absolute z-[-500] h-section w-full"
     />
-    {@render children?.()}
+
+        {@render children?.()}
 </div>
-<footer class="my-24">
-
-</footer>
-
 
 <svelte:window bind:scrollY bind:innerWidth />
-
 {#if scrollY > 150}
   <style>
     .disappearing {
