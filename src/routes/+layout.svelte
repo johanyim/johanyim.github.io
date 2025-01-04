@@ -2,7 +2,7 @@
   import "../app.css";
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import Stars from "$organisms/Stars.svelte";
 
   interface Props {
@@ -19,7 +19,7 @@
   let isOpen = $state(false);
 
   // for highlighting navbar
-  let routeId = $derived($page.route.id);
+  let routeId = $derived(page.route.id);
 
   const links = [
     { href: `/`, text: "Home" },
