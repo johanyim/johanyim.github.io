@@ -24,7 +24,7 @@
   const links = [
     { href: `/`, text: "Home" },
     { href: `/reviews`, text: "Reviews" },
-    // { href: `/linux`, text: "Linux" },
+    { href: `/linux`, text: "Linux" },
     { href: `/blog`, text: "Blog" },
   ];
 </script>
