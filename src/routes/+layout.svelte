@@ -44,8 +44,8 @@
       "
       class:text-lavender={isOpen}><Menu /></button
     >
+            <!-- class:hidden={!isOpen && !(innerWidth >640) } -->
       <ul class="relative mx-4 justify-center gap-x-4 sm:flex"
-            class:hidden={!isOpen && !(innerWidth >640) }
 
         >
         {#each links as { href, text }}
