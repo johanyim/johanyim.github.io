@@ -4,8 +4,6 @@
   import { reviews } from "$data/reviews";
   import FormatQuoteOpen from "~icons/mdi/format-quote-open";
   import FormatQuoteClose from "~icons/mdi/format-quote-close";
-
-  let fallback = "http://placekitten.com/200/200";
 </script>
 
 <svelte:head><title>Reviews</title></svelte:head>

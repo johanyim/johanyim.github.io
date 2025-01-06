@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Line from "$atoms/Line.svelte";
   import { formatDate } from "$lib/utils";
   interface Props {
     data: any;
@@ -30,7 +31,8 @@
       />
     {/if}
   </header>
-  <main>
+  <main class="bg-crust">
     <data.post.default />
   </main>
 </article>
+<Line text="End" style="my-12" color="#585b70" />

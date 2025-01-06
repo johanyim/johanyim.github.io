@@ -7,14 +7,17 @@
   let { children }: Props = $props();
 </script>
 
-<!-- TODO: use history.back because this pushes to the history stack -->
+
+<div>
+
 <button
   onclick={() => {
     history.back();
   }}
-  class="flex text-lg"><ChevronLeft class="text-2xl" /> Back</button
+  class="relative flex z-[1000] text-3xl text-surface2 hover:text-text duration-150"><ChevronLeft class="text-3xl z-[1000]" /> Back</button
 >
-<div class="mb-10">
+
+</div>
+<div class="mb-10 relative">
   {@render children?.()}
-  <footer>This is a footer</footer>
 </div>

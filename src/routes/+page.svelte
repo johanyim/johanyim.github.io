@@ -9,7 +9,6 @@
   import Contact from "$organisms/Contact.svelte";
   import Lazy from "svelte-lazy";
   import LifeChart from "$organisms/LifeChart.svelte";
-  import ContactForm from "$organisms/ContactForm.svelte";
 </script>
 
 <svelte:head>

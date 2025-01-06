@@ -1,5 +1,5 @@
 <script>
-  import ContactForm from "$organisms/ContactForm.svelte";
+  import ContactForm from "$molecules/ContactForm.svelte";
   import ContactDetailsButton from "$atoms/ContactDetailsButton.svelte";
   import Email from "~icons/mdi/email";
   import Phone from "~icons/mdi/phone";

@@ -11,6 +11,7 @@ thumbnail: https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming
 <script>
   import code from "$code/code.html?raw";
   import tohtml_doc from "$code/tohtml-doc.html?raw";
+  import tohtml_code from "$code/tohtml-code.html?raw";
   import CodeSnippet from "$molecules/CodeSnippet.svelte";
 </script>
 Typically, code snippets embedded into websites like this blog are handled with syntax highlighters like `Prism` or `Highlight.js`, this site in particular is using `Shiki` and it looks something like this:
@@ -57,11 +58,14 @@ One feature built into Neovim which I don't seem to hear about very often is the
 
 <CodeSnippet content={tohtml_doc}/> 
 
-Maybe I haven't used enough Lua to know how to read (or even find) documentation. 
+Maybe I haven't used enough Lua to know how to understand (or even find) the documentation, but I felt like the documentation provided here is lacklustre compared to what it can do.
 
 Many people
 
 
+## The code
+
+<CodeSnippet content={tohtml_code} />
 
 
 ## The good and the bad

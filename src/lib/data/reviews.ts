@@ -5,7 +5,7 @@ export interface Review {
     rating: number;
     thumbnail?: string;
     href?: string;
-    excerpt?: string;
+    excerpt: string;
 }
 
 

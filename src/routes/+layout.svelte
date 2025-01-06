@@ -23,15 +23,15 @@
 
   const links = [
     { href: `/`, text: "Home" },
+    { href: `/cv`, text: "CV" },
     { href: `/reviews`, text: "Reviews" },
-    { href: `/linux`, text: "Linux" },
     { href: `/blog`, text: "Blog" },
   ];
 </script>
 
 <header class="fixed z-50 flex h-header w-screen items-center">
   <h1
-    class="disappearing flex-0 mx-4 hidden h-fit text-nowrap rounded-xl p-2 text-2xl sm:block"
+    class="z-[-50] disappearing flex-0 mx-4 hidden h-fit text-nowrap rounded-xl p-2 text-2xl sm:block"
   >
     Johan Yim
   </h1>
@@ -52,7 +52,7 @@
           <li class="contents">
             <a
               {href}
-              class="disappearing block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
+              class="disappearing text-lg block w-fit rounded-lg p-2 text-overlay2 hover:text-text"
               class:active={routeId == href}
               onclick={() => (isOpen = false)}>{text}</a
             >
@@ -80,7 +80,7 @@
 <footer class="my-24"></footer>
 
 <svelte:window bind:scrollY bind:innerWidth />
-{#if scrollY > 150}
+{#if scrollY > 50}
   <style>
     .disappearing {
       opacity: 30%;
