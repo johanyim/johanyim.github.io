@@ -1,6 +1,7 @@
 <script lang="ts">
   import Heart from "~icons/mdi/heart";
 
+  import { base } from "$app/paths";
   import { prompts } from "./prompts";
 
   interface Props {
@@ -47,7 +48,7 @@
 {#snippet heartButton()}
   <button
     class="absolute bottom-5 right-5 flex aspect-square w-20 items-center justify-center rounded-[50%] bg-base duration-100 hover:bg-surface0 hover:text-lavender"
-    on:click={next}
+    onclick={next}
   >
     <Heart class="text-4xl" />
   </button>
@@ -57,7 +58,7 @@
   {#key refresh}
     <div class="align-center relative w-full">
       <img
-        src={randFrom(paths)}
+        src={`${base}${randFrom(paths)}`}
         alt=""
         class="aspect-[3/4] w-full rounded-xl object-cover"
       />
