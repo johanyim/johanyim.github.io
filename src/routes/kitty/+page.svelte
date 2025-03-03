@@ -1,17 +1,72 @@
 <script lang="ts">
   import Heart from "~icons/mdi/heart";
 
-  import { base } from "$app/paths";
   import { prompts } from "./prompts";
+  import { onMount } from "svelte";
 
-  interface Props {
-    data: {
-      paths: string[];
-    };
+  // interface Props {
+  //   data: {
+  //     paths: string[];
+  //   };
+  // }
+  //
+  // let { data }: Props = $props();
+  // let { paths } = data;
+
+  let paths = [
+    "/dating/1.jpg",
+    "/dating/2.jpg",
+    "/dating/3.jpg",
+    "/dating/4.jpg",
+    "/dating/5.jpg",
+    "/dating/6.jpg",
+    "/dating/7.jpg",
+    "/dating/8.jpg",
+    "/dating/9.jpg",
+    "/dating/10.jpg",
+    "/dating/11.jpg",
+    "/dating/12.jpg",
+    "/dating/13.jpg",
+    "/dating/14.jpg",
+    "/dating/15.jpg",
+    "/dating/16.jpg",
+    "/dating/17.jpg",
+    "/dating/18.jpg",
+    "/dating/19.jpg",
+    "/dating/20.jpg",
+    "/dating/21.jpg",
+    "/dating/22.jpg",
+    "/dating/23.jpg",
+    "/dating/24.jpg",
+    "/dating/25.jpg",
+    "/dating/26.jpg",
+    "/dating/27.jpg",
+    "/dating/28.jpg",
+    "/dating/29.jpg",
+    "/dating/30.jpg",
+    "/dating/31.jpg",
+    "/dating/32.jpg",
+    "/dating/33.jpg",
+    "/dating/34.jpg",
+    "/dating/35.jpg",
+    "/dating/36.jpg",
+    "/dating/37.jpg",
+    "/dating/38.jpg",
+    "/dating/39.jpg",
+    "/dating/40.jpg",
+    "/dating/41.jpg",
+    "/dating/42.jpg",
+  ];
+
+  function shuffleArray(array: Array<any>) {
+    return array.sort(() => Math.random() - 0.5);
   }
 
-  let { data }: Props = $props();
-  let { paths } = data;
+  let images = $state([]);
+
+  onMount(() => {
+    images = shuffleArray([...paths]);
+  });
 
   let names = [
     "Johan",
@@ -23,8 +78,6 @@
     "Han Han",
     "嚴証恩",
   ];
-
-  let total = paths.length;
 
   function randFrom(array: Array) {
     return array[Math.floor(Math.random() * array.length)];
@@ -55,11 +108,12 @@
 {/snippet}
 
 {#snippet imageCard()}
+  {@const path = randFrom(paths)}
   {#key refresh}
     <div class="align-center relative w-full">
       <img
-        src={`${base}${randFrom(paths)}`}
-        alt=""
+        src={path}
+        alt="me"
         class="aspect-[3/4] w-full rounded-xl object-cover"
       />
       {@render heartButton()}

@@ -26,6 +26,6 @@ export function load() {
 
 
     return {
-        paths: paths.map((path) => path[0])
+        paths: paths.map((path) => path[0].split('/').pop())
     };
 }
