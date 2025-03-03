@@ -17,7 +17,7 @@
 <div {id} class={style}>
   <div
     class="m-auto flex h-0 w-full max-w-[120rem] items-center"
-    style="color: {color}"
+    style="border-color: {color}"
   >
     {#if text}
       <div

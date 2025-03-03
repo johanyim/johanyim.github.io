@@ -3,8 +3,14 @@
 
   import ContentCopy from "~icons/mdi/content-copy";
 
+  let email = $state("");
   let subject = $state("");
   let message = $state("");
+
+  let showKitty = $derived(
+    email.toLowerCase() == "kitty" && subject.toLowerCase() == "love",
+    // && message.toLowerCase().includes("mew"),
+  );
 </script>
 
 <form
@@ -20,6 +26,7 @@
       type="email"
       name="email"
       placeholder="Your email"
+      bind:value={email}
     />
     <button
       class="block flex-1 basis-64 overflow-x-hidden text-nowrap rounded-xl border-2 border-mantle bg-base p-4 text-left text-md text-surface1 placeholder-surface1 ring-surface0 duration-200 hover:ring-2 active:bg-mantle"
@@ -56,6 +63,15 @@
       type="submit"
       class="m-auto h-fit w-full rounded-xl bg-lavender p-3 text-md text-crust"
       >Send</button
+    >
+
+    <a
+      href="/kitty"
+      class="m-auto block w-full min-w-40 rounded-xl text-center text-md text-pink transition-opacity duration-1000 sm:w-fit"
+      class:opacity-0={!showKitty}
+      class:p-3={showKitty}
+      class:border-pink={showKitty}
+      class:border-2={showKitty}>{showKitty ? "Mew!" : ""}</a
     >
   </div>
 </form>

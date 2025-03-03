@@ -11,10 +11,10 @@
 <ol class="relative space-y-8">
   {#each reviews
     .slice()
-    .reverse() as { listing, date, location, rating, href, thumbnail, excerpt }, index}
+    .reverse() as { listing, date, location, rating, href, thumbnail, word_count, excerpt }, index}
     <li class="max-w-narrower mx-auto w-full">
       <a
-        class="block space-y-2 rounded-xl border-4 border-surface1 bg-base p-8 duration-200 hover:border-subtext0"
+        class="block space-y-2 rounded-xl border-4 border-surface1 bg-base p-8 duration-200 hover:border-overlay2"
         target="_blank"
         {href}
       >
@@ -60,7 +60,10 @@
             <quote class="line-clamp-5 text-lg italic">
               {excerpt}
             </quote>
-            <FormatQuoteClose class="self-end text-3xl text-surface2" />
+            <div class="flex justify-between">
+              <div class="flex-0 text-surface2">{word_count} words</div>
+              <FormatQuoteClose class="flex-0 text-3xl text-surface2" />
+            </div>
           </div>
         </div>
         <div class="flex justify-center space-x-2">

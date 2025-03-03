@@ -21,21 +21,11 @@ interface Metadata {
 
 /** @type {import('./$types').PageLoad} */
 export function load() {
-    const glob_import = import.meta.glob<Glob>('$posts/*.md', { eager: true });
+    const glob_import = import.meta.glob<Glob>("$lib/assets/dating/*", { eager: true });
     const paths: [string, Glob][] = Object.entries(glob_import);
 
+
     return {
-        posts: paths
-            .map((path) => ({
-                data: path[1].metadata,
-                url: `blog/` + path[0].split('/').pop()?.replace('.md', '') || '',
-            }))
-            .filter((post) => post.data.published)
-            .sort((first, second) =>
-                new Date(second.data.date).getTime() - new Date(first.data.date).getTime()
-            )
+        paths: paths.map((path) => path[0])
     };
 }
-
-
-

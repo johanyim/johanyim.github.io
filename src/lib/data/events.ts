@@ -3,10 +3,10 @@ export interface Event {
     title: string;
     location?: string;
     description: string;
-    outcomes: string[];
-    tools?: string[];
     start_date: Date;
     end_date?: Date;
+    outcomes: string[];
+    tools?: string[];
 }
 
 export const events: Event[] =
@@ -39,13 +39,12 @@ export const events: Event[] =
         {
             title: "Software Developer",
             location: "BG Automotive",
-            description: "Working as a backend engineer with Rust as the primary language for development",
+            description: "Working as a software engineer for the automotive industry, focusing on Rust as the ",
             outcomes: [
-                "Designed and implemented a bepoke warranty system, with emphasis on high performance",
-                "Used database connection pooling and shared state semaphors to manage asynchronous access",
-                "Applied knowledge of Rust's memory layout of types and ownership rules for highly performant execution speed",
-                "Utilized knowledge of Rust's extensive type system and design patterns for type-safety and extensibility",
-                "Containerized application for deployment on cloud services",
+                "Designed and implemented a modern Warranty system, managing 2,000+ claims and over £350,000 worth of items",
+                "Containerized application for consistent deployment on cloud services",
+                "Developed various full-stack desktop applications targetting Windows, MacOS, and Linux to enhance the workflow of workers in the company",
+                "Introduced IT solutions to a wide variety of business challenges, including: Spreadsheet manipulation, Text rendering for generated images, Video manipulation, Key logging, Financial analysis and projection, Cryptography-based authentication, and more",
             ],
             tools: ["SQL", "Rust", "Tauri", "Svelte", "Azure"],
             start_date: new Date(2024, 4),
