@@ -1,6 +1,6 @@
 <script>
   import { copy } from "svelte-copy";
-
+  import { base } from "$app/paths";
   import ContentCopy from "~icons/mdi/content-copy";
 
   let email = $state("");
@@ -66,7 +66,7 @@
     >
 
     <a
-      href="/kitty"
+      href="{base}/kitty"
       class="m-auto block w-full min-w-40 rounded-xl text-center text-md text-pink transition-opacity duration-1000 sm:w-fit"
       class:opacity-0={!showKitty}
       class:p-3={showKitty}
