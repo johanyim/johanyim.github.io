@@ -14,7 +14,7 @@
   // let { data }: Props = $props();
   // let { paths } = data;
 
-  let paths = [
+  let paths = $state([
     `${base}/dating/1.jpg`,
     `${base}/dating/2.jpg`,
     `${base}/dating/3.jpg`,
@@ -57,17 +57,11 @@
     `${base}/dating/40.jpg`,
     `${base}/dating/41.jpg`,
     `${base}/dating/42.jpg`,
-  ];
+  ]);
 
   function shuffleArray(array: Array<any>) {
     return array.sort(() => Math.random() - 0.5);
   }
-
-  let images = $state([]);
-
-  onMount(() => {
-    images = shuffleArray([...paths]);
-  });
 
   let names = [
     "Johan",
@@ -83,7 +77,6 @@
   function randFrom(array: Array) {
     return array[Math.floor(Math.random() * array.length)];
   }
-  let current = $state<string>("");
   let refresh = $state<boolean>(false);
 
   let pr = $state(prompts.filter((p) => p.answer));
@@ -94,7 +87,8 @@
   function next() {
     displayName = randFrom(names);
     imageUrl = randFrom(paths);
-    refresh = !refresh;
+    paths = shuffleArray(paths);
+    console.log(paths);
     pr = prompts.filter((p) => p.answer);
   }
 </script>
@@ -108,12 +102,11 @@
   </button>
 {/snippet}
 
-{#snippet imageCard()}
-  {@const path = randFrom(paths)}
+{#snippet imageCard(i: number)}
   {#key refresh}
     <div class="align-center relative w-full">
       <img
-        src={path}
+        src={paths[i]}
         alt="me"
         class="aspect-[3/4] w-full rounded-xl object-cover"
       />
@@ -149,15 +142,15 @@
     </div>
   </div>
 
-  {@render imageCard()}
+  {@render imageCard(0)}
   {@render promptCard(randFrom(pr))}
   {@render promptCard(randFrom(pr))}
-  {@render imageCard()}
-  {@render imageCard()}
+  {@render imageCard(1)}
+  {@render imageCard(2)}
   {@render promptCard(randFrom(pr))}
-  {@render imageCard()}
+  {@render imageCard(3)}
   {@render promptCard(randFrom(pr))}
-  {@render imageCard()}
+  {@render imageCard(4)}
   {@render promptCard(randFrom(pr))}
   {@render promptCard(randFrom(pr))}
 </div>
