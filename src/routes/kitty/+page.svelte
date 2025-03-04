@@ -3,61 +3,52 @@
   import { base } from "$app/paths";
 
   import { prompts } from "./prompts";
-  import { onMount } from "svelte";
-
-  // interface Props {
-  //   data: {
-  //     paths: string[];
-  //   };
-  // }
-  //
-  // let { data }: Props = $props();
-  // let { paths } = data;
-
-  let paths = $state([
-    `${base}/dating/1.jpg`,
-    `${base}/dating/2.jpg`,
-    `${base}/dating/3.jpg`,
-    `${base}/dating/4.jpg`,
-    `${base}/dating/5.jpg`,
-    `${base}/dating/6.jpg`,
-    `${base}/dating/7.jpg`,
-    `${base}/dating/8.jpg`,
-    `${base}/dating/9.jpg`,
-    `${base}/dating/10.jpg`,
-    `${base}/dating/11.jpg`,
-    `${base}/dating/12.jpg`,
-    `${base}/dating/13.jpg`,
-    `${base}/dating/14.jpg`,
-    `${base}/dating/15.jpg`,
-    `${base}/dating/16.jpg`,
-    `${base}/dating/17.jpg`,
-    `${base}/dating/18.jpg`,
-    `${base}/dating/19.jpg`,
-    `${base}/dating/20.jpg`,
-    `${base}/dating/21.jpg`,
-    `${base}/dating/22.jpg`,
-    `${base}/dating/23.jpg`,
-    `${base}/dating/24.jpg`,
-    `${base}/dating/25.jpg`,
-    `${base}/dating/26.jpg`,
-    `${base}/dating/27.jpg`,
-    `${base}/dating/28.jpg`,
-    `${base}/dating/29.jpg`,
-    `${base}/dating/30.jpg`,
-    `${base}/dating/31.jpg`,
-    `${base}/dating/32.jpg`,
-    `${base}/dating/33.jpg`,
-    `${base}/dating/34.jpg`,
-    `${base}/dating/35.jpg`,
-    `${base}/dating/36.jpg`,
-    `${base}/dating/37.jpg`,
-    `${base}/dating/38.jpg`,
-    `${base}/dating/39.jpg`,
-    `${base}/dating/40.jpg`,
-    `${base}/dating/41.jpg`,
-    `${base}/dating/42.jpg`,
-  ]);
+  let paths = $state(
+    shuffleArray([
+      `${base}/dating/1.jpg`,
+      `${base}/dating/2.jpg`,
+      `${base}/dating/3.jpg`,
+      `${base}/dating/4.jpg`,
+      `${base}/dating/5.jpg`,
+      `${base}/dating/6.jpg`,
+      `${base}/dating/7.jpg`,
+      `${base}/dating/8.jpg`,
+      `${base}/dating/9.jpg`,
+      `${base}/dating/10.jpg`,
+      `${base}/dating/11.jpg`,
+      `${base}/dating/12.jpg`,
+      `${base}/dating/13.jpg`,
+      `${base}/dating/14.jpg`,
+      `${base}/dating/15.jpg`,
+      `${base}/dating/16.jpg`,
+      `${base}/dating/17.jpg`,
+      `${base}/dating/18.jpg`,
+      `${base}/dating/19.jpg`,
+      `${base}/dating/20.jpg`,
+      `${base}/dating/21.jpg`,
+      `${base}/dating/22.jpg`,
+      `${base}/dating/23.jpg`,
+      `${base}/dating/24.jpg`,
+      `${base}/dating/25.jpg`,
+      `${base}/dating/26.jpg`,
+      `${base}/dating/27.jpg`,
+      `${base}/dating/28.jpg`,
+      `${base}/dating/29.jpg`,
+      `${base}/dating/30.jpg`,
+      `${base}/dating/31.jpg`,
+      `${base}/dating/32.jpg`,
+      `${base}/dating/33.jpg`,
+      `${base}/dating/34.jpg`,
+      `${base}/dating/35.jpg`,
+      `${base}/dating/36.jpg`,
+      `${base}/dating/37.jpg`,
+      `${base}/dating/38.jpg`,
+      `${base}/dating/39.jpg`,
+      `${base}/dating/40.jpg`,
+      `${base}/dating/41.jpg`,
+      `${base}/dating/42.jpg`,
+    ]),
+  );
 
   function shuffleArray(array: Array<any>) {
     return array.sort(() => Math.random() - 0.5);
@@ -74,7 +65,7 @@
     "嚴証恩",
   ];
 
-  function randFrom(array: Array) {
+  function randFrom(array: Array<any>) {
     return array[Math.floor(Math.random() * array.length)];
   }
   let refresh = $state<boolean>(false);
@@ -82,13 +73,10 @@
   let pr = $state(prompts.filter((p) => p.answer));
 
   let displayName = $state<string>(randFrom(names));
-  let imageUrl = $state<string>(randFrom(paths));
 
   function next() {
     displayName = randFrom(names);
-    imageUrl = randFrom(paths);
     paths = shuffleArray(paths);
-    console.log(paths);
     pr = prompts.filter((p) => p.answer);
   }
 </script>
