@@ -39,7 +39,7 @@ export const events: Event[] =
         {
             title: "Software Developer",
             location: "BG Automotive",
-            description: "Working as a software engineer for the automotive industry, focusing on Rust as the ",
+            description: "Working as a software engineer for the automotive industry, using Rust as my primary language of choice",
             outcomes: [
                 "Designed and implemented a modern Warranty system, managing 2,000+ claims and over £350,000 worth of items",
                 "Containerized application for consistent deployment on cloud services",
