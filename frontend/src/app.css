@@ -1,0 +1,35 @@
+@import "$lib/markdown.scss";
+@import "$lib/syntax-highlighting.css";
+@import '@fontsource/noto-sans-mono/300.css';
+@import '@fontsource/noto-sans-mono/400.css';
+@import '@fontsource/noto-sans-mono/600.css';
+
+/* @import '@fontsource/open-sans/300.css'; */
+@import '@fontsource/open-sans/400.css';
+/* @import '@fontsource/open-sans/600.css'; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+::selection {
+    background: rgb(69, 71, 90);
+    /* color: #11111b; */
+}
+
+section {
+    margin: auto;
+    max-width: 80rem;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

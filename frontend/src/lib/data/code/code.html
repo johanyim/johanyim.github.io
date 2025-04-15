@@ -1,0 +1,133 @@
+<style scoped>
+  body {
+    color: #cdd6f4;
+  }
+  .-variable-parameter {
+    color: #eba0ac;
+  }
+  .-keyword-function {
+    color: #cba6f7;
+  }
+  .Type {
+    color: #f9e2af;
+  }
+  .Keyword {
+    color: #cba6f7;
+  }
+  .-spell {
+  }
+  .Constant {
+    color: #fab387;
+  }
+  .-module {
+    color: #b4befe;
+  }
+  .-type-builtin {
+    color: #f9e2af;
+  }
+  .DiagnosticVirtualTextError {
+    color: #f38ba8;
+    background-color: #32283a;
+  }
+  .Character {
+    color: #94e2d5;
+  }
+  .Include {
+    color: #cba6f7;
+  }
+  .Delimiter {
+    color: #9399b2;
+  }
+  .DiagnosticUnderlineHint {
+    text-decoration-line: underline;
+  }
+  .LspInlayHint {
+    color: #45475a;
+  }
+  .String {
+    color: #a6e3a1;
+  }
+  .TodoFgNOTE {
+    color: #b4befe;
+  }
+  .TodoBgNOTE {
+    font-weight: bold;
+    color: #11111b;
+    background-color: #b4befe;
+  }
+  .Operator {
+    color: #89dceb;
+  }
+  .Special {
+    color: #f5c2e7;
+  }
+  .TodoBgTODO {
+    font-weight: bold;
+    color: #11111b;
+    background-color: #f2cdcd;
+  }
+  .TodoFgTODO {
+    color: #f2cdcd;
+  }
+  .DiagnosticVirtualTextWarn {
+    color: #f9e2af;
+    background-color: #33313a;
+  }
+  .MatchParen {
+    font-weight: bold;
+    color: #fab387;
+    background-color: #45475a;
+  }
+  .-variable-member {
+    color: #b4befe;
+  }
+  .Comment {
+    color: #6c7086;
+  }
+  .-function-macro {
+    color: #94e2d5;
+  }
+  .-variable {
+    color: #cdd6f4;
+  }
+  .Function {
+    color: #89b4fa;
+  }
+  .DiagnosticVirtualTextHint {
+    color: #94e2d5;
+    background-color: #29313e;
+  }
+  .-punctuation-bracket {
+    color: #9399b2;
+  }
+</style>
+<pre>
+<span class="Include">use</span> <span class="-variable"><span class="-module">std</span></span><span class="Delimiter">::</span><span class="-variable">fs</span><span class="Delimiter">;</span>
+<span class="Keyword">const</span> <span class="-variable"><span class="Type"><span class="Constant"><span class="Constant">HOME_DIR</span></span></span></span><span class="Delimiter">:</span> <span class="Operator">&amp;</span><span class="Keyword">'</span><span class="-variable"><span class="Constant"><span class="Special">static</span></span></span> <span class="-type-builtin">str</span> <span class="Operator">=</span> <span class="String">&quot;/home/johan/&quot;</span><span class="Delimiter">;</span>
+<span class="Special">#</span><span class="-punctuation-bracket">[</span><span class="-variable"><span class="-module">rustfmt</span></span><span class="Delimiter">::</span><span class="-variable"><span class="-function-macro">skip</span></span><span class="-punctuation-bracket">]</span>
+<span class="-keyword-function">fn</span> <span class="-variable"><span class="Function">list_dotfile_paths</span></span><span class="-punctuation-bracket">(</span>
+    <span class="-variable"><span class="-variable-parameter"><span class="Comment"><span class="DiagnosticUnderlineHint">dir_name</span></span></span></span><span class="Delimiter">:</span> <span class="Operator">&amp;</span><span class="Keyword">'</span><span class="-variable"><span class="Constant"><span class="Special">static</span></span></span> <span class="-type-builtin">str</span><span class="Delimiter">,</span>
+<span class="DiagnosticVirtualTextWarn">    </span><span class="DiagnosticVirtualTextWarn">├──── </span><span class="DiagnosticVirtualTextWarn">unused_variables: unused variable: `dir_name`</span>
+<span class="DiagnosticVirtualTextWarn">    </span><span class="DiagnosticVirtualTextWarn">│</span><span class="DiagnosticVirtualTextWarn">     </span><span class="DiagnosticVirtualTextWarn">`#[warn(unused_variables)]` on by default</span>
+<span class="DiagnosticVirtualTextHint">    </span><span class="DiagnosticVirtualTextHint">└──── </span><span class="DiagnosticVirtualTextHint">unused_variables: if this is intentional, prefix it with an underscore: `_dir_name`</span>
+<span class="-punctuation-bracket">)</span> <span class="Delimiter">-&gt;</span> <span class="Keyword">impl</span> <span class="Type">Iterator</span><span class="Operator"><span class="-punctuation-bracket">&lt;</span></span><span class="Type">Item</span> <span class="Operator">=</span> <span class="Keyword">impl</span> <span class="Type">Iterator</span><span class="Operator"><span class="-punctuation-bracket">&lt;</span></span><span class="Type">Item</span> <span class="Operator">=</span> <span class="Type">String</span><span class="Operator"><span class="-punctuation-bracket">&gt;</span></span><span class="Operator"><span class="-punctuation-bracket">&gt;</span></span> <span class="-punctuation-bracket">{</span>
+    <span class="Keyword">let</span> <span class="-variable">directories</span> <span class="Operator">=</span> <span class="-variable"><span class="Type"><span class="Constant">HOME_DIR</span></span></span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">split_inclusive</span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;/&quot;</span><span class="-punctuation-bracket">)</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">map</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Type"><span class="-module"><span class="Type">String</span></span></span></span><span class="Delimiter">::</span><span class="-variable">from</span><span class="-punctuation-bracket">)</span><span class="Delimiter">;</span> <span class="LspInlayHint">-&gt; impl Iterator&lt;Item = String&gt;</span>
+
+    <span class="Comment"><span class="-spell">//<span class="TodoBgTODO"> TODO<span class="TodoFgTODO">:</span></span><span class="TodoFgTODO"> Handle file not found Error</span></span></span>
+    <span class="Keyword">let</span> <span class="-variable">paths</span> <span class="Operator">=</span> <span class="-variable"><span class="-module">fs</span></span><span class="Delimiter">::</span><span class="-variable"><span class="Function">read_dir</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Type"><span class="Constant">HOME_DIR</span></span></span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">&lt;= (path) -&gt; impl Iterator&lt;Item = String&gt;, Result&lt;ReadDir, Error&gt;</span>
+        <span class="Delimiter">.</span><span class="-variable-member"><span class="Function">unwrap</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">flatten</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">-&gt; impl Iterator&lt;Item = DirEntry&gt;</span>
+        <span class="Delimiter">.</span><span class="-variable-member"><span class="Function">filter_map</span></span><span class="-punctuation-bracket">(</span><span class="Keyword">move</span> <span class="Operator"><span class="-punctuation-bracket">|</span></span><span class="-variable"><span class="-variable-parameter">file</span></span><span class="Operator"><span class="-punctuation-bracket">|</span></span> <span class="-punctuation-bracket">{</span> <span class="LspInlayHint">-&gt; DirEntry</span>
+            <span class="-variable">file</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">path</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">-&gt; PathBuf</span>
+                <span class="Delimiter">.</span><span class="-variable-member"><span class="Function">strip_prefix</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Type"><span class="Constant">HOME_DIR</span></span></span><span class="-punctuation-bracket">)</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">ok</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">&lt;= (base) -&gt; Option&lt;&amp;Path&gt;</span>
+                <span class="Delimiter">.</span><span class="-variable-member"><span class="Function">and_then</span></span><span class="-punctuation-bracket">(</span><span class="Operator"><span class="-punctuation-bracket">|</span></span><span class="-variable"><span class="-variable-parameter">relative_path</span></span><span class="Operator"><span class="-punctuation-bracket">|</span></span> <span class="-variable">relative_path</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">to_str</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">map</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="Type"><span class="-module"><span class="Type">String</span></span></span></span><span class="Delimiter">::</span><span class="-variable">from</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">-&gt; &amp;Path</span>
+        <span class="-punctuation-bracket">}</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">-&gt; impl Iterator&lt;Item = String&gt;</span>
+        <span class="Delimiter">.</span><span class="-variable-member"><span class="Function">filter</span></span><span class="-punctuation-bracket">(</span><span class="Operator"><span class="-punctuation-bracket">|</span></span><span class="-variable"><span class="-variable-parameter">x</span></span><span class="Operator"><span class="-punctuation-bracket">|</span></span> <span class="-variable">x</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">starts_with</span></span><span class="-punctuation-bracket">(</span><span class="Character">'.'</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">-&gt; &amp;String</span>
+<span class="DiagnosticVirtualTextError">                                       </span><span class="DiagnosticVirtualTextError">├──── </span><span class="DiagnosticVirtualTextError">expected `;`, found `paths`</span>
+<span class="DiagnosticVirtualTextError">                                       </span><span class="DiagnosticVirtualTextError">├──── </span><span class="DiagnosticVirtualTextError">syntax-error: Syntax Error: expected SEMICOLON</span>
+<span class="DiagnosticVirtualTextHint">                                       </span><span class="DiagnosticVirtualTextHint">└──── </span><span class="DiagnosticVirtualTextHint">add `;` here: `;`</span>
+
+    <span class="Comment"><span class="-spell">//<span class="TodoBgNOTE"> NOTE<span class="TodoFgNOTE">:</span></span><span class="TodoFgNOTE"> includes directories</span></span></span>
+    <span class="-variable"><span class="DiagnosticUnderlineHint">paths</span></span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">map</span></span><span class="-punctuation-bracket">(</span><span class="Keyword">move</span> <span class="Operator"><span class="-punctuation-bracket">|</span></span><span class="-variable"><span class="-variable-parameter">path</span></span><span class="Operator"><span class="-punctuation-bracket">|</span></span> <span class="-variable">directories</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">clone</span></span><span class="-punctuation-bracket">(</span><span class="-punctuation-bracket">)</span><span class="Delimiter">.</span><span class="-variable-member"><span class="Function">chain</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="-module">std</span></span><span class="Delimiter">::</span><span class="-variable"><span class="-module">iter</span></span><span class="Delimiter">::</span><span class="-variable"><span class="Function">once</span></span><span class="-punctuation-bracket">(</span><span class="-variable">path</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span><span class="-punctuation-bracket">)</span> <span class="LspInlayHint">-&gt; String</span>
+<span class="DiagnosticVirtualTextHint">    </span><span class="DiagnosticVirtualTextHint">└──── </span><span class="DiagnosticVirtualTextHint">unexpected token</span>
+<span class="-punctuation-bracket">}</span>
+</pre>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="bg-crust font-mono text-text">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Johan Yim" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta property="og:title" content="Johan Yim" />
+    <meta property="og:type" content="website" />
+    <meta property="og:URL" content="https://johanyim.com" />
+
+    <!-- theme/color of banners -->
+    <meta name="theme-color" content="#11111b" />
+
+    <!-- og-image.png comes from the github README, not the source code, I might make static images when I get the website up -->
+    <meta property="og:image" content="https://johanyim.com/og-image.png" />
+    <meta property="og:description" content="Johan's personal website" />
+
+    <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents">%sveltekit.body%</div>
+  </body>
+</html>

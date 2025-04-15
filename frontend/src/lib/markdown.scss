@@ -1,0 +1,69 @@
+.markdown {
+  header {
+    h1 {
+      @apply text-2xl font-semibold text-lavender sm:text-3xl
+    }
+
+    p {
+      @apply text-lg sm:text-xl
+    }
+
+    date {
+      @apply text-md text-overlay0 block mb-4
+    }
+
+    .thumbnail {
+      @apply rounded-lg align-middle border-base border-4
+    }
+  }
+
+  main {
+
+    @apply space-y-4;
+
+    h1 {
+      @apply text-3xl font-semibold text-lavender sm:text-4xl mt-12 mb-4
+    }
+
+    h2 {
+      @apply text-2xl font-semibold text-lavender sm:text-3xl mt-12 mb-4
+    }
+
+    h3 {
+      @apply text-xl font-semibold text-lavender sm:text-2xl mt-12 mb-4
+    }
+
+    h4 {
+      @apply text-lg font-semibold text-lavender sm:text-xl mt-12 mb-4
+    }
+
+    p {
+      @apply text-wrap font-sans font-normal text-lg
+    }
+
+    img {
+      @apply mx-auto my-4 rounded-xl
+    }
+
+    // for big code blocks
+    pre>code {
+      @apply border-base my-2 text-text
+    }
+
+    // for inline code
+    code {
+      @apply border-base my-2 text-flamingo
+    }
+
+    ul {
+      @apply list-disc
+    }
+
+    ol {
+      @apply list-decimal
+    }
+  }
+
+
+
+}

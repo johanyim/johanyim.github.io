@@ -1,0 +1,130 @@
+<style>
+  body {
+    color: #cdd6f4;
+  }
+  .-keyword-function {
+    color: #cba6f7;
+  }
+  .-property {
+    color: #b4befe;
+  }
+  .Keyword {
+    color: #cba6f7;
+  }
+  .-constant-builtin {
+    color: #fab387;
+  }
+  .Constant {
+    color: #fab387;
+  }
+  .Label {
+    color: #74c7ec;
+  }
+  .-spell {
+  }
+  .Delimiter {
+    color: #9399b2;
+  }
+  .Boolean {
+    color: #fab387;
+  }
+  .String {
+    color: #a6e3a1;
+  }
+  .-constructor-lua {
+    color: #f2cdcd;
+  }
+  .Operator {
+    color: #89dceb;
+  }
+  .Special {
+    color: #f5c2e7;
+  }
+  .-variable-parameter {
+    color: #eba0ac;
+  }
+  .-string-escape {
+    color: #f5c2e7;
+  }
+  .Conditional {
+    color: #cba6f7;
+  }
+  .Number {
+    color: #fab387;
+  }
+  .Function {
+    color: #89b4fa;
+  }
+  .Comment {
+    color: #6c7086;
+  }
+  .-variable-member {
+    color: #b4befe;
+  }
+  .-variable {
+    color: #cdd6f4;
+  }
+  .-punctuation-bracket {
+    color: #9399b2;
+  }
+  .DiagnosticVirtualTextHint {
+    background-color: #29313e;
+    color: #94e2d5;
+  }
+  .-function-builtin {
+    color: #fab387;
+  }
+</style>
+<pre>
+<span class="Keyword">local</span> <span class="-keyword-function">function</span> <span class="-variable"><span class="Function">selection_to_html</span></span><span class="-punctuation-bracket">(</span><span class="-variable"><span class="-variable-parameter">opts</span></span><span class="-punctuation-bracket">)</span>
+    <span class="Comment"><span class="-spell">-- save the selected lines</span></span>
+    <span class="Keyword">local</span> <span class="-variable">start_line</span> <span class="Operator">=</span> <span class="-variable">opts</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">line1</span></span>
+    <span class="Keyword">local</span> <span class="-variable">end_line</span> <span class="Operator">=</span> <span class="-variable">opts</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">line2</span></span>
+
+    <span class="Comment"><span class="-spell">-- convert into raw html</span></span>
+    <span class="Keyword">local</span> <span class="-variable">html_output</span> <span class="Operator">=</span> <span class="-variable">tohtml</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">tohtml</span></span></span><span class="-punctuation-bracket">(</span><span class="-constant-builtin">nil</span><span class="Delimiter">,</span> <span class="-punctuation-bracket"><span class="-constructor-lua">{</span></span> <span class="-variable"><span class="-property">number_lines</span></span> <span class="Operator">=</span> <span class="Boolean">false</span> <span class="-punctuation-bracket"><span class="-constructor-lua">}</span></span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- Create a new buffer</span></span>
+    <span class="Keyword">local</span> <span class="-variable">new_buf</span> <span class="Operator">=</span> <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_create_buf</span></span></span><span class="-punctuation-bracket">(</span><span class="Boolean">false</span><span class="Delimiter">,</span> <span class="Boolean">true</span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- open a new split window with html contents inside</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_command</span></span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;<span class="Keyword">vsplit</span>&quot;</span><span class="-punctuation-bracket">)</span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_win_set_buf</span></span></span><span class="-punctuation-bracket">(</span><span class="Number">0</span><span class="Delimiter">,</span> <span class="-variable">new_buf</span><span class="-punctuation-bracket">)</span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_buf_set_lines</span></span></span><span class="-punctuation-bracket">(</span><span class="-variable">new_buf</span><span class="Delimiter">,</span> <span class="Number">0</span><span class="Delimiter">,</span> <span class="Operator">-</span><span class="Number">1</span><span class="Delimiter">,</span> <span class="Boolean">false</span><span class="Delimiter">,</span> <span class="-variable">html_output</span><span class="-punctuation-bracket">)</span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">bo</span></span><span class="-punctuation-bracket">[</span><span class="-variable">new_buf</span><span class="-punctuation-bracket">]</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">filetype</span></span> <span class="Operator">=</span> <span class="String">&quot;html&quot;</span>
+
+    <span class="Comment"><span class="-spell">-- remove the css font and body setting, because it messes with the rest of the document</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_command</span></span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;<span class="Delimiter">:</span>%s/<span class="-string-escape">\\</span>* {<span class="Label">font-family: monospace}$/</span>&quot;</span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- STYLES</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">fn</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">search</span></span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;&lt;style&gt;&quot;</span><span class="Delimiter">,</span> <span class="String">&quot;w&quot;</span><span class="-punctuation-bracket">)</span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">cmd</span></span></span><span class="-punctuation-bracket">(</span><span class="String">'<span class="Keyword">normal</span><span class="Special">!</span><span class="Constant"> &quot;syat</span>'</span><span class="Delimiter">,</span> <span class="Boolean">true</span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- BODY</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">fn</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">search</span></span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;&lt;pre&gt;&quot;</span><span class="Delimiter">,</span> <span class="String">&quot;w&quot;</span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- because end - start may be 0, and 0 is not a valid quantity</span></span>
+    <span class="Keyword">local</span> <span class="-variable">movement</span> <span class="Operator">=</span> <span class="String">&quot;j&quot;</span>
+    <span class="Conditional">if</span> <span class="-variable">end_line</span> <span class="Operator">-</span> <span class="-variable">start_line</span> <span class="Operator">==</span> <span class="Number">0</span> <span class="Conditional">then</span>
+        <span class="-variable">movement</span> <span class="Operator">=</span> <span class="String">&quot;&quot;</span>
+    <span class="Conditional">end</span>
+
+    <span class="Keyword">local</span> <span class="-variable">command</span> <span class="Operator">=</span> <span class="-variable">start_line</span> <span class="Operator">..</span> <span class="String">&quot;jV&quot;</span> <span class="Operator">..</span> <span class="-punctuation-bracket">(</span><span class="-variable">end_line</span> <span class="Operator">-</span> <span class="-variable">start_line</span><span class="-punctuation-bracket">)</span> <span class="Operator">..</span> <span class="-variable">movement</span> <span class="Operator">..</span> <span class="String">'&quot;bygg'</span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">cmd</span></span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;normal! &quot;</span> <span class="Operator">..</span> <span class="-variable">command</span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- clear all</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">cmd</span></span></span><span class="-punctuation-bracket">(</span><span class="String">&quot;<span class="Keyword">normal</span><span class="Special">!</span><span class="Constant"> ggdG</span>&quot;</span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- paste BODY</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">cmd</span></span></span><span class="-punctuation-bracket">(</span><span class="String">'<span class="Keyword">normal</span><span class="Special">!</span><span class="Constant"> gg0&quot;bP</span>'</span><span class="-punctuation-bracket">)</span> <span class="Comment"><span class="-spell">-- there will be one blank line</span></span>
+
+    <span class="Comment"><span class="-spell">-- surround in pre tags</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_buf_set_lines</span></span></span><span class="-punctuation-bracket">(</span><span class="-variable">new_buf</span><span class="Delimiter">,</span> <span class="Number">0</span><span class="Delimiter">,</span> <span class="Number">0</span><span class="Delimiter">,</span> <span class="Boolean">false</span><span class="Delimiter">,</span> <span class="-punctuation-bracket"><span class="-constructor-lua">{</span></span> <span class="String">&quot;&lt;pre&gt;&quot;</span> <span class="-punctuation-bracket"><span class="-constructor-lua">}</span></span><span class="-punctuation-bracket">)</span>
+    <span class="Keyword">local</span> <span class="-variable">new_last_line</span> <span class="Operator">=</span> <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_buf_line_count</span></span></span><span class="-punctuation-bracket">(</span><span class="-variable">new_buf</span><span class="-punctuation-bracket">)</span> <span class="Operator">-</span> <span class="Number">1</span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member">api</span></span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">nvim_buf_set_lines</span></span></span><span class="-punctuation-bracket">(</span><span class="-variable">new_buf</span><span class="Delimiter">,</span> <span class="-variable">new_last_line</span><span class="Delimiter">,</span> <span class="-variable">new_last_line</span><span class="Delimiter">,</span> <span class="Boolean">false</span><span class="Delimiter">,</span> <span class="-punctuation-bracket"><span class="-constructor-lua">{</span></span> <span class="String">&quot;&lt;/pre&gt;&quot;</span> <span class="-punctuation-bracket"><span class="-constructor-lua">}</span></span><span class="-punctuation-bracket">)</span>
+
+    <span class="Comment"><span class="-spell">-- paste styles</span></span>
+    <span class="-variable">vim</span><span class="Delimiter">.</span><span class="-variable"><span class="-variable-member"><span class="Function">cmd</span></span></span><span class="-punctuation-bracket">(</span><span class="String">'<span class="Keyword">normal</span><span class="Special">!</span><span class="Constant"> gg0&quot;sP</span>'</span><span class="-punctuation-bracket">)</span>
+<span class="-keyword-function">end</span>
+
+</pre>

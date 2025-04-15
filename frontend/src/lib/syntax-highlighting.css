@@ -1,0 +1,136 @@
+/**
+ * atom-dark theme for `prism.js`
+ * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
+ * @author Joe Gibson (@gibsjose)
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #cdd6f4;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+    border: 4px solid #1e1e2e;
+}
+
+:not(pre)>code[class*="language-"],
+pre[class*="language-"] {
+    background: #11111b;
+}
+
+/* Inline code */
+:not(pre)>code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+}
+
+/* unidentified selectors */
+prolog,
+doctype,
+cdata,
+punctuation,
+namespace,
+property,
+symbol,
+deleted,
+selector,
+builtin,
+inserted,
+operator,
+entity,
+string,
+string,
+atrule,
+regex,
+important,
+important,
+bold,
+italic {
+    color: red
+}
+
+.token.class-name {
+    /*yellow*/
+    color: #f9e2af
+}
+
+
+
+/* mauve */
+.token.keyword,
+.token.tag {
+    /*mauve*/
+    color: #cba6f7;
+}
+
+
+.token.function {
+    /*blue*/
+    color: #89b4fa;
+}
+
+
+
+.token.variable {
+    /*flamingo*/
+    color: #f2cdcd;
+}
+
+
+
+.token.attr-name,
+.token.char {
+    /*teal*/
+    color: #94e2d5;
+}
+
+.token.attr-value,
+.token.string {
+    /*green*/
+    color: #a6e3a1;
+}
+
+.token.number,
+.token.boolean,
+.token.constant {
+    /*peach*/
+    color: #fab387;
+}
+
+.token.comment {
+    /*overlay0*/
+    color: #6c7086;
+}
+
+.token.punctuation {
+    /*overlay2*/
+    color: #9399b2;
+}
+
+.token.operator {
+    color: #89dceb;
+}
+
+/* .token.tag { */
+/*     /*lavender*/
+/*     color: #b4befe; */
+/* } */
