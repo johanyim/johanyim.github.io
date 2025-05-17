@@ -8,6 +8,10 @@
         await tick();
         await ref.focus();
     })
+
+    let { data } = $props();
+
+    
 </script>
 
 <div class="h-screen w-screen 
@@ -30,9 +34,11 @@
         >
             <!-- border-2 border-lavender rounded-lg  -->
     </form>
-
     <Line style="mb-16 mt-2 mx-2" color="#cdd6f4" />
-
-
-
+    <pre>
+        {JSON.stringify(data, null, 2)}
+    </pre> 
 </div>
+
+
+
