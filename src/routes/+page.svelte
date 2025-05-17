@@ -27,7 +27,7 @@
         Hi, I'm Johan
       </h1>
       <h4 class="text-balance text-lg text-text opacity-60 sm:text-2xl">
-        I'm a software engineer that will go to great lengths to make programs
+        I'm a software developer that will go to great lengths to make programs
         feel fast
       </h4>
       <div class="my-4 flex gap-3 text-2xl sm:text-3xl"><SocialButtons /></div>
