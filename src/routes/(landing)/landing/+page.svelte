@@ -7,10 +7,12 @@ let ref = null
 
 
 
-const weatherPromise = fetch("https://wttr.in/London?format=j1");
+const weatherPromise = fetch("https://wttr.in/London?format=j1")
+    .then(async (res) => res.json())
 
 
 onMount(async () => {
+    ref.value = ""
     await tick();
     await ref.focus();
 
@@ -52,17 +54,64 @@ let data = ""
     <!-- </div> -->
     {#await weatherPromise}
         Loading...
-    {:then weatherRes}
-        {#await weatherRes.json()}
-            Loading...
-        {:then weather}
-            <pre>{JSON.stringify(weather, null, 2)}</pre>
-        {/await}
+    {:then data}
+        {@const current_condition  = ( ({
+            FeelsLikeC,
+            temp_C,
+            weatherCode,
+            weatherDesc,
+        }) => ({
+                FeelsLikeC,
+                temp_C,
+                weatherCode,
+                weatherDesc,
+            }) )(data.current_condition[0])
+        }
+
+        {@const weather = data.weather.map((d) => {
+            return {
+                date: d.date,
+                minTemp: d.mintempC,
+                maxTemp: d.maxtempC,
+                hourly: d.hourly.map((h) => 
+                {return {
+                        forecast: (({
+                            FeelsLikeC,
+                            chanceofrain,
+                            tempC,
+                            time,
+                            weatherCode,
+                        }) => ({
+                                FeelsLikeC,
+                                chanceofrain,
+                                tempC,
+                                time,
+                                weatherCode,
+                            }))(h)
+                    }}
+                ),
+            } 
+
+        })}
+        <pre>{JSON.stringify(current_condition, null, 2)}</pre> 
+        <pre>{JSON.stringify(weather, null, 2)}</pre> 
+
     {:catch}
         Could not get weather
     {/await}
-    <pre>{JSON.stringify(data, null, 2)}</pre>
 </div>
 
 
-
+  <!-- // -->
+  <!-- // return { -->
+  <!-- //     current_condition, -->
+  <!-- //     weather, -->
+  <!-- //   // .weather -->
+  <!-- //       // .map((d) => d.hourly -->
+  <!-- //       //   // .map((h, i) => {return { -->
+  <!-- //       //   //   time: i * 300,  -->
+  <!-- //       //   //   desc: h.weatherDesc[0].value -->
+  <!-- //       //   // }}) -->
+  <!-- //       // ) -->
+  <!-- // -->
+  <!-- // } -->
