@@ -15,7 +15,7 @@
   <title>Johan Yim</title>
   <meta
     name="keywords"
-    content="Johan Yim, Johan, Yim, Software, Rust, Svelte, BGAutomotive, Tauri, Vim, NeoVim, Linux"
+    content="Johan Yim, Johan, Yim, Software, Rust, Svelte, BGAutomotive, Tauri, Vim, NeoVim, Linux, Bash"
   />
   <meta name="description" content="The home page of Johan Yim" />
 </svelte:head>
@@ -23,12 +23,11 @@
 <section class="-mt-header flex h-[30rem] min-h-section">
   <div class="m-auto p-0 align-middle sm:p-8">
     <div class="container m-auto h-fit max-w-wide p-3">
-      <h1 class="mb-4 text-2xl font-semibold opacity-80 sm:text-4xl">
-        Hi, I'm Johan
+      <h1 class="mb-4 text-4xl font-semibold opacity-80 sm:text-5xl">
+        Johan Yim
       </h1>
-      <h4 class="text-balance text-lg text-text opacity-60 sm:text-2xl">
-        I'm a software engineer that will go to great lengths to make programs
-        feel fast
+      <h4 class="text-balance text-xl text-text opacity-60 sm:text-2xl">
+        Software Engineer
       </h4>
       <div class="my-4 flex gap-3 text-2xl sm:text-3xl"><SocialButtons /></div>
     </div>

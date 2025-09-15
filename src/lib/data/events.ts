@@ -41,12 +41,12 @@ export const events: Event[] =
             location: "BG Automotive",
             description: "Working as a software engineer for the automotive industry, using Rust as my primary language of choice",
             outcomes: [
-                "Designed and implemented a modern Warranty system, managing 2,000+ claims and over £350,000 worth of items",
+                "Designed and implemented a modern Warranty system, managing 5,000+ claims and over £1,500,000 worth of items",
                 "Containerized application for consistent deployment on cloud services",
                 "Developed various full-stack desktop applications targetting Windows, MacOS, and Linux to enhance the workflow of workers in the company",
                 "Introduced IT solutions to a wide variety of business challenges, including: Spreadsheet manipulation, Text rendering for generated images, Video manipulation, Key logging, Financial analysis and projection, Cryptography-based authentication, and more",
             ],
-            tools: ["SQL", "Rust", "Tauri", "Svelte", "Azure"],
+            tools: ["SQL", "Rust", "Tauri", "Svelte", "Bash"],
             start_date: new Date(2024, 4),
         }
     ]
