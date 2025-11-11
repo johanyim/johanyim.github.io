@@ -11,7 +11,7 @@ export const prompts = [
     { question: "Apparently, my life's soundtrack is", answer: "" },
     { question: "Ask me anything about", answer: "" },
     { question: "Best travel story", answer: "" },
-    { question: "Biggest risk I've taken", answer: "" },
+    { question: "Biggest risk I've taken", answer: "Asking my crush to date me with marriage in mind." },
     { question: "Can we talk about", answer: "" },
     { question: "Change my mind about", answer: "Windows and MacOS are just worse" },
     { question: "Choose our first date", answer: "KFC, Nandos or Kebabs (Anime included)" },
