@@ -1,0 +1,210 @@
+experience:
+  - company: BG Automotive
+    location: Swindon
+    role: Software Engineer
+    date_from: 2024-05
+    date_to: Present
+    points: 
+      # BG Automotive's well-recognized Warranty site, which gained recognition during a company exhibition. 
+      # - Implemented Cookie-based JWT authentication, permission groups, file serving, automated emails, and ERP integration to manage over 7,500 warranty claims and 10,000 GBP worth of products.
+      
+      - Implemented stateless, secure authentication using `JWT`s stored in HTTP-only cookies, with access and refresh token rotation for session management.
+      # Stateless: JWT
+      # Secure: HTTP only, Samesite Lax|Strict, Secure, HTTPonly (no javascript access, requests only)
+      # Session management: access + refresh tokens
+      #
+      # The JWT is just base64 encoded string
+      # Try this experiment:
+      #   - echo "$JWT" | awk -F. '{ print $1 $2 $3 }' | base64 -d | jq '.''
+      # BGA warranty system: 
+      #   - Authentication with JWTs, but no refresh tokens = frequent relogin OR login time is long + unbreakable
+      #   - All JWTs were sent along with requests as 'Bearer token' headers (difficult implementation for every endpoint)
+      #   - Cookies are just a mechanism to store a string, and that string being stored is a JWT
+      # CSRF
+      #   - local storage can just be accessed by any site
+      #   - Samesite: None = Malicious website "evil.com" could have <img src="store.bga"> to force browser to send a request
+      #   - Cookies (The SameSite header: Lax/Strict) solve CSRF (same domain only)
+
+      - Implemented HTTP middleware in `Rust` using `Redis` as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger.
+      # Middleware: intercepts requests and/or responses to apply something to them before reaching the handler
+      # Redis = 400 times faster
+      #   - 45s average -> 0.1s with caching
+      #   - expiry date synchronized to 
+      #
+      # Virtualization/Windowing = 600 times larger
+      #   - HTML was trying to render 40,000+ <tr> tags (n tags)
+      #   - using the scrollY binding, made a dynamic slice of data which only renders what's visible
+      #     - Games programming analogy: Frustum culling => don't render things that aren't on screen
+      #   - Using this lazy rendering method we render a constant 50 rows + 2 growing/shrinking empty rows
+      #     - Browser tries to render 2 enormous divs rather than 40,000 rows of the same height
+      #   - Server-Sent events avoid sending a massive chunk of json through the network 
+      # 
+      # Q: Why not use a CDN for http response caching?
+      # A: My company has applications which are internally hosted => a CDN would be infeasible because we arent'd istributed 
+
+      - Developed a silent background process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system.
+      # TODO: use the word `daemon`
+      #
+      # S: Customers were complaining that their orders have been missing items
+      # T: We needed to prove that our warehouse employees were scanning the items and putting them in the box, 
+      #   the fault is in our delivery couriers, not us.
+      # A: 
+      #   - barcode scanner = keyboard input, scanning = type all the characters really fast
+      #   - intercept warehouse employees with keylogger, use regex to extract barcodes (products|picks)
+      #   - When a barcode is recognized snap a picture
+      #
+      # Q: We can't store the entire video feed, too much storage requirement
+      # A: only capture images when barcode gets scanned, remove images after 6 month retention period 
+      #
+      # Q: the barcode might be blurred on that frame, we have a pic, not clear enough 
+      # A: make the camera burst fire (0.3s interval)
+      #   - multiple consecutive scans = interleaving
+      #   - Used asynchronous rust tasks (greenthreads)
+      #   - Minor detail: keylogger is sync thread, images are async thread. Used message passing between threads
+      #
+      # Q: Windows/Employees could just close our program unexpectedly / Might not run on startup
+      # A: Rather than configuring windows to start the program with WMS, Disguised the program to look like the WMS like a program wrapper, employees had no choice but to run the program alongside it
+      # 
+      # Q: what about mobile scanners
+      # A: Raspberry pi implementation in bash, listen to dev input events with evtest utility, 
+      # Uses raspberry pi camera not cctv camera, systemd services + fstab to connect to shared drive on system startup
+      #
+      # R: Misfire ratio went from 19% to 2%, 
+      # Saved 100k GBP worth of reimbursements
+
+      # TODO: rewrite to be more technical
+      - Applied systems programming concepts, including mutex-based synchronization, to prevent race conditions and manage concurrent write operations.
+      # Warehouse assigns a maximum number of people (N) to an order 
+      # Develop an application which where only (N) employee(s) can interact with an order at once
+      #   - Implemented a semaphore, gets released when the user exits the program
+      #   - Code can't run after application is closed though
+      #   - Loop writes to a shared storage the current timestamp + 30s (AKA: locked_until timestamp) = loop ends when application closes, releasing lock/semaphore
+
+      - Used `cron`, the GNU coreutils, and `git` to create an automated deployment pipeline for various automated services.
+      # I introduced cronjobs to my team when I joined the company. cron became our primary scheduling mechanism for automated tasks
+      # Q: storing te source code of the automations quickly consumed the space on the disk
+      # A: write a bash script which would pull the github repo into a tempdir, build it, and save the binary and commit hash
+      #
+      # Created a script which would parse the user's crontab file for all automations, updating them when the git commit hash is different between local and remote
+
+      
+      - Deployed 10 containerized cloud applications optimized for resource efficiency, achieving reliable operation on a single low-tier cloud instance.
+      # They were all written in Rust (God's intended language) as a *single* statically linked binary executable 
+      #   (except for glibc libgcc, for that you'll need musl as a libc alternative)
+      #   glibc = faster, musl = lighter
+      #   ever heard of diet libc
+      #
+      # Rather than have two applications (frontend and backend):
+      #   Compiled the svelte frontend statically and served it from the rust backend 
+      #   All frontend files were compiled into the executable binary
+      #
+      # Static compilation step was scripted within the dockerfile
+      #
+      # Build artifacts were completely removed from the final image, 
+      #
+      # Produced a single statically linked, independent file 
+      #   execute the file -> website served
+      #
+      # Tradeoff: hot reloading in development was mostly gone
+      # 
+      # - Learned to confgure DHCP to reserve IP addresses for 
+      
+
+      - Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros at compile time.
+      # Usual task was to parse a large file, and programmatically create an excel file from it, sending it through STMP as an email to a mailing list
+      # This required more than just awk, so rust was used for this task.
+      # 
+      # xlsxwriter cannot modify excel, so had to parse excel, and produce a new excel from it, with all same styling
+      # vba macro had to be extracted from an existing xlsm file, and then fed into the new sheet
+
+
+      # - Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL 
+      # 
+  - company: Bath Royal Literary and Scientific Institution
+    location: Bath
+    role: Volunteer Data Assistant
+    date_from: 2024-03
+    date_to: 2024-05
+    points: 
+      - Used text-manipulation tools from the GNU coreutils such as `awk` and `sed` to process and clean existing tabular data.
+      # These museum people are so old - they don't have any structure to their data. Didn't know how to use cell formats
+      # Hardest task was to format the date columns to be consistent.
+      #   - yyyy-mm-dd, dd-mm-yyyy, yy-mm-dd, mm-dd yy, yyyy/mm/dd, yyyy.mm.dd
+      #   - Can't just apply a cell formatting rule because unambiguous formatting 
+      #   - (09/05/10) = 9th may 2010, or 10th may 2009?
+      #   - initially used sed, but then needed more powerful awk
+      #   - regexes with backreferences
+
+projects:
+
+  # - title: HTTP Redis Caching Middleware
+  #   url: https://github.com/johanyim/tower-redis-middleware
+  #   display_url: johanyim/tower-redis-middleware
+  #   description: A rust library for flexible http response caching | response caching layer
+  #   points:
+  #     # public caching, not private
+  #     - Implements a module for response caching, which can be used in a variety of related projects
+  #     - Intermediary between application and data repository such as an SQL Database
+  #     # - Practiced writing Documentation 
+  #     # - Practiced writing tests
+  #     - Implements a module for response caching, which can be used in a variety of related projects
+
+  - title: Structure-Preserving Encryption and Decryption
+    url: https://github.com/johanyim/spead
+    display_url: johanyim/spead
+    description: A command-line tool designed to securely encrypt structured files using symmetric key encryption, ensuring schema preservation for consistent data structure post-decryption.
+    points:
+      # I wanted to make a way to push secrets like env files to github, without needing to jump through hoops
+      - Implemented key derivation with `Argon2` algorithm to derive cryptographically strong keys to mitigate brute-force and GPU-based attacks.
+      # side channel attacks too
+      - Applied Format-Preserving Encryption (FPE) to encrypt and decrypt structured data without altering data formats or types, reducing the effect of encryption on data type validation.
+      # - Guided development decisions through test-driven development and performance benchmarking to monitor the direction of the project.
+      - Combined concepts from JSON traversal/pointers (RFC 6901) with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
+      # - Crypto secure because nonce selection
+
+
+      # - Practiced writing performance benchmarks to guide the direction of development
+      # - Improved user experience by enforcing command-line flag validation to prevent misuse.
+      # - Distributed CPU-bound parallel workloads to several threads to reduce the amount of time taken to encrypt and decrypt.
+      # - Practiced writing 
+      # - Practiced writing tests
+      # - Measured the performance using benchmarks using the criterion crate writing performance tests
+      # - Implements a module for response caching, which can be used in a variety of related projects
+      # Key derivation functions (argon2), chacha20
+
+education:
+  - title: Computer Science MComp (Hons)
+    date_from: 2019-09
+    date_to: 2023-05
+    subtitle: University of Bath
+    result: 'Degree Class awarded: 2:1'
+    subjects:
+      - Functional Programming (82%)
+      - Machine Learning (77%)
+      - Statistics for Data Science (73%)
+      - Cryptography (78%)
+      - Data Structures and Algorithms (82%)
+      - Computer Systems Architecture (82%)
+  - title: International Baccalaureate (iB)
+    date_from: 2017-09
+    date_to: 2019-05
+    subtitle: King George V School
+    result: 39 points overall
+    subjects: 
+      - HL Maths (7)
+      - HL Physics (7)
+      - HL Computing (5)
+
+skills: 
+  - Rust
+  - Bash
+  - Redis
+  - Svelte
+
+
+
+# JWT, Redis Caching, http middleware, SSEs, 
+# Authentication, 
+# Automation pipelines, Bash Scripting, Text processing with awk and sed, networking dhcp, raspberry pi, synchronization, 
+# combined CCTV with keylogger 
+
