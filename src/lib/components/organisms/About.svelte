@@ -17,7 +17,7 @@
     class="relative z-10 mx-auto rounded-b-xl border-2 border-t-0 border-surface1 border-t-subtext1 bg-mantle p-4 transition duration-500 group-hover:border-overlay0"
   >
     <enhanced:img
-      src="$lib/assets/train-square-2.webp"
+      src="$lib/assets/formal-color-serious-square.webp"
       alt="Me"
       class="relative left-6 top-[-10rem] mb-[-8rem] size-[10rem] rounded-full border-4 border-subtext0 bg-mantle transition duration-500 group-hover:border-lavender"
     />
