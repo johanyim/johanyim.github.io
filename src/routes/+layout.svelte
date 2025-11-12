@@ -1,7 +1,7 @@
 <script>
   let {children } = $props()
 
-  // import "../app.css";
+  import "../app.css";
   import Stars from "$organisms/Stars.svelte";
   import { base } from "$app/paths";
   import Menu from "~icons/mdi/menu";
