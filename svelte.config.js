@@ -22,13 +22,8 @@ const config = {
       precompress: true,
     }),
 
-    prerender: {
-      handleHttpError: "warn" // suppress broken __data.json fetches
-    },
-
     paths: {
       base: process.env.NODE_ENV === "production" ? process.env.BASE_PATH : "",
-      relative: true
     },
     alias: {
       $atoms: "./src/lib/components/atoms",
