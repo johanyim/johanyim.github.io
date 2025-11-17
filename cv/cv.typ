@@ -2,8 +2,10 @@
 #let column_widths = (1.3cm, auto)
 #import "@preview/cmarker:0.1.6"
 
-#set text(size: 12pt, font: "Roboto")
-// #set text(size: 11pt, font: "Roboto")
+// #set text(size: 12pt, font: "Roboto")
+#set text(size: 11pt, font: "Roboto")
+// #set text(size: 12pt)
+// #set text(size: 11pt)
 #set page(margin: 2em)
 
 
@@ -35,7 +37,7 @@
   inset: (bottom: -0.4cm),
   columns: 2,
   box()[
-    #text(size: 2.5em, weight: "bold")[Johan Yim]\
+    #text(size: 2.0em, weight: "bold")[Johan Yim]\
     #text(size: 1.5em, fill: luma(128))[Software Engineer]
   ],
 )

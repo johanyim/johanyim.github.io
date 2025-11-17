@@ -2,10 +2,10 @@
 
 
 echo "Removing old versions"
-rm Johan*.pdf > /dev/null 2>&1
+rm Johan-Yim.pdf > /dev/null 2>&1
 
 
-new_file="Johan-Yim-$(date --i=d).pdf"
+new_file="Johan-Yim.pdf"
 echo "Compiling new version"
 
 typst compile cv.typ $new_file

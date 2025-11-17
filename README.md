@@ -6,15 +6,6 @@
 - [linkedin.com/in/johanjyyim](https://linkedin.com/in/johanjyyim/)
 - [github.com/johanyim](https://github.com/johanyim)
 ## Experience
-### Software Engineer - *BG Automotive*
-> `2024-05` - `Present`
-- Implemented stateless, secure authentication using `JWT`s stored in HTTP-only cookies, with access and refresh token rotation for session management.
-- Implemented HTTP middleware in `Rust` using `Redis` as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger.
-- Developed a silent background process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system.
-- Applied systems programming concepts, including mutex-based synchronization, to prevent race conditions and manage concurrent write operations.
-- Used `cron`, the GNU coreutils, and `git` to create an automated deployment pipeline for various automated services.
-- Deployed 10 containerized cloud applications optimized for resource efficiency, achieving reliable operation on a single low-tier cloud instance.
-- Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros at compile time.
 ### Volunteer Data Assistant - *Bath Royal Literary and Scientific Institution*
 > `2024-03` - `2024-05`
 - Used text-manipulation tools from the GNU coreutils such as `awk` and `sed` to process and clean existing tabular data.
@@ -22,7 +13,7 @@
 ### Structure-Preserving Encryption and Decryption - *https://github.com/johanyim/spead*
 - Implemented key derivation with `Argon2` algorithm to derive cryptographically strong keys to mitigate brute-force and GPU-based attacks.
 - Applied Format-Preserving Encryption (FPE) to encrypt and decrypt structured data without altering data formats or types, reducing the effect of encryption on data type validation.
-- Combined concepts from JSON traversal/pointers (RFC 6901) with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
+- Combined concepts from JSON traversal/pointers with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
 ## Education
 ### Computer Science MComp (Hons) - *University of Bath*
 > `2019-09` - `2023-05`

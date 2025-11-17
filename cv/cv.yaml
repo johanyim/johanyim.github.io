@@ -5,10 +5,31 @@ experience:
     date_from: 2024-05
     date_to: Present
     points: 
-      # BG Automotive's well-recognized Warranty site, which gained recognition during a company exhibition. 
-      # - Implemented Cookie-based JWT authentication, permission groups, file serving, automated emails, and ERP integration to manage over 7,500 warranty claims and 10,000 GBP worth of products.
+      - Developed, deployed and maintained 10 containerized cloud applications optimized for resource efficiency, achieving reliable simultaneous operation on a single-core, low-tier cloud instance consuming less than 2 GB of memory running in parallel.
+      # 1. BG Automotive's well-recognized Warranty site, which gained recognition during a company exhibition. 
+      # - Implemented Cookie-based JWT authentication, permission groups, file serving, automated emails, and ERP integration to manage over 7,500 warranty claims and 1,000,000 GBP worth of products.
+      #
+      # 2. They were all written in Rust (God's intended language) as a *single* statically linked binary executable 
+      #   (except for glibc libgcc, for that you'll need musl as a libc alternative)
+      #   glibc = faster, musl = lighter
+      #   ever heard of diet libc
+      #
+      # Rather than have two applications (frontend and backend):
+      #   Compiled the svelte frontend statically and served it from the rust backend 
+      #   All frontend files were compiled into the executable binary
+      #
+      # Static compilation step was scripted within the dockerfile
+      #
+      # Build artifacts were completely removed from the final image, 
+      #
+      # Produced a single statically linked, independent file 
+      #   execute the file -> website served
+      #
+      # Tradeoff: hot reloading in development was mostly gone
+      # 
+      # - Learned to confgure DHCP to reserve IP addresses for 
       
-      - Implemented stateless, secure authentication using `JWT`s stored in HTTP-only cookies, with access and refresh token rotation for session management.
+      - Streamlined user experience by implementing stateless, secure authentication using `JWT`s stored in HTTP-only cookies, with access and refresh token rotation for session management.
       # Stateless: JWT
       # Secure: HTTP only, Samesite Lax|Strict, Secure, HTTPonly (no javascript access, requests only)
       # Session management: access + refresh tokens
@@ -25,7 +46,7 @@ experience:
       #   - Samesite: None = Malicious website "evil.com" could have <img src="store.bga"> to force browser to send a request
       #   - Cookies (The SameSite header: Lax/Strict) solve CSRF (same domain only)
 
-      - Implemented HTTP middleware in `Rust` using `Redis` as an intermediary cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger.
+      - Implemented HTTP middleware in `Rust` using `Redis` as an intermediary write-back cache layer, Server-Sent Events, and frontend Virtualization/Windowing to handle payloads 600 times larger.
       # Middleware: intercepts requests and/or responses to apply something to them before reaching the handler
       # Redis = 400 times faster
       #   - 45s average -> 0.1s with caching
@@ -42,8 +63,7 @@ experience:
       # Q: Why not use a CDN for http response caching?
       # A: My company has applications which are internally hosted => a CDN would be infeasible because we arent'd istributed 
 
-      - Developed a silent background process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system.
-      # TODO: use the word `daemon`
+      - Developed a `daemon` process that monitors key presses and recognizes barcode syntax, triggering image capture from the warehouse CCTV system to be used as customer-facing proof of order integrity, saving over £150,000 worth of reimbursements.
       #
       # S: Customers were complaining that their orders have been missing items
       # T: We needed to prove that our warehouse employees were scanning the items and putting them in the box, 
@@ -72,8 +92,7 @@ experience:
       # R: Misfire ratio went from 19% to 2%, 
       # Saved 100k GBP worth of reimbursements
 
-      # TODO: rewrite to be more technical
-      - Applied systems programming concepts, including mutex-based synchronization, to prevent race conditions and manage concurrent write operations.
+      - Implemented semaphore-based synchronization in an asynchronous, multithreaded environment, to prevent race conditions and manage concurrent write operations.
       # Warehouse assigns a maximum number of people (N) to an order 
       # Develop an application which where only (N) employee(s) can interact with an order at once
       #   - Implemented a semaphore, gets released when the user exits the program
@@ -87,28 +106,17 @@ experience:
       #
       # Created a script which would parse the user's crontab file for all automations, updating them when the git commit hash is different between local and remote
 
+      - Migrated from and interoperated with legacy C\# interfaces - originally created in 2003 - to modern Rust-based desktop applications, web APIs and scheduled automations.
+
+      # Currently
+
       
-      - Deployed 10 containerized cloud applications optimized for resource efficiency, achieving reliable operation on a single low-tier cloud instance.
-      # They were all written in Rust (God's intended language) as a *single* statically linked binary executable 
-      #   (except for glibc libgcc, for that you'll need musl as a libc alternative)
-      #   glibc = faster, musl = lighter
-      #   ever heard of diet libc
-      #
-      # Rather than have two applications (frontend and backend):
-      #   Compiled the svelte frontend statically and served it from the rust backend 
-      #   All frontend files were compiled into the executable binary
-      #
-      # Static compilation step was scripted within the dockerfile
-      #
-      # Build artifacts were completely removed from the final image, 
-      #
-      # Produced a single statically linked, independent file 
-      #   execute the file -> website served
-      #
-      # Tradeoff: hot reloading in development was mostly gone
-      # 
-      # - Learned to confgure DHCP to reserve IP addresses for 
       
+      - Implemented procedural compile-time macros to enhance developer experience through abstraction, reducing the source lines of code in the overall project by 42%.
+      
+
+
+
 
       - Interfaced with the `xlsxwriter` C library to programmatically generate non-trivial excel spreadsheets, such as spawning charts and extracting/including VBA macros at compile time.
       # Usual task was to parse a large file, and programmatically create an excel file from it, sending it through STMP as an email to a mailing list
@@ -116,7 +124,6 @@ experience:
       # 
       # xlsxwriter cannot modify excel, so had to parse excel, and produce a new excel from it, with all same styling
       # vba macro had to be extracted from an existing xlsm file, and then fed into the new sheet
-
 
       # - Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL Something about SQL 
       # 
@@ -159,9 +166,11 @@ projects:
       # side channel attacks too
       - Applied Format-Preserving Encryption (FPE) to encrypt and decrypt structured data without altering data formats or types, reducing the effect of encryption on data type validation.
       # - Guided development decisions through test-driven development and performance benchmarking to monitor the direction of the project.
-      - Combined concepts from JSON traversal/pointers (RFC 6901) with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
+      - Combined concepts from JSON traversal/pointers with nonce selection to produce deterministic encryption, while resisting ciphertext-equality attacks.
       # - Crypto secure because nonce selection
 
+
+      # - Employed github actions with automated testing
 
       # - Practiced writing performance benchmarks to guide the direction of development
       # - Improved user experience by enforcing command-line flag validation to prevent misuse.
