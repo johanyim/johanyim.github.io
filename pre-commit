@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+
+
+DIR="cv"
+
+echo "Removing old versions"
+rm $DIR/Johan-Yim.pdf > /dev/null 2>&1
+
+
+echo "Compiling new version"
+new_file="Johan-Yim.pdf"
+typst compile $DIR/cv.typ $DIR/$new_file
+git add $DIR/$new_file
+
+
+echo "Making a copy to the static/ directory"
+cp $DIR/$new_file static/$new_file
+git add static/$new_file
+
+
+# typst compile ./cv.typ  
+# echo "compiling"
+
+# start blank
+truncate -s 0 README.md
+
+
+echo "Creating README"
+{
+    echo '![og-image](https://github.com/user-attachments/assets/952b9c2f-f8b9-4dee-a3ff-86a370a34f41)'
+
+    echo "# **Johan Yim** - Software Engineer"
+
+    echo "- [johanyim.com](https://johanyim.com)"
+    echo "- [johanjyyim@gmail.com](mailto://johanjyyim@gmail.com)"
+    echo "- [+44 7510787854](tel:07510787854)"
+    echo "- [linkedin.com/in/johanjyyim](https://linkedin.com/in/johanjyyim/)"
+    echo "- [github.com/johanyim](https://github.com/johanyim)"
+
+    echo "## Experience"
+
+    sed -e 's/\\//g' $DIR/cv.yaml | yq -c '.experience[]' | while read experience; do 
+        echo $experience | jq -cr '"### \(.role) - *\(.company)*"'
+        echo $experience | jq -cr '"> `\(.date_from)` - `\(.date_to)`"' 
+        echo $experience | jq -cr '.points[]' | xargs -I{} echo '- {}'
+    done
+    
+    echo "## Projects"
+
+    sed -e 's/\\//g' $DIR/cv.yaml | yq -c '.projects[]' | while read project; do 
+        echo $project | jq -cr '"### \(.title) - *\(.url)*"'
+        echo $project | jq -cr '.points[]' | xargs -I{} echo '- {}'
+    done
+    
+    echo "## Education"
+
+    sed -e 's/\\//g' $DIR/cv.yaml | yq -c '.education[]' | while read edu; do 
+        echo $edu | jq -cr '"### \(.title) - *\(.subtitle)*"'
+        echo $edu | jq -cr '"> `\(.date_from)` - `\(.date_to)`"' 
+        echo $edu | jq -cr '.subjects[]' | xargs -I{} echo '- {}'
+    done
+    
+
+} >> README.md
+
+
+echo "Adding README to commit"
+git add README.md
+
+
+
+
+# echo "##  Projects"
+# cat ./cv.yaml | yq -c '.projects[]' | while read project; do 
+#     echo $experience | jq -cr '"### \(.role), \(.company)"'  >> ./README.md;
+#     echo $experience | jq -cr '.points[]' | xargs -I{} echo '- {}' >> ./README.md;
+# done
+
+
+# glow ./README.md
