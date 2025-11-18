@@ -1,6 +1,8 @@
 import type { SvelteComponent } from "svelte";
 // import { base } from "$app/paths";
 
+export const prerender = true 
+export const ssr = true
 
 interface Glob {
     default: SvelteComponent;
