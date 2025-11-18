@@ -21,6 +21,7 @@ interface Metadata {
 }
 
 
+// TODO: find ou why navigating to /blog directly on URL fails, but via buttons works
 
 /** @type {import('./$types').PageLoad} */
 export function load() {

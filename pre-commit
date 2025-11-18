@@ -14,8 +14,8 @@ git add $DIR/$new_file
 
 
 echo "Making a copy to the static/ directory"
-cp $DIR/$new_file static/$new_file
-git add static/$new_file
+cp $DIR/$new_file frontend/static/$new_file
+git add frontend/static/$new_file
 
 
 # typst compile ./cv.typ  
