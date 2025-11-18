@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"watch-build": "nodemon --watch src --ext svelte,js,ts --exec \"vite build --mode development\"",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
@@ -20,6 +21,7 @@
 		"autoprefixer": "^10.4.20",
 		"eslint-config-prettier": "^9.1.0",
 		"mdsvex": "^0.11.2",
+		"nodemon": "^3.1.11",
 		"prettier": "^3.3.2",
 		"prettier-plugin-svelte": "^3.2.6",
 		"prettier-plugin-tailwindcss": "^0.6.5",
